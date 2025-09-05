@@ -40,9 +40,7 @@ const parseMon = (save, address, PF) => {
 
   mon["Species"] = species["Name"];
   mon["Form"] = form["Name"];
-  mon["Type"] = form["Type"].map(
-    (type) => type.at(0).toUpperCase() + type.slice(1)
-  );
+  mon["Type"] = form["Type"];
 
   //Byte #2: Held Item
 

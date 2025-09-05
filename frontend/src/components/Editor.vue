@@ -22,14 +22,23 @@ const boxNo = ref(1);
     @click="boxNo = boxNo === 20 ? 1 : boxNo + 1"
   />
   <div
-    class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5"
+    class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5 items-stretch"
   >
-    <div v-for="pokemon in data[boxNo - 1]">
-      <Card v-if="pokemon === 0" :pt="{ caption: 'm-auto mb-2' }">
+    <div v-for="pokemon in data[boxNo - 1]" class="flex">
+      <Card
+        v-if="pokemon === 0"
+        :pt="{ caption: 'm-auto mb-2' }"
+        class="flex flex-col flex-1"
+      >
         <template #title>Empty</template>
         <template #content></template>
       </Card>
-      <Pokemon v-else :pokemon="pokemon" :PF="PF" />
+      <Pokemon
+        v-else
+        :pokemon="pokemon"
+        :PF="PF"
+        class="flex flex-col flex-1"
+      />
     </div>
   </div>
 </template>
