@@ -9,7 +9,7 @@ let abilities = {
 
 //Paths
 const namesASM =
-  import.meta.dirname + "/../polishedcrystal/data/abilities/names.asm";
+  import.meta.dirname + "/../public/polishedcrystal/data/abilities/names.asm";
 
 const extractNames = (data, PF) => {
   data = data.filter((line) => line.includes("rawchar"));
