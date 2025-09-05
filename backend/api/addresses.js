@@ -41,7 +41,7 @@ const extractAddresses = (data) => {
 };
 
 //#1: Addresses
-raw = await readFile(addressesASM, "utf-8");
+const raw = await readFile(addressesASM, "utf-8");
 extractAddresses(raw);
 
 //Abilities GETTER
