@@ -13,7 +13,7 @@ let abilities = {
 
 //Paths
 const namesASM =
-  join(import.meta.dirname, '..', 'public', 'polishedcrystal', 'data', 'abilities', 'names.asm')
+  join(__dirname, '..', 'public', 'polishedcrystal', 'data', 'abilities', 'names.asm')
 
 const extractNames = (data, PF) => {
   data = data.filter((line) => line.includes("rawchar"));
