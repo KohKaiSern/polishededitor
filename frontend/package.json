@@ -1,0 +1,27 @@
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@primeuix/themes": "^1.2.3",
+    "@tailwindcss/vite": "^4.1.13",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.3.8",
+    "tailwindcss": "^4.1.13",
+    "vue": "^3.5.18"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.0.6",
+    "vite-plugin-vue-devtools": "^8.0.0"
+  }
+}
