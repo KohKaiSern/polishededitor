@@ -39,10 +39,16 @@ const reduce = (str) => {
     .replaceAll("é", "e");
 };
 
-const getGIFURL = (species, form, shininess) => {
+const getGIFURL = (species, form, shininess, isEgg) => {
   //Format names to Cammy's format
   species = reduce(species);
   form = reduce(form);
+
+  //Special Case: Egg
+  if (isEgg) {
+    form = "plain";
+    species = "egg";
+  }
 
   //Decide the right URL path
   const shine = shininess === "Shiny" ? "shiny" : "normal";
@@ -63,7 +69,8 @@ const getGIFURL = (species, form, shininess) => {
               getGIFURL(
                 pokemon['Species'],
                 pokemon['Form'],
-                pokemon['Shininess']
+                pokemon['Shininess'],
+                pokemon['Is Egg']
               )
             "
           />
