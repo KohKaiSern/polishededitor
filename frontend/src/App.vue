@@ -2,11 +2,12 @@
 import { ref, watch } from "vue";
 import FileUpload from "primevue/fileupload";
 import Divider from "primevue/divider";
+import ToggleSwitch from "primevue/toggleswitch";
 import parseSave from "./lib/parsesave.js";
 
 const fileContent = ref(null);
 const data = ref(null);
-const PF = ref("Polished");
+const PF = ref(true);
 
 //Receive File Input
 const handleFileSelect = (event) => {
@@ -20,14 +21,20 @@ const handleFileSelect = (event) => {
 
 watch(fileContent, () => {
   //Compile File Data into Pokemon Objects
-  data.value = parseSave(fileContent.value, PF.value);
+  data.value = parseSave(fileContent.value, PF.value ? "Polished" : "Faithful");
 });
-
 </script>
 
 <template>
   <div class="m-5">
-    <h1 class="text-3xl mb-5">Polished Editor</h1>
+    <div class="flex justify-between">
+      <h1 class="text-3xl mb-5">Polished Editor</h1>
+      <div class="flex text-center gap-2">
+        <ToggleSwitch class="mt-0.25" v-model="PF" :disabled="data" />
+        <span v-if="PF">Polished</span>
+        <span v-else>Faithful</span>
+      </div>
+    </div>
     <FileUpload
       mode="basic"
       accept=".sav,.srm"
