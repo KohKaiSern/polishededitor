@@ -3,7 +3,7 @@ import Card from "primevue/card";
 defineProps(["pokemon"]);
 
 const typeColours = {
-  bug: "#92BCDC",
+  bug: "#92BC2C",
   dark: "#595761",
   dragon: "#0C69C8",
   electric: "#F2D94E",
@@ -80,11 +80,11 @@ const getGIFURL = (species, form, shininess, isEgg) => {
           <div class="flex gap-3">
             <div
               v-for="type in pokemon['Type']"
-              class="size-[30px] rounded-lg flex items-center justify-center"
+              class="size-[30px] rounded-[50%] flex items-center justify-center"
               :style="{ backgroundColor: typeColours[type] }"
             >
               <img
-                class="size-[70%] object-contain"
+                class="size-[60%] object-contain"
                 :src="`https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/5781623f147f1bf850f426cfe1874ba56a9b75ee/icons/${type}.svg`"
               />
             </div>
