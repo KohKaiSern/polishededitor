@@ -1,5 +1,5 @@
 import { readFile } from "fs/promises";
-import { dirname } from 'path';
+import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,7 +13,7 @@ let abilities = {
 
 //Paths
 const namesASM =
-  __dirname + '../public/polishedcrystal/data/abilities/names.asm'
+  join(__dirname, '../public/polishedcrystal/data/abilities/names.asm')
 
 const extractNames = (data, PF) => {
   data = data.filter((line) => line.includes("rawchar"));
