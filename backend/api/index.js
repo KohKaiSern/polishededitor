@@ -7,7 +7,7 @@ app.use(cors());
 
 app.get("/", (req, res) => res.send("Polished Editor Backend Functional!"));
 
-app.get("/api/abilities", (req, res) => res.json(getAbilities()))
+app.get("/api/abilities", (req, res) => res.send(JSON.stringify(getAbilities())));
 
 app.listen(3000, () => console.log("Server ready on port 3000."));
 
