@@ -18,10 +18,11 @@ const handleFileSelect = (event) => {
   reader.readAsArrayBuffer(file);
 };
 
-watch(fileContent, async () => {
+watch(fileContent, () => {
   //Compile File Data into Pokemon Objects
-  data.value = await parseSave(fileContent.value, PF.value);
+  data.value = parseSave(fileContent.value, PF.value);
 });
+
 </script>
 
 <template>

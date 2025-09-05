@@ -11,7 +11,7 @@ const addressesASM = join(__dirname, "../public/polishedcrystal-3.1.1.sym");
 
 //Symbols
 const SYMBOLS = [
-  "sBackupNewBox1Entries",
+  "sBackupNewBox1",
   "sBoxMons1A",
   "sBoxMons1B",
   "sBoxMons1C",
