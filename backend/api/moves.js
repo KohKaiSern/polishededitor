@@ -66,4 +66,9 @@ const movesFILES = splitFile(raw);
 extractMoves(movesFILES[0], "Polished");
 extractMoves(movesFILES[1], "Faithful");
 
-export default moves;
+//Moves GETTER
+const getMoves = () => {
+  return moves;
+};
+
+export default getMoves;
