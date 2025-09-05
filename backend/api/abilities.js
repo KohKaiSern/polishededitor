@@ -7,6 +7,27 @@ let abilities = {
   Faithful: [],
 };
 
+//Paths
+const namesASM =
+  import.meta.dirname + "/../polishedcrystal/data/abilities/names.asm";
+
+const extractNames = (data, PF) => {
+  data = data.filter((line) => line.includes("rawchar"));
+  data = data.map((line) => line.slice(0, -1).split('"').at(-1));
+  for (let ability of data.slice(1)) {
+    abilities[PF].push({
+      ID: reduce(ability),
+      Name: ability,
+    });
+  }
+};
+
+//#1: Names
+let raw = await readFile(namesASM, "utf-8");
+const namesFILES = splitFile(raw);
+extractNames(namesFILES[0], "Polished");
+extractNames(namesFILES[1], "Faithful");
+
 const getAbilities = () => {
   return abilities;
 };
