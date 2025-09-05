@@ -1,6 +1,6 @@
 import { readFile } from "fs/promises";
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 import splitFile from "../lib/split.js";
@@ -12,10 +12,14 @@ let abilities = {
 };
 
 //Paths
-const namesASM =
-  join(__dirname, '../public/polishedcrystal/data/abilities/names.asm')
-const descriptionsASM =
-  join(__dirname, "../public/polishedcrystal/data/abilities/descriptions.asm")
+const namesASM = join(
+  __dirname,
+  "../public/polishedcrystal/data/abilities/names.asm"
+);
+const descriptionsASM = join(
+  __dirname,
+  "../public/polishedcrystal/data/abilities/descriptions.asm"
+);
 
 const extractNames = (data, PF) => {
   data = data.filter((line) => line.includes("rawchar"));
@@ -71,7 +75,7 @@ const descriptionsFILES = splitFile(raw);
 extractDescriptions(descriptionsFILES[0], "Polished");
 extractDescriptions(descriptionsFILES[1], "Faithful");
 
-//Getter abilities
+//Abilities GETTER
 const getAbilities = () => {
   return abilities;
 };
