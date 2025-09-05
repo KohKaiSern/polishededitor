@@ -1,4 +1,5 @@
 import { readFile } from "fs/promises";
+import { join } from 'path';
 import splitFile from "../lib/split.js";
 import reduce from "../lib/reduce.js";
 
@@ -9,7 +10,7 @@ let abilities = {
 
 //Paths
 const namesASM =
-  import.meta.dirname + "/../public/polishedcrystal/data/abilities/names.asm";
+  join(import.meta.dirname, '..', 'public', 'polishedcrystal', 'data', 'abilities', 'names.asm')
 
 const extractNames = (data, PF) => {
   data = data.filter((line) => line.includes("rawchar"));
