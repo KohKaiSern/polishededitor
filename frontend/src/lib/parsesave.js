@@ -78,9 +78,9 @@ export const parseSave = (save, PF) => {
         block += "2";
       }
       //Check letter
-      if (indexes[box][i] < 168) {
+      if (indexes[box][i] < 167) {
         block += "A";
-      } else if (indexes[box][i] < 197) {
+      } else if (indexes[box][i] < 196) {
         block += "B";
       } else {
         block += "C";
@@ -93,7 +93,7 @@ export const parseSave = (save, PF) => {
       } else if (block[1] === "B") {
         address += (indexes[box][i] - 167) * 49;
       } else {
-        address += (indexes[box][i] - 196) * 49;
+        address += (indexes[box][i] - 195) * 49;
       }
       data[box][i] = parseMon(save, address, PF);
     }

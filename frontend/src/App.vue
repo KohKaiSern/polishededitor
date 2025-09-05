@@ -6,7 +6,7 @@ import parseSave from "./lib/parsesave.js";
 
 const fileContent = ref(null);
 const data = ref(null);
-const PF = ref(true);
+const PF = ref("Polished");
 
 //Receive File Input
 const handleFileSelect = (event) => {
