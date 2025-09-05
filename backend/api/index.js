@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import getAddresses from "./addresses.js";
 import getPokemon from "./pokemon.js";
 import getAbilities from "./abilities.js";
 import getMoves from "./moves.js";
@@ -12,8 +13,11 @@ app.use(cors());
 //Home Route
 app.get("/", (req, res) => res.send("Polished Editor Backend Functional!"));
 
+//Address Route
+app.get("/addresses", (req, res) => res.json(getAddresses()));
+
 //Pokemon Route
-app.get("/pokemon", (req, res) => res.json(getPokemon()))
+app.get("/pokemon", (req, res) => res.json(getPokemon()));
 
 //Abilities Route
 app.get("/abilities", (req, res) => res.json(getAbilities()));
