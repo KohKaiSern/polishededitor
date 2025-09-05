@@ -32,10 +32,10 @@ const wToSRAM = (address) => {
 };
 
 const extractAddresses = (data) => {
-  data = data.split("\n").trim();
+  data = data.split("\n");
   data = data.map((line) => line.trim());
   for (let entry of SYMBOLS) {
-    symbol = data.find((line) => line.endsWith(entry));
+    const symbol = data.find((line) => line.endsWith(entry));
     addresses[entry] = wToSRAM(symbol.split(" ").at(0).replace(":", ""));
   }
 };
