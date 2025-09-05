@@ -2,7 +2,9 @@
 import parseMon from "./parsemon.js";
 
 //GET sRAM Addresses
-let response = await fetch("https://polishededitor-backend.vercel.app/addresses");
+let response = await fetch(
+  "https://polishededitor-backend.vercel.app/addresses"
+);
 const addresses = await response.json();
 
 //Converts save file to string of two-digit hex numbers
@@ -70,21 +72,9 @@ export const parseSave = (save, PF) => {
       }
 
       //If it does, find the memory block
-      let block = "";
-      //Check flag
-      if (flags[box][i] === "0") {
-        block += "1";
-      } else {
-        block += "2";
-      }
-      //Check letter
-      if (indexes[box][i] < 167) {
-        block += "A";
-      } else if (indexes[box][i] < 196) {
-        block += "B";
-      } else {
-        block += "C";
-      }
+      const block =
+        (flags[box][i] === "0" ? "1" : "2") +
+        (indexes[box][i] < 167 ? "A" : indexes[box][i] < 196 ? "B" : "C");
 
       //Get address
       let address = parseInt(addresses[`sBoxMons${block}`], 16);
