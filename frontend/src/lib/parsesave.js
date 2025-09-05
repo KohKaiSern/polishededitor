@@ -7,21 +7,11 @@ let response = await fetch(
 );
 const addresses = await response.json();
 
-//Converts save file to string of two-digit hex numbers
-const buf2hex = (buffer) => {
-  return [...new Uint8Array(buffer)].map((x) =>
-    x.toString(16).padStart(2, "0").toUpperCase()
-  );
-};
-
 //Determines the memory address of each Pokemon and calls the parse function on it.
 //Details of the NewBox system can be found at:
 //https://github.com/Rangi42/polishedcrystal/blob/master/docs/newbox_format.md
 
 export const parseSave = (save, PF) => {
-  //Converts Buffer to Array of Hex Strings
-  save = buf2hex(save);
-
   //Retrieve all indexes from sBackupNewBoxXEntries
   // prettier-ignore
   let indexes = Array(20).fill().map(() => Array(20).fill(0));

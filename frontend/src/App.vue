@@ -10,12 +10,19 @@ const fileContent = ref(null);
 const data = ref(null);
 const PF = ref(true);
 
+//Converts save file to string of two-digit hex numbers
+const buf2hex = (buffer) => {
+  return [...new Uint8Array(buffer)].map((x) =>
+    x.toString(16).padStart(2, "0").toUpperCase()
+  );
+};
+
 //Receive File Input
 const handleFileSelect = (event) => {
   const file = event.files[0];
   const reader = new FileReader();
   reader.onload = (e) => {
-    fileContent.value = e.target.result;
+    fileContent.value = buf2hex(e.target.result);
   };
   reader.readAsArrayBuffer(file);
 };
