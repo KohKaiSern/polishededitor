@@ -53,7 +53,7 @@ const extractDescriptions = (data, PF) => {
     for (let entry of abilitiesArr) {
       let ability = abilities[PF].find((ability) => ability["ID"] === entry);
       if (ability) {
-        ability["Description"] = description;
+        ability["Description"] = description.trim();
       }
     }
   }
