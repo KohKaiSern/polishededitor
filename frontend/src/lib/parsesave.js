@@ -17,6 +17,7 @@ const buf2hex = (buffer) => {
 //Determines the memory address of each Pokemon and calls the parse function on it.
 //Details of the NewBox system can be found at:
 //https://github.com/Rangi42/polishedcrystal/blob/master/docs/newbox_format.md
+
 export const parseSave = (save, PF) => {
   //Converts Buffer to Array of Hex Strings
   save = buf2hex(save);
