@@ -1,0 +1,35 @@
+<script setup>
+import { ref } from "vue";
+import Button from "primevue/button";
+import Card from "primevue/card";
+import Pokemon from "./Pokemon.vue";
+
+defineProps(["data", "PF"]);
+
+const boxNo = ref(1);
+</script>
+
+<template>
+  <Button
+    icon="pi pi-caret-left"
+    severity="secondary"
+    @click="boxNo = boxNo === 1 ? 20 : boxNo - 1"
+  />
+  <span class="ml-3 mr-3 text-lg"> Box {{ boxNo }} </span>
+  <Button
+    icon="pi pi-caret-right"
+    severity="secondary"
+    @click="boxNo = boxNo === 20 ? 1 : boxNo + 1"
+  />
+  <div
+    class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5"
+  >
+    <div v-for="pokemon in data[boxNo - 1]">
+      <Card v-if="pokemon === 0" :pt="{ caption: 'm-auto mb-2' }">
+        <template #title>Empty</template>
+        <template #content></template>
+      </Card>
+      <Pokemon v-else :pokemon="pokemon" :PF="PF" />
+    </div>
+  </div>
+</template>

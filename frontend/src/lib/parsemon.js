@@ -10,6 +10,10 @@ const items = await response.json();
 response = await fetch("https://polishededitor-backend.vercel.app/moves");
 const moves = await response.json();
 
+//GET Abilities Object
+response = await fetch("https://polishededitor-backend.vercel.app/abilities");
+const abilities = await response.json();
+
 //Parses one Pokemon's worth of data into a Pokemon Object
 const parseMon = (save, address, PF) => {
   let mon = {};
@@ -36,6 +40,9 @@ const parseMon = (save, address, PF) => {
 
   mon["Species"] = species["Name"];
   mon["Form"] = form["Name"];
+  mon["Type"] = form["Type"].map(
+    (type) => type.at(0).toUpperCase() + type.slice(1)
+  );
 
   //Byte #2: Held Item
 
@@ -50,7 +57,7 @@ const parseMon = (save, address, PF) => {
   let moveset = [];
   for (let i = 2; i < 6; i++) {
     if (save[address + i] === "00") {
-      moveset.push("-");
+      moveset.push("---");
       continue;
     }
     moveset.push(moves[PF][parseInt(save[address + i], 16) - 2]["Name"]);
@@ -81,12 +88,12 @@ const parseMon = (save, address, PF) => {
   //Byte #18-20: DVs
 
   mon["DVs"] = [
-    parseInt(save[address + 17], 16),
-    parseInt(save[address + 18], 16),
-    parseInt(save[address + 19], 16),
-    parseInt(save[address + 20], 16),
-    parseInt(save[address + 21], 16),
-    parseInt(save[address + 22], 16),
+    parseInt(save[address + 17].at(0), 16),
+    parseInt(save[address + 17].at(1), 16),
+    parseInt(save[address + 18].at(0), 16),
+    parseInt(save[address + 18].at(1), 16),
+    parseInt(save[address + 19].at(0), 16),
+    parseInt(save[address + 19].at(1), 16),
   ];
 
   //Byte #21: Ability, Nature, Shininess
@@ -125,18 +132,23 @@ const parseMon = (save, address, PF) => {
     "Quirky",
   ];
 
-  mon["Nature"] = NATURES[parseInt(byte21.slice(3), 2)]
+  mon["Nature"] = NATURES[parseInt(byte21.slice(3), 2)];
 
-  mon["Ability"] = form["Abilities"][parseInt(byte21.slice(1, 3), 2) - 1]
+  const ability = abilities[PF].find(
+    (ability) =>
+      form["Abilities"].at(parseInt(byte21.slice(1, 3), 2) - 1) ===
+      ability["ID"]
+  );
+  mon["Ability"] = ability["Name"];
 
   //Byte #22: Gender, isEgg
 
-  mon["Is Egg"] = byte22.at(1) === "0" ? false : true
-  
+  mon["Is Egg"] = byte22.at(1) === "0" ? false : true;
+
   if (form["Has Gender"]) {
-    mon["Gender"] = byte22.at(0) === "0" ? "Male" : "Female"
+    mon["Gender"] = byte22.at(0) === "0" ? "Male" : "Female";
   } else {
-    mon["Gender"] = "Genderless"
+    mon["Gender"] = "Genderless";
   }
 
   //Byte #23: PP Ups TODO
@@ -144,11 +156,11 @@ const parseMon = (save, address, PF) => {
   //Byte #24: Happiness
 
   if (mon["Is Egg"]) {
-    mon["Hatch Cycles"] = parseInt(save[address + 23], 16)
-    mon["Happiness"] = "-"
+    mon["Hatch Cycles"] = parseInt(save[address + 23], 16);
+    mon["Happiness"] = "---";
   } else {
-    mon["Hatch Cycles"] = "-"
-    mon["Happiness"] = parseInt(save[address + 23], 16)
+    mon["Hatch Cycles"] = "---";
+    mon["Happiness"] = parseInt(save[address + 23], 16);
   }
 
   //Byte #25: Pokerus [UNSUPPORTED]
@@ -161,7 +173,7 @@ const parseMon = (save, address, PF) => {
 
   //Byte #29: Level
 
-  mon["Level"] = parseInt(save[address + 28], 16)
+  mon["Level"] = parseInt(save[address + 28], 16);
 
   //Byte #30-32: Extra [UNSUPPORTED]
 

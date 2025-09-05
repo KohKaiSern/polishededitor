@@ -4,6 +4,7 @@ import FileUpload from "primevue/fileupload";
 import Divider from "primevue/divider";
 import ToggleSwitch from "primevue/toggleswitch";
 import parseSave from "./lib/parsesave.js";
+import Editor from "./components/Editor.vue";
 
 const fileContent = ref(null);
 const data = ref(null);
@@ -30,7 +31,7 @@ watch(fileContent, () => {
     <div class="flex justify-between">
       <h1 class="text-3xl mb-5">Polished Editor</h1>
       <div class="flex text-center gap-2">
-        <ToggleSwitch class="mt-0.25" v-model="PF" :disabled="data" />
+        <ToggleSwitch class="mt-0.25" v-model="PF" :disabled="data != null" />
         <span v-if="PF">Polished</span>
         <span v-else>Faithful</span>
       </div>
@@ -42,7 +43,7 @@ watch(fileContent, () => {
       @select="handleFileSelect"
     />
     <Divider />
-    {{ data }}
+    <Editor v-if="data != null" :data="data" :PF="PF" />
   </div>
 </template>
 
