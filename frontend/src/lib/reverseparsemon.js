@@ -25,10 +25,10 @@ const reverseParseMon = (save, address, mon, PF) => {
   //9th-Bit Activated
   const byte22 = hex2bin(save[address + 21]);
   if (dexNo > 254) {
-    save[address] = (dexNo - 254).toString(16);
+    save[address] = (dexNo - 254).toString(16).padStart(2, "0");
     save[address + 21] = bin2hex(byte22.slice(0, 2) + "1" + byte22.slice(3));
   } else {
-    save[address] = dexNo.toString(16);
+    save[address] = dexNo.toString(16).padStart(2, "0");
     save[address + 21] = bin2hex(byte22.slice(0, 2) + "0" + byte22.slice(3));
   }
 
@@ -39,9 +39,13 @@ const reverseParseMon = (save, address, mon, PF) => {
     .padStart(5, "0");
   save[address + 21] = bin2hex(byte22.slice(0, 3) + formNo);
 
-  //TODO: Figure out why Mr. Mime (Kantonian) has a Form Number of 0.
-
   //Byte #2: Held Item
+  const item = items[PF].find((item) => item["Name"] === mon["Held Item"]);
+  if (item) {
+    save[address + 1] = item["Item Number"].toString(16).padStart(2, "0");
+  } else {
+    save[address + 1] = "00";
+  }
 
   //Byte #3-6: Moveset
 

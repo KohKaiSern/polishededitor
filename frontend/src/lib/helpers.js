@@ -82,7 +82,7 @@ export const buf2hex = (buffer) => {
 //The opposite of the above
 export const hex2buf = (hex) => {
   const bytes = new Uint8Array(hex.map((byte) => parseInt(byte, 16)));
-  return bytes.buffer
+  return bytes.buffer;
 };
 
 //Converts hex byte string to string of 8 bits
@@ -92,5 +92,5 @@ export const hex2bin = (hex) => {
 
 //The opposite of the above
 export const bin2hex = (bin) => {
-  return parseInt(bin, 2).toString(16)
-}
+  return parseInt(bin, 2).toString(16).padStart(2, "0");
+};
