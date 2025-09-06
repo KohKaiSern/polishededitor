@@ -61,6 +61,11 @@ const reverseParseMon = (save, address, mon, PF) => {
   //Byte #7-8: ID [UNSUPPORTED]
 
   //Byte #9-11: EXP
+	
+	const exp = mon["Experience"].toString(16).padStart(6, "0")
+	save[address + 8] = exp.slice(0, 2)
+	save[address + 9] = exp.slice(2, 4)
+	save[address + 10] = exp.slice(4)
 
   //Byte #12-17: EVs
 
