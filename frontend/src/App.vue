@@ -48,6 +48,9 @@ const readSave = (event) => {
     if (saveVersion === versions.value["Save"]) {
       fileContent.value = hex;
       uploadSuccess.value = true;
+      setTimeout(() => {
+        uploadSuccess.value = null;
+      }, 1000);
     } else {
       uploadSuccess.value = false;
     }
@@ -98,15 +101,15 @@ const downloadSave = () => {
       </div>
     </div>
     <div class="flex flex-wrap justify-between">
-      <div>
+      <div class="flex flex-wrap items-end gap-5">
         <FileUpload
           mode="basic"
           accept=".sav,.srm"
           :maxFileSize="33000"
           @select="readSave"
         />
-        <Message class="mt-3" v-if="uploadSuccess" severity="success"
-          >Upload Successful!</Message
+        <Message v-if="uploadSuccess" severity="success"
+          ><i class="pi pi-check"></i></Message
         >
         <Message
           class="mt-3"
