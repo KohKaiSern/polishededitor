@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import getVersions from "./version.js";
 import getAddresses from "./addresses.js";
 import getPokemon from "./pokemon.js";
 import getAbilities from "./abilities.js";
@@ -10,8 +11,8 @@ const app = express();
 //Middleware
 app.use(cors());
 
-//Home Route
-app.get("/", (req, res) => res.send("Polished Editor Backend Functional!"));
+//Home/Versions Route
+app.get("/", (req, res) => res.json(getVersions()));
 
 //Address Route
 app.get("/addresses", (req, res) => res.json(getAddresses()));
