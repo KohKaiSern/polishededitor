@@ -75,6 +75,11 @@ const reverseParseMon = (save, address, mon, PF) => {
 
   //Byte #18-20: DVs
 
+	const dvs = mon["DVs"].map((dv) => dv.toString(16))
+	save[address + 17] = dvs[0] + dvs[1]
+	save[address + 18] = dvs[2] + dvs[3]
+	save[address + 19] = dvs[4] + dvs[5]
+
   //Byte #21: Ability, Nature, Shininess
 
   //Byte #22: Gender, isEgg
