@@ -6,17 +6,11 @@ const pokemon = defineModel();
 
 const getGIFURL = () => {
   // Format names to Cammy's format
-  let species = cammyFormat(pokemon.value["Species"]);
-  let form = cammyFormat(pokemon.value["Form"]);
-
-  // Special Case: Egg
-  if (pokemon.value["Is Egg"]) {
-    form = "plain";
-    species = "egg";
-  }
-
-  // Decide the right URL path
+  let species = pokemon["Is Egg"] ? "egg" : cammyFormat(pokemon.value["Species"]);
+  let form = pokemon["Is Egg"] ? "plain" : cammyFormat(pokemon.value["Form"]);
   const shine = pokemon.value["Shininess"] === "Shiny" ? "shiny" : "normal";
+
+  //Put it all together
   const formPath = form === "plain" ? species : `${species}_${form}`;
   return `https://raw.githubusercontent.com/caomicc/polisheddex/refs/heads/main/public/sprites/pokemon/${formPath}/${shine}_front_animated.gif`;
 };
