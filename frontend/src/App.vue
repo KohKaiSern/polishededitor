@@ -5,6 +5,7 @@ import Divider from "primevue/divider";
 import ToggleSwitch from "primevue/toggleswitch";
 import Button from "primevue/button";
 import parseSave from "./lib/parsesave.js";
+import checksum from "./lib/checksum.js";
 import { buf2hex, hex2buf } from "./lib/helpers.js";
 import Editor from "./components/Editor.vue";
 
@@ -34,7 +35,7 @@ const downloadSave = () => {
   if (!fileContent.value) return;
 
   //Create Blob
-  const buffer = hex2buf(fileContent.value);
+  const buffer = hex2buf(checksum(fileContent.value));
   const blob = new Blob([buffer]);
   const link = URL.createObjectURL(blob);
 

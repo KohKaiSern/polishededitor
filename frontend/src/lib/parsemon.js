@@ -16,34 +16,6 @@ const moves = await response.json();
 response = await fetch("https://polishededitor-backend.vercel.app/abilities");
 const abilities = await response.json();
 
-//Calculates checksum
-const calcChecksum = (save, address) => {
-  //Start with 127
-  let x = 127;
-  //For bytes #1-#32, add the value times byteNo
-  for (let byteNo = 1; byteNo < 33; byteNo++) {
-    x += parseInt(save[address + byteNo - 1], 16) * byteNo;
-  }
-  //For bytes #33-#49, add the value of the lower 7 bits times byteNo + 1
-  for (let byteNo = 33; byteNo < 50; byteNo++) {
-    x +=
-      parseInt(hex2bin(save[address + byteNo - 1]).slice(1), 2) * (byteNo + 1);
-  }
-  //Clamp to two bytes
-  x = x < 0 || x > 65535 ? 0 : x;
-  //Treat the two bytes as a series of bits
-  x = x.toString(2).padStart(16, "0");
-  //Write the most signficant bit to byte #33's MSB
-  //Continue with the 2nd most signficant bit to byte #34's MSB
-  //So on and so forth
-  for (let byteNo = 33; byteNo < 49; byteNo++) {
-    let newByte = hex2bin(save[address + byteNo - 1]);
-    newByte = x.at(byteNo - 33) + newByte.slice(1);
-    save[address + byteNo - 1] = newByte;
-  }
-  return save;
-};
-
 //Parses one Pokemon's worth of data into a Pokemon Object
 const parseMon = (save, address, PF) => {
   let mon = {};
