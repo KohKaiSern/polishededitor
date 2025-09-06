@@ -38,7 +38,6 @@ const boxNo = ref(1);
       <Pokemon
         v-else
         :pokemon="pokemon"
-        :PF="PF"
         class="flex flex-col flex-1"
       />
     </div>

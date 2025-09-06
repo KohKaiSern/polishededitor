@@ -50,7 +50,7 @@ watch(fileContent, () => {
       @select="handleFileSelect"
     />
     <Divider />
-    <Editor v-if="data != null" :data="data" :PF="PF" />
+    <Editor v-if="data != null" :data="data" />
   </div>
 </template>
 
