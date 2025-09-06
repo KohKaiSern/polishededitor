@@ -8,7 +8,7 @@ import parseSave from "./lib/parsesave.js";
 import { buf2hex, hex2buf } from "./lib/helpers.js";
 import Editor from "./components/Editor.vue";
 
-const fileName = ref(null)
+const fileName = ref(null);
 const fileContent = ref(null);
 const data = ref(null);
 const PF = ref(true);
@@ -16,7 +16,7 @@ const PF = ref(true);
 //Receive File Input
 const readSave = (event) => {
   const file = event.files[0];
-  fileName.value = file.name
+  fileName.value = file.name;
   const reader = new FileReader();
   reader.onload = (e) => {
     fileContent.value = buf2hex(e.target.result);
@@ -34,7 +34,7 @@ const downloadSave = () => {
   if (!fileContent.value) return;
 
   //Create Blob
-  const buffer = hex2buf(fileContent.value)
+  const buffer = hex2buf(fileContent.value);
   const blob = new Blob([buffer]);
   const link = URL.createObjectURL(blob);
 
