@@ -89,3 +89,8 @@ export const hex2buf = (hex) => {
 export const hex2bin = (hex) => {
   return parseInt(hex, 16).toString(2).padStart(8, "0");
 };
+
+//The opposite of the above
+export const bin2hex = (bin) => {
+  return parseInt(bin, 2).toString(16)
+}

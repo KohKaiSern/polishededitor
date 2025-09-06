@@ -5,6 +5,7 @@ import Divider from "primevue/divider";
 import ToggleSwitch from "primevue/toggleswitch";
 import Button from "primevue/button";
 import parseSave from "./lib/parsesave.js";
+import reverseParseSave from "./lib/reverseparsesave.js";
 import checksum from "./lib/checksum.js";
 import { buf2hex, hex2buf } from "./lib/helpers.js";
 import Editor from "./components/Editor.vue";
@@ -34,14 +35,25 @@ watch(fileContent, () => {
 const downloadSave = () => {
   if (!fileContent.value) return;
 
+  //Update save file with edited info and apply checksum
+  const editedData = checksum(
+    reverseParseSave(
+      fileContent.value,
+      data.value,
+      PF.value ? "Polished" : "Faithful"
+    )
+  );
+
   //Create Blob
-  const buffer = hex2buf(checksum(fileContent.value));
+  const buffer = hex2buf(editedData);
   const blob = new Blob([buffer]);
   const link = URL.createObjectURL(blob);
 
   const a = document.createElement("a");
   a.href = link;
-  a.download = `${fileName.value.slice(0, -4)} - Edited${fileName.value.slice(-4)}`;
+  a.download = `${fileName.value.slice(0, -4)} - Edited${fileName.value.slice(
+    -4
+  )}`;
   a.click();
 };
 </script>
