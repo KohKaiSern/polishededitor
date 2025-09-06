@@ -1,6 +1,6 @@
 //A collection of small helper functions
 
-const typeColours = {
+const TYPE_COLOURS = {
   bug: "#92BC2C",
   dark: "#595761",
   dragon: "#0C69C8",
@@ -22,8 +22,40 @@ const typeColours = {
 };
 
 export const getTypeColour = (type) => {
-  return typeColours[type];
+  return TYPE_COLOURS[type];
 };
+
+const NATURES = [
+  "Hardy",
+  "Lonely",
+  "Brave",
+  "Adamant",
+  "Naughty",
+  "Bold",
+  "Docile",
+  "Relaxed",
+  "Impish",
+  "Lax",
+  "Timid",
+  "Hasty",
+  "Serious",
+  "Jolly",
+  "Naive",
+  "Modest",
+  "Mild",
+  "Quiet",
+  "Bashful",
+  "Rash",
+  "Calm",
+  "Gentle",
+  "Sassy",
+  "Careful",
+  "Quirky",
+];
+
+export const getNature = (x) => {
+  return NATURES[x];
+}
 
 export const cammyFormat = (str) => {
   if (str === "spiky_eared") {

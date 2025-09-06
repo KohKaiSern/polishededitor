@@ -1,4 +1,4 @@
-import { hex2bin } from "./helpers.js";
+import { hex2bin, getNature } from "./helpers.js";
 
 //GET Pokemon Object
 let response = await fetch("https://polishededitor-backend.vercel.app/pokemon");
@@ -127,35 +127,7 @@ const parseMon = (save, address, PF) => {
 
   mon["Shininess"] = byte21.at(0) === "1" ? "Shiny" : "Not Shiny";
 
-  const NATURES = [
-    "Hardy",
-    "Lonely",
-    "Brave",
-    "Adamant",
-    "Naughty",
-    "Bold",
-    "Docile",
-    "Relaxed",
-    "Impish",
-    "Lax",
-    "Timid",
-    "Hasty",
-    "Serious",
-    "Jolly",
-    "Naive",
-    "Modest",
-    "Mild",
-    "Quiet",
-    "Bashful",
-    "Rash",
-    "Calm",
-    "Gentle",
-    "Sassy",
-    "Careful",
-    "Quirky",
-  ];
-
-  mon["Nature"] = NATURES[parseInt(byte21.slice(3), 2)];
+  mon["Nature"] = getNature(parseInt(byte21.slice(3), 2));
 
   const ability = abilities[PF].find(
     (ability) =>
