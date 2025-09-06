@@ -46,3 +46,8 @@ export const buf2hex = (buffer) => {
     x.toString(16).padStart(2, "0").toUpperCase()
   );
 };
+
+//Converts hex byte string to string of 8 bits
+export const hex2bin = (hex) => {
+  return parseInt(hex, 16).toString(2).padStart(8, "0");
+};
