@@ -79,6 +79,7 @@ export const buf2hex = (buffer) => {
   );
 };
 
+//The opposite of the above
 export const hex2buf = (hex) => {
   const bytes = new Uint8Array(hex.map((byte) => parseInt(byte, 16)));
   return bytes.buffer
