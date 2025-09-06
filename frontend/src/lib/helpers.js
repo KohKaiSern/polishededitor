@@ -57,6 +57,11 @@ export const getNature = (x) => {
   return NATURES[x];
 };
 
+//The opposite of the above
+export const getNatureNo = (nature) => {
+  return NATURES.find((NATURE) => NATURE === nature)
+}
+
 export const cammyFormat = (str) => {
   if (str === "spiky_eared") {
     return "spiky";

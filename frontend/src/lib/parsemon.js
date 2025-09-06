@@ -105,7 +105,7 @@ const parseMon = (save, address, PF) => {
   const ability = abilities[PF].find(
     (ability) =>
       form["Abilities"].at(parseInt(byte21.slice(1, 3), 2) - 1) ===
-      ability["ID"]
+      ability["Name"]
   );
   mon["Ability"] = ability["Name"];
 

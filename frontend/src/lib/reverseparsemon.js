@@ -1,4 +1,4 @@
-import { hex2bin, bin2hex, getNature } from "./helpers.js";
+import { hex2bin, bin2hex, getNatureNo } from "./helpers.js";
 
 //GET Pokemon Object
 let response = await fetch("https://polishededitor-backend.vercel.app/pokemon");
@@ -81,10 +81,29 @@ const reverseParseMon = (save, address, mon, PF) => {
 
   //Byte #21: Ability, Nature, Shininess
 
-	const abilityNo = form["Abilities"].findIndex((ability) => ability["Name"] === mon["Ability"])
-	console.log(abilityNo)
+	const byte21 = hex2bin(save[address + 20])
+	const abilityNo = form["Abilities"].findIndex((ability) => ability === mon["Ability"])
+	save[address + 20] = bin2hex(byte21.at(0) + (abilityNo + 1).toString(2).padStart(2, "0") + byte21.slice(3))
+
+	save[address + 20] = bin2hex((mon["Shininess"] === "Shiny" ? "1" : "0") + byte21.slice(1))
+
+	save[address + 20] = bin2hex(byte21.slice(0, 3) + getNatureNo(mon["Nature"]).toString(2).padStart(5, "0"))
 
   //Byte #22: Gender, isEgg
+
+	if (!(mon["Gender"] === "Genderless")) {
+		if (mon["Gender"] === "Male") {
+			save[address + 21] = bin2hex("0" + byte22.slice(1))
+		} else {
+			save[address + 21] = bin2hex("1" + byte22.slice(1))
+		}
+	}
+
+	if (mon["Is Egg"]) {
+		save[address + 21] = bin2hex(byte22.at(0) + "1" + byte22.slice(2))
+	} else {
+		save[address + 21] = bin2hex(byte22.at(0) + "0" + byte22.slice(2))
+	}
 
   //Byte #23: PP Ups TODO
 
