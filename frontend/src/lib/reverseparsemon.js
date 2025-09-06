@@ -109,6 +109,12 @@ const reverseParseMon = (save, address, mon, PF) => {
 
   //Byte #24: Happiness
 
+	if (mon["Is Egg"]) {
+		save[address + 23] = mon["Hatch Cycles"].toString(16).padStart(2, "0")
+	} else {
+		save[address + 23] = mon["Happiness"].toString(16).padStart(2, "0")
+	}
+
   //Byte #25: Pokerus [UNSUPPORTED]
 
   //Byte #26: Caught Ball, Caught Time, Caught Data [UNSUPPORTED]
