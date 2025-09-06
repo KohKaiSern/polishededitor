@@ -13,7 +13,7 @@ const addresses = await response.json();
 export const getAddresses = (save) => {
   //Retrieve all indexes from sBackupNewBoxXEntries
   // prettier-ignore
-  let indexes = Array(20).fill().map(() => Array(20).fill(0));
+  let indexes = Array(20).fill().map(() => Array(20).fill(null));
   for (let box = 0; box < 20; box++) {
     for (let i = 0; i < 20; i++) {
       // prettier-ignore
@@ -24,7 +24,7 @@ export const getAddresses = (save) => {
 
   //Retrieve all flags from sBackupNewBoxXBanks
   // prettier-ignore
-  let flags = Array(20).fill().map(() => Array(20).fill(0));
+  let flags = Array(20).fill().map(() => Array(20).fill(null));
   for (let box = 0; box < 20; box++) {
     //Grab the three relevant bytes
     let flagArr = [
@@ -53,7 +53,7 @@ export const getAddresses = (save) => {
 
   //Filling 20 Boxes of 20 Pokemon...
   // prettier-ignore
-  let data = Array(20).fill().map(() => Array(20).fill(0));
+  let data = Array(20).fill().map(() => Array(20).fill(null));
   for (let box = 0; box < 20; box++) {
     for (let i = 0; i < 20; i++) {
       //Check if Pokemon exists

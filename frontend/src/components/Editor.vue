@@ -27,7 +27,7 @@ const boxNo = ref(1);
   >
     <div v-for="(pokemon, index) in data[boxNo - 1]" class="flex">
       <Card
-        v-if="pokemon === 0"
+        v-if="pokemon === null"
         :pt="{ caption: 'm-auto mb-2' }"
         class="flex flex-col flex-1"
       >
