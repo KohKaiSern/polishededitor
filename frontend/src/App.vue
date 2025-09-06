@@ -109,8 +109,8 @@ const downloadSave = () => {
           @select="readSave"
         />
         <Message v-if="uploadSuccess" severity="success"
-          ><i class="pi pi-check"></i></Message
-        >
+          ><i class="pi pi-check"></i
+        ></Message>
         <Message
           class="mt-3"
           v-else-if="uploadSuccess === false"
