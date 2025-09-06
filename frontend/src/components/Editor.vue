@@ -9,7 +9,7 @@ const boxNo = ref(1);
 </script>
 
 <template>
-  <div class="sticky top-0 mr-auto bg-[#121212] pt-3 pb-3">
+  <div class="sticky top-0 mr-auto bg-[#121212] pt-3 pb-3 z-10">
     <Button
       icon="pi pi-caret-left"
       severity="secondary"
