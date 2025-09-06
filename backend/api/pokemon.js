@@ -5,6 +5,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 import splitFile from "../lib/split.js";
 import reduce from "../lib/reduce.js";
+import getAbilities from "./abilities.js";
+
+const ABILITIES = getAbilities()
 
 let pokemon = {
   Polished: [],
@@ -175,7 +178,12 @@ const extractMon = (data, PF) => {
     .find((line) => line.startsWith("abilities_for"))
     .split(",")
     .slice(1);
-  abilities = abilities.map((ability) => reduce(ability.trim()));
+  for (let i = 0; i < 3; i++) {
+    const ABILITY = ABILITIES[PF].find((ABILITY) => ABILITY["ID"] === reduce(abilities[i]))
+    if (ABILITY) {
+      abilities[i] = ABILITY["Name"]
+    }
+  }
 
   let bsts = data
     .find((line) => line.endsWith("BST"))

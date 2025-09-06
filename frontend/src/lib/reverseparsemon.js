@@ -33,9 +33,8 @@ const reverseParseMon = (save, address, mon, PF) => {
   }
 
   //Form
-  const formNo = pokemon[PF][dexNo - 1]["Forms"]
-    .find((form) => form["Name"] === mon["Form"])
-    ["Form Number"].toString(2)
+	const form = pokemon[PF][dexNo - 1]["Forms"].find((form) => form["Name"] === mon["Form"])
+  const formNo = form["Form Number"].toString(2)
     .padStart(5, "0");
   save[address + 21] = bin2hex(byte22.slice(0, 3) + formNo);
 
@@ -81,6 +80,9 @@ const reverseParseMon = (save, address, mon, PF) => {
 	save[address + 19] = dvs[4] + dvs[5]
 
   //Byte #21: Ability, Nature, Shininess
+
+	const abilityNo = form["Abilities"].findIndex((ability) => ability["Name"] === mon["Ability"])
+	console.log(abilityNo)
 
   //Byte #22: Gender, isEgg
 
