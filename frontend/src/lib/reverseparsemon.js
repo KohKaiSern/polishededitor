@@ -49,6 +49,15 @@ const reverseParseMon = (save, address, mon, PF) => {
 
   //Byte #3-6: Moveset
 
+  for (let i = 0; i < 4; i++) {
+    if (mon["Moves"][i] === "---") {
+      save[address + 2 + i] = "00";
+    } else {
+      const move = moves[PF].find((move) => move["Name"] === mon["Moves"][i]);
+      save[address + 2 + i] = (move["Move Number"] + 1).toString(16).padStart(2, "0");
+    }
+  }
+
   //Byte #7-8: ID [UNSUPPORTED]
 
   //Byte #9-11: EXP
