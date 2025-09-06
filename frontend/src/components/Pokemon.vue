@@ -1,7 +1,8 @@
 <script setup>
 import Card from "primevue/card";
 import { getTypeColour, cammyFormat } from "../lib/helpers.js";
-defineProps(["pokemon"]);
+
+const pokemon = defineModel();
 
 const getGIFURL = (species, form, shininess, isEgg) => {
   //Format names to Cammy's format

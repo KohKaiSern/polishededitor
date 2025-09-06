@@ -39,3 +39,10 @@ export const cammyFormat = (str) => {
     .replaceAll("♀", "f")
     .replaceAll("é", "e");
 };
+
+//Converts save file to string of two-digit hex numbers
+export const buf2hex = (buffer) => {
+  return [...new Uint8Array(buffer)].map((x) =>
+    x.toString(16).padStart(2, "0").toUpperCase()
+  );
+};

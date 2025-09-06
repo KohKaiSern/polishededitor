@@ -4,18 +4,12 @@ import FileUpload from "primevue/fileupload";
 import Divider from "primevue/divider";
 import ToggleSwitch from "primevue/toggleswitch";
 import parseSave from "./lib/parsesave.js";
+import { buf2hex } from "./lib/helpers.js";
 import Editor from "./components/Editor.vue";
 
 const fileContent = ref(null);
 const data = ref(null);
 const PF = ref(true);
-
-//Converts save file to string of two-digit hex numbers
-const buf2hex = (buffer) => {
-  return [...new Uint8Array(buffer)].map((x) =>
-    x.toString(16).padStart(2, "0").toUpperCase()
-  );
-};
 
 //Receive File Input
 const readSave = (event) => {
@@ -50,7 +44,7 @@ watch(fileContent, () => {
       @select="readSave"
     />
     <Divider />
-    <Editor v-if="data != null" :data="data" />
+    <Editor v-if="data != null" v-model="data" />
   </div>
 </template>
 
