@@ -55,7 +55,7 @@ const NATURES = [
 
 export const getNature = (x) => {
   return NATURES[x];
-}
+};
 
 export const cammyFormat = (str) => {
   if (str === "spiky_eared") {

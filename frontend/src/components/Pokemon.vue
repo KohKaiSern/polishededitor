@@ -6,7 +6,9 @@ const pokemon = defineModel();
 
 const getGIFURL = () => {
   // Format names to Cammy's format
-  let species = pokemon["Is Egg"] ? "egg" : cammyFormat(pokemon.value["Species"]);
+  let species = pokemon["Is Egg"]
+    ? "egg"
+    : cammyFormat(pokemon.value["Species"]);
   let form = pokemon["Is Egg"] ? "plain" : cammyFormat(pokemon.value["Form"]);
   const shine = pokemon.value["Shininess"] === "Shiny" ? "shiny" : "normal";
 

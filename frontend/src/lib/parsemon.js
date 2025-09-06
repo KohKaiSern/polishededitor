@@ -22,26 +22,27 @@ const calcChecksum = (save, address) => {
   let x = 127;
   //For bytes #1-#32, add the value times byteNo
   for (let byteNo = 1; byteNo < 33; byteNo++) {
-    x += parseInt(save[address + byteNo - 1], 16) * byteNo
+    x += parseInt(save[address + byteNo - 1], 16) * byteNo;
   }
   //For bytes #33-#49, add the value of the lower 7 bits times byteNo + 1
   for (let byteNo = 33; byteNo < 50; byteNo++) {
-    x += parseInt(hex2bin(save[address + byteNo - 1]).slice(1), 2) * (byteNo + 1)
+    x +=
+      parseInt(hex2bin(save[address + byteNo - 1]).slice(1), 2) * (byteNo + 1);
   }
   //Clamp to two bytes
-  x = (x < 0 || x > 65535) ? 0 : x
+  x = x < 0 || x > 65535 ? 0 : x;
   //Treat the two bytes as a series of bits
-  x = x.toString(2).padStart(16, "0")
+  x = x.toString(2).padStart(16, "0");
   //Write the most signficant bit to byte #33's MSB
   //Continue with the 2nd most signficant bit to byte #34's MSB
   //So on and so forth
   for (let byteNo = 33; byteNo < 49; byteNo++) {
-    let newByte = hex2bin(save[address + byteNo - 1])
-    newByte = x.at(byteNo - 33) + newByte.slice(1)
-    save[address + byteNo - 1] = newByte
+    let newByte = hex2bin(save[address + byteNo - 1]);
+    newByte = x.at(byteNo - 33) + newByte.slice(1);
+    save[address + byteNo - 1] = newByte;
   }
-  return save
-}
+  return save;
+};
 
 //Parses one Pokemon's worth of data into a Pokemon Object
 const parseMon = (save, address, PF) => {
@@ -51,7 +52,7 @@ const parseMon = (save, address, PF) => {
   let dexNo = parseInt(save[address], 16);
 
   //Check 9th-Bit
-  const byte22 = hex2bin(save[address + 21])
+  const byte22 = hex2bin(save[address + 21]);
   if (byte22.at(2) === "1") {
     dexNo += 254;
   }
@@ -123,7 +124,7 @@ const parseMon = (save, address, PF) => {
 
   //Byte #21: Ability, Nature, Shininess
 
-  const byte21 = hex2bin(save[address + 20])
+  const byte21 = hex2bin(save[address + 20]);
 
   mon["Shininess"] = byte21.at(0) === "1" ? "Shiny" : "Not Shiny";
 
