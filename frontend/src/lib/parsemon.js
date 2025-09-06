@@ -58,7 +58,7 @@ const parseMon = (save, address, PF) => {
       moveset.push("---");
       continue;
     }
-    moveset.push(moves[PF][parseInt(save[address + i], 16) - 2]["Name"]);
+    moveset.push(moves[PF][parseInt(save[address + i], 16) - 1]["Name"]);
   }
 
   mon["Moves"] = moveset;
