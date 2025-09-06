@@ -1,48 +1,12 @@
 <script setup>
 import Card from "primevue/card";
+import { getTypeColour, cammyFormat } from "../lib/helpers.js";
 defineProps(["pokemon"]);
-
-const typeColours = {
-  bug: "#92BC2C",
-  dark: "#595761",
-  dragon: "#0C69C8",
-  electric: "#F2D94E",
-  fire: "#FBA54C",
-  fairy: "#EE90E6",
-  fighting: "#D3425F",
-  flying: "#A1BBEC",
-  ghost: "#5F6DBC",
-  grass: "#5FBD58",
-  ground: "#DA7C4D",
-  ice: "#75D0C1",
-  normal: "#A0A29F",
-  poison: "#B763CF",
-  psychic: "#FA8581",
-  rock: "#C9BB8A",
-  steel: "#5695A3",
-  water: "#539DDF",
-};
-
-const reduce = (str) => {
-  //TODO Special Case: Spiky-Eared Pichu
-  if (str === "spiky_eared") {
-    return "spiky";
-  }
-  return str
-    .toLowerCase()
-    .replaceAll(" ", "_")
-    .replaceAll("-", "_")
-    .replaceAll("'", "_")
-    .replaceAll(".", "_")
-    .replaceAll("♂", "m")
-    .replaceAll("♀", "f")
-    .replaceAll("é", "e");
-};
 
 const getGIFURL = (species, form, shininess, isEgg) => {
   //Format names to Cammy's format
-  species = reduce(species);
-  form = reduce(form);
+  species = cammyFormat(species);
+  form = cammyFormat(form);
 
   //Special Case: Egg
   if (isEgg) {
@@ -81,7 +45,7 @@ const getGIFURL = (species, form, shininess, isEgg) => {
             <div
               v-for="type in pokemon['Type']"
               class="size-[30px] rounded-[50%] flex items-center justify-center"
-              :style="{ backgroundColor: typeColours[type] }"
+              :style="{ backgroundColor: getTypeColour(type) }"
             >
               <img
                 class="size-[60%] object-contain"

@@ -35,11 +35,7 @@ const boxNo = ref(1);
         <template #title>Empty</template>
         <template #content></template>
       </Card>
-      <Pokemon
-        v-else
-        :pokemon="pokemon"
-        class="flex flex-col flex-1"
-      />
+      <Pokemon v-else :pokemon="pokemon" class="flex flex-col flex-1" />
     </div>
   </div>
 </template>

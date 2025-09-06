@@ -18,7 +18,7 @@ const buf2hex = (buffer) => {
 };
 
 //Receive File Input
-const handleFileSelect = (event) => {
+const readSave = (event) => {
   const file = event.files[0];
   const reader = new FileReader();
   reader.onload = (e) => {
@@ -46,8 +46,8 @@ watch(fileContent, () => {
     <FileUpload
       mode="basic"
       accept=".sav,.srm"
-      :maxFileSize="128000"
-      @select="handleFileSelect"
+      :maxFileSize="33000"
+      @select="readSave"
     />
     <Divider />
     <Editor v-if="data != null" :data="data" />
