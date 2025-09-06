@@ -4,19 +4,19 @@ import { getTypeColour, cammyFormat } from "../lib/helpers.js";
 
 const pokemon = defineModel();
 
-const getGIFURL = (species, form, shininess, isEgg) => {
-  //Format names to Cammy's format
-  species = cammyFormat(species);
-  form = cammyFormat(form);
+const getGIFURL = () => {
+  // Format names to Cammy's format
+  let species = cammyFormat(pokemon.value["Species"]);
+  let form = cammyFormat(pokemon.value["Form"]);
 
-  //Special Case: Egg
-  if (isEgg) {
+  // Special Case: Egg
+  if (pokemon.value["Is Egg"]) {
     form = "plain";
     species = "egg";
   }
 
-  //Decide the right URL path
-  const shine = shininess === "Shiny" ? "shiny" : "normal";
+  // Decide the right URL path
+  const shine = pokemon.value["Shininess"] === "Shiny" ? "shiny" : "normal";
   const formPath = form === "plain" ? species : `${species}_${form}`;
   return `https://raw.githubusercontent.com/caomicc/polisheddex/refs/heads/main/public/sprites/pokemon/${formPath}/${shine}_front_animated.gif`;
 };
@@ -29,16 +29,7 @@ const getGIFURL = (species, form, shininess, isEgg) => {
         <div
           class="mr-5 size-[70px] bg-white rounded-lg flex justify-center items-center"
         >
-          <img
-            :src="
-              getGIFURL(
-                pokemon['Species'],
-                pokemon['Form'],
-                pokemon['Shininess'],
-                pokemon['Is Egg']
-              )
-            "
-          />
+          <img :src="getGIFURL()" />
         </div>
         <div class="flex flex-col justify-between">
           <span>{{ pokemon["Species"] }}</span>
