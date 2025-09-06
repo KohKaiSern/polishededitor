@@ -79,6 +79,11 @@ export const buf2hex = (buffer) => {
   );
 };
 
+export const hex2buf = (hex) => {
+  const bytes = new Uint8Array(hex.map((byte) => parseInt(byte, 16)));
+  return bytes.buffer
+};
+
 //Converts hex byte string to string of 8 bits
 export const hex2bin = (hex) => {
   return parseInt(hex, 16).toString(2).padStart(8, "0");
