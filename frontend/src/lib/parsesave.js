@@ -1,7 +1,7 @@
 //This is the file responsible for parsing the save file into usable Mon Objects
 import parseMon from "./parsemon.js";
 
-//GET sRAM Addresses
+//GET Addresses
 let response = await fetch(
   "https://polishededitor-backend.vercel.app/addresses"
 );
