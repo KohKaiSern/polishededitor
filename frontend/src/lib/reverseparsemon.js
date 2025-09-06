@@ -17,22 +17,27 @@ response = await fetch("https://polishededitor-backend.vercel.app/abilities");
 const abilities = await response.json();
 
 //Parses one Pokemon object and edits the save file as necessary.
-const reverseParseMon = (save, address, data, PF) => {
-
+const reverseParseMon = (save, address, mon, PF) => {
   //Byte #1, Byte #22: Species, 9th-Bit, Form
-  const dexNo = pokemon[PF].findIndex((pokemon) => pokemon["Name"] === data["Species"]) + 1;
-	
-	//9th-Bit Activated
-	const byte22 = hex2bin(save[address + 21])
-	if (dexNo > 254) {
-		save[address] = (dexNo - 254).toString(16)
-		save[address + 21] = bin2hex(byte22.slice(0, 2) + "1" + byte22.slice(3))
-	} else {
-		save[address] = dexNo.toString(16)
-		save[address + 21] = bin2hex(byte22.slice(0, 2) + "0" + byte22.slice(3))
-	}
+  const dexNo =
+    pokemon[PF].findIndex((pokemon) => pokemon["Name"] === mon["Species"]) + 1;
 
-  //Check 9th-Bit
+  //9th-Bit Activated
+  const byte22 = hex2bin(save[address + 21]);
+  if (dexNo > 254) {
+    save[address] = (dexNo - 254).toString(16);
+    save[address + 21] = bin2hex(byte22.slice(0, 2) + "1" + byte22.slice(3));
+  } else {
+    save[address] = dexNo.toString(16);
+    save[address + 21] = bin2hex(byte22.slice(0, 2) + "0" + byte22.slice(3));
+  }
+
+  //Form
+  const formNo = pokemon[PF][dexNo - 1]["Forms"]
+    .find((form) => form["Name"] === mon["Form"])
+    ["Form Number"].toString(2)
+    .padStart(5, "0");
+  save[address + 21] = bin2hex(byte22.slice(0, 3) + formNo);
 
   //TODO: Figure out why Mr. Mime (Kantonian) has a Form Number of 0.
 
