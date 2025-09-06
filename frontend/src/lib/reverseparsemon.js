@@ -125,6 +125,8 @@ const reverseParseMon = (save, address, mon, PF) => {
 
   //Byte #29: Level
 
+	save[address + 28] = mon["Level"].toString(16).padStart(2, "0")
+
   //Byte #30: Hyper Training TODO
 
   //Byte #31-#32: Extra [UNSUPPORTED]
