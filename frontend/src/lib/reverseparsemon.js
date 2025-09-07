@@ -81,7 +81,6 @@ const reverseParseMon = (save, address, mon, PF) => {
 
   //Byte #21: Ability, Nature, Shininess
 
-
 	const byte21 = hex2bin(save[address + 20])
 	const abilityNo = form["Abilities"].findIndex((ability) => ability === mon["Ability"])
 	save[address + 20] = bin2hex(byte21.at(0) + (abilityNo + 1).toString(2).padStart(2, "0") + byte21.slice(3))
