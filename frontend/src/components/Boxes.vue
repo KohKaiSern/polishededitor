@@ -27,9 +27,9 @@ const boxNo = ref(1);
     <div
       class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5 items-stretch"
     >
-      <div v-for="(pokemon, index) in save[boxNo - 1]" class="flex">
+      <div v-for="(mon, index) in save[boxNo - 1]" class="flex">
         <Card
-          v-if="pokemon === null"
+          v-if="mon === null"
           :pt="{ caption: 'm-auto mb-2' }"
           class="flex flex-col flex-1"
         >
