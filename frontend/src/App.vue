@@ -20,15 +20,13 @@ const data = ref(null);
 const PF = ref(true);
 
 //Get Game and Save Versions, as well as the address for sSaveVersion
-const getVersions = async () => {
-  let response = await fetch("https://polishededitor-backend.vercel.app");
-  versions.value = await response.json();
-  response = await fetch("https://polishededitor-backend.vercel.app/addresses");
-  addresses.value = await response.json();
+const fetchData = async () => {
+  versions.value = await(await fetch("https://polishededitor-backend.vercel.app")).json();
+  addresses.value = await(await fetch("https://polishededitor-backend.vercel.app/addresses")).json();
 };
 
 onBeforeMount(() => {
-  getVersions();
+  fetchData();
 });
 
 //Receive File Input
