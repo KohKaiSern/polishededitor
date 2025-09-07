@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeMount, ref, watch } from "vue";
+import { onBeforeMount, ref, watch, provide } from "vue";
 import FileUpload from "primevue/fileupload";
 import Divider from "primevue/divider";
 import ToggleSwitch from "primevue/toggleswitch";
@@ -90,6 +90,9 @@ const downloadSave = () => {
   )}`;
   a.click();
 };
+
+//Provider for PF
+provide('PF', PF ? "Polished" : "Faithful")
 </script>
 
 <template>
