@@ -10,10 +10,6 @@ import InputNumber from "primevue/inputnumber";
 
 const pokemon = defineModel();
 
-//TODO CALCULATE EXP
-watch(pokemon["Level"], () => {
-  return
-})
 </script>
 
 <template>

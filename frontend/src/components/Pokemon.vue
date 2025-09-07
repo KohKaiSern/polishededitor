@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import Card from "primevue/card";
 import Button from "primevue/button";
 import Drawer from "primevue/drawer";
