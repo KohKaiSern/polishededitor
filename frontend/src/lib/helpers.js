@@ -59,7 +59,7 @@ export const getNature = (x) => {
 
 //The opposite of the above
 export const getNatureNo = (nature) => {
-  return NATURES.find((NATURE) => NATURE === nature)
+  return NATURES.findIndex((NATURE) => NATURE === nature)
 }
 
 export const cammyFormat = (str) => {

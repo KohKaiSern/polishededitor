@@ -53,7 +53,7 @@ const reverseParseMon = (save, address, mon, PF) => {
       save[address + 2 + i] = "00";
     } else {
       const move = moves[PF].find((move) => move["Name"] === mon["Moves"][i]);
-      save[address + 2 + i] = (move["Move Number"] + 1).toString(16).padStart(2, "0");
+      save[address + 2 + i] = (move["Move Number"]).toString(16).padStart(2, "0");
     }
   }
 
@@ -81,6 +81,7 @@ const reverseParseMon = (save, address, mon, PF) => {
 
   //Byte #21: Ability, Nature, Shininess
 
+
 	const byte21 = hex2bin(save[address + 20])
 	const abilityNo = form["Abilities"].findIndex((ability) => ability === mon["Ability"])
 	save[address + 20] = bin2hex(byte21.at(0) + (abilityNo + 1).toString(2).padStart(2, "0") + byte21.slice(3))
@@ -88,7 +89,7 @@ const reverseParseMon = (save, address, mon, PF) => {
 	save[address + 20] = bin2hex((mon["Shininess"] === "Shiny" ? "1" : "0") + byte21.slice(1))
 
 	save[address + 20] = bin2hex(byte21.slice(0, 3) + getNatureNo(mon["Nature"]).toString(2).padStart(5, "0"))
-
+  
   //Byte #22: Gender, isEgg
 
 	if (!(mon["Gender"] === "Genderless")) {
