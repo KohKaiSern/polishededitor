@@ -62,6 +62,11 @@ export const getNatureNo = (nature) => {
   return NATURES.findIndex((NATURE) => NATURE === nature)
 }
 
+//Just get a list
+export const getNatures = () => {
+  return NATURES
+}
+
 export const cammyFormat = (str) => {
   if (str === "spiky_eared") {
     return "spiky";

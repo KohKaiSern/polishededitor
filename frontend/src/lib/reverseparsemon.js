@@ -81,6 +81,7 @@ const reverseParseMon = (save, address, mon, PF) => {
 
   //Byte #21: Ability, Nature, Shininess
 
+  console.log(save[address + 20])
 	const byte21 = hex2bin(save[address + 20])
 	const abilityNo = form["Abilities"].findIndex((ability) => ability === mon["Ability"])
 	save[address + 20] = bin2hex(byte21.at(0) + (abilityNo + 1).toString(2).padStart(2, "0") + byte21.slice(3))
@@ -88,6 +89,7 @@ const reverseParseMon = (save, address, mon, PF) => {
 	save[address + 20] = bin2hex((mon["Shininess"] === "Shiny" ? "1" : "0") + byte21.slice(1))
 
 	save[address + 20] = bin2hex(byte21.slice(0, 3) + getNatureNo(mon["Nature"]).toString(2).padStart(5, "0"))
+  console.log(save[address + 20])
   
   //Byte #22: Gender, isEgg
 

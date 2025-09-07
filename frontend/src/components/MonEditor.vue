@@ -7,6 +7,8 @@ import Card from "primevue/card";
 import IftaLabel from "primevue/iftalabel";
 import InputText from "primevue/inputtext";
 import InputNumber from "primevue/inputnumber";
+import Select from "primevue/select";
+import { getNatures } from "../lib/helpers";
 
 const mon = defineModel();
 </script>
@@ -161,6 +163,10 @@ const mon = defineModel();
               <label for="spd">Sp. Def</label>
             </IftaLabel>
           </div>
+        </div>
+        <div>
+          <span class="text-lg font-semibold">Nature</span> <br />
+          <Select class="mt-3 w-full" v-model="mon['Nature']" :options="getNatures()" filter />
         </div>
       </AccordionContent>
     </AccordionPanel>
