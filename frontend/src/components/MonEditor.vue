@@ -7,7 +7,7 @@ import IftaLabel from "primevue/iftalabel";
 import InputText from "primevue/inputtext";
 import InputNumber from "primevue/inputnumber";
 
-const pokemon = defineModel();
+const mon = defineModel();
 
 </script>
 
@@ -22,7 +22,7 @@ const pokemon = defineModel();
           <IftaLabel>
             <InputNumber
               id="hp"
-              v-model="pokemon['DVs'][0]"
+              v-model="mon['DVs'][0]"
               showButtons
               :min="0"
               :max="15"
@@ -33,7 +33,7 @@ const pokemon = defineModel();
           <IftaLabel>
             <InputNumber
               id="atk"
-              v-model="pokemon['DVs'][1]"
+              v-model="mon['DVs'][1]"
               showButtons
               :min="0"
               :max="15"
@@ -44,7 +44,7 @@ const pokemon = defineModel();
           <IftaLabel>
             <InputNumber
               id="def"
-              v-model="pokemon['DVs'][2]"
+              v-model="mon['DVs'][2]"
               showButtons
               :min="0"
               :max="15"
@@ -55,7 +55,7 @@ const pokemon = defineModel();
           <IftaLabel>
             <InputNumber
               id="spe"
-              v-model="pokemon['DVs'][3]"
+              v-model="mon['DVs'][3]"
               showButtons
               :min="0"
               :max="15"
@@ -66,7 +66,7 @@ const pokemon = defineModel();
           <IftaLabel>
             <InputNumber
               id="spa"
-              v-model="pokemon['DVs'][4]"
+              v-model="mon['DVs'][4]"
               showButtons
               :min="0"
               :max="15"
@@ -77,7 +77,7 @@ const pokemon = defineModel();
           <IftaLabel>
             <InputNumber
               id="spd"
-              v-model="pokemon['DVs'][5]"
+              v-model="mon['DVs'][5]"
               showButtons
               :min="0"
               :max="15"
