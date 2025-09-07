@@ -100,7 +100,7 @@ const downloadSave = () => {
         <span v-else>Faithful</span>
       </div>
     </div>
-    <div class="flex flex-wrap justify-between">
+    <div class="flex flex-wrap justify-between gap-5">
       <div class="flex flex-wrap items-end gap-5">
         <FileUpload
           mode="basic"
