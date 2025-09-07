@@ -6,31 +6,29 @@ import Drawer from "primevue/drawer";
 import { getTypeColour, cammyFormat } from "../lib/helpers.js";
 import MonEditor from "./MonEditor.vue";
 
-const pokemon = defineModel();
+const mon = defineModel();
 const toggleEdit = ref(false);
 const screenSize = ref([window.innerHeight, window.innerWidth]);
 
 onMounted(() => {
   window.addEventListener("resize", updateScreenSize);
 });
-
 onUnmounted(() => {
   window.removeEventListener("resize", updateScreenSize);
 });
-
 const updateScreenSize = () => {
   screenSize.value = [window.innerHeight, window.innerWidth];
 };
 
 const getGIFURL = () => {
   // Format names to Cammy's format
-  let species = pokemon.value["Is Egg"]
+  let species = mon.value["Is Egg"]
     ? "egg"
-    : cammyFormat(pokemon.value["Species"]);
-  let form = pokemon.value["Is Egg"]
+    : cammyFormat(mon.value["Species"]);
+  let form = mon.value["Is Egg"]
     ? "plain"
-    : cammyFormat(pokemon.value["Form"]);
-  const shine = pokemon.value["Shininess"] === "Shiny" ? "shiny" : "normal";
+    : cammyFormat(mon.value["Form"]);
+  const shine = mon.value["Shininess"] === "Shiny" ? "shiny" : "normal";
 
   //Put it all together
   const formPath = form === "plain" ? species : `${species}_${form}`;
@@ -50,10 +48,10 @@ const getGIFURL = () => {
               <img :src="getGIFURL()" />
             </div>
             <div class="flex flex-col justify-between">
-              <span>{{ pokemon["Species"] }}</span>
+              <span>{{ mon["Species"] }}</span>
               <div class="flex gap-3">
                 <div
-                  v-for="type in pokemon['Type']"
+                  v-for="type in mon['Type']"
                   class="size-[30px] rounded-[50%] flex items-center justify-center"
                   :style="{ backgroundColor: getTypeColour(type) }"
                 >
@@ -77,20 +75,20 @@ const getGIFURL = () => {
       </template>
       <template #content>
         <div class="mt-1">
-          Held Item: {{ pokemon["Held Item"] }}<br />
-          Ability: {{ pokemon["Ability"] }}<br />
-          Nature: {{ pokemon["Nature"] }}<br />
+          Held Item: {{ mon["Held Item"] }}<br />
+          Ability: {{ mon["Ability"] }}<br />
+          Nature: {{ mon["Nature"] }}<br />
         </div>
       </template>
     </Card>
     <div>
       <Drawer
-        class="!w-[50%]"
+        :class="screenSize[0] > screenSize[1] ? '!h-[70%]' : '!w-[50%]'"
         v-model:visible="toggleEdit"
-        header="Edit Pokémon"
+        :header="`Edit ${mon['Species']}`"
         :position="screenSize[0] > screenSize[1] ? 'bottom' : 'right'"
       >
-        <MonEditor v-model="pokemon" />
+        <MonEditor v-model="mon" />
       </Drawer>
     </div>
   </div>
