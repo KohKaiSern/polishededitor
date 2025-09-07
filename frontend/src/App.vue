@@ -9,7 +9,7 @@ import parseSave from "./lib/parsesave.js";
 import reverseParseSave from "./lib/reverseparsesave.js";
 import checksum from "./lib/checksum.js";
 import { buf2hex, hex2buf } from "./lib/helpers.js";
-import Editor from "./components/Editor.vue";
+import Boxes from "./components/Boxes.vue";
 
 const versions = ref(null);
 const addresses = ref(null);
@@ -122,7 +122,7 @@ const downloadSave = () => {
       <Button icon="pi pi-download" label="Download" @click="downloadSave" />
     </div>
     <Divider />
-    <Editor v-if="data != null" v-model="data" />
+    <Boxes v-if="data != null" v-model="data" />
   </div>
 </template>
 
