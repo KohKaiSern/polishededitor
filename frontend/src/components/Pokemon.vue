@@ -22,12 +22,8 @@ const updateScreenSize = () => {
 
 const getGIFURL = () => {
   // Format names to Cammy's format
-  let species = mon.value["Is Egg"]
-    ? "egg"
-    : cammyFormat(mon.value["Species"]);
-  let form = mon.value["Is Egg"]
-    ? "plain"
-    : cammyFormat(mon.value["Form"]);
+  let species = mon.value["Is Egg"] ? "egg" : cammyFormat(mon.value["Species"]);
+  let form = mon.value["Is Egg"] ? "plain" : cammyFormat(mon.value["Form"]);
   const shine = mon.value["Shininess"] === "Shiny" ? "shiny" : "normal";
 
   //Put it all together
