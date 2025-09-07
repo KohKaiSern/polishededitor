@@ -16,13 +16,17 @@ const addresses = ref(null);
 const uploadSuccess = ref(null);
 const fileName = ref(null);
 const fileContent = ref(null);
-const data = ref(null);
+const save = ref(null);
 const PF = ref(true);
 
 //Get Game and Save Versions, as well as the address for sSaveVersion
 const fetchData = async () => {
-  versions.value = await(await fetch("https://polishededitor-backend.vercel.app")).json();
-  addresses.value = await(await fetch("https://polishededitor-backend.vercel.app/addresses")).json();
+  versions.value = await (
+    await fetch("https://polishededitor-backend.vercel.app")
+  ).json();
+  addresses.value = await (
+    await fetch("https://polishededitor-backend.vercel.app/addresses")
+  ).json();
 };
 
 onBeforeMount(() => {
@@ -58,7 +62,7 @@ const readSave = (event) => {
 
 watch(fileContent, () => {
   //Compile File Data into Pokemon Objects
-  data.value = parseSave(fileContent.value, PF.value ? "Polished" : "Faithful");
+  save.value = parseSave(fileContent.value, PF.value ? "Polished" : "Faithful");
 });
 
 //Download File Output
@@ -66,16 +70,16 @@ const downloadSave = () => {
   if (!fileContent.value) return;
 
   //Update save file with edited info and apply checksum
-  const editedData = checksum(
+  const editedSave = checksum(
     reverseParseSave(
       fileContent.value,
-      data.value,
+      save.value,
       PF.value ? "Polished" : "Faithful"
     )
   );
 
   //Create Blob
-  const buffer = hex2buf(editedData);
+  const buffer = hex2buf(editedSave);
   const blob = new Blob([buffer]);
   const link = URL.createObjectURL(blob);
 
@@ -93,7 +97,7 @@ const downloadSave = () => {
     <div class="flex justify-between">
       <h1 class="text-3xl mb-5">Polished Editor v{{ versions["Game"] }}</h1>
       <div class="flex text-center gap-2">
-        <ToggleSwitch class="mt-0.25" v-model="PF" :disabled="data != null" />
+        <ToggleSwitch class="mt-0.25" v-model="PF" :disabled="save != null" />
         <span v-if="PF">Polished</span>
         <span v-else>Faithful</span>
       </div>
@@ -120,7 +124,7 @@ const downloadSave = () => {
       <Button icon="pi pi-download" label="Download" @click="downloadSave" />
     </div>
     <Divider />
-    <Boxes v-if="data != null" v-model="data" />
+    <Boxes v-if="save != null" v-model="save" />
   </div>
 </template>
 
