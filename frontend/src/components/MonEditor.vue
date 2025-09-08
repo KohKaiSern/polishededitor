@@ -7,6 +7,7 @@ import AccordionContent from "primevue/accordioncontent";
 import DVEVNature from "./boxEditors/DVEVNature.vue";
 import Moveset from "./boxEditors/Moveset.vue";
 import Basics from "./boxEditors/Basics.vue";
+import Misc from "./boxEditors/Misc.vue";
 
 const mon = defineModel();
 const pokemon = ref(null);
@@ -30,8 +31,8 @@ const form = computed(() => {
 </script>
 
 <template>
-  <Accordion class="m-0">
-    <AccordionPanel value="basic" v-if="pokemon">
+  <Accordion class="m-0" v-if="pokemon">
+    <AccordionPanel value="basic">
       <AccordionHeader>Basics</AccordionHeader>
       <AccordionContent>
         <Basics v-model="mon" :form/>
@@ -47,6 +48,12 @@ const form = computed(() => {
       <AccordionHeader>Moveset</AccordionHeader>
       <AccordionContent>
         <Moveset v-model="mon" />
+      </AccordionContent>
+    </AccordionPanel>
+    <AccordionPanel value="misc">
+      <AccordionHeader>Miscellaneous</AccordionHeader>
+      <AccordionContent>
+        <Misc v-model="mon" :form/>
       </AccordionContent>
     </AccordionPanel>
   </Accordion>
