@@ -26,7 +26,7 @@ const form = computed(() => {
 </script>
 
 <template>
-  <Accordion class="m-0" v-if="pokemon">
+  <Accordion class="m-0">
     <AccordionPanel value="basic">
       <AccordionHeader>Basics</AccordionHeader>
       <AccordionContent>
