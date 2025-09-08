@@ -78,9 +78,6 @@ export const getAddresses = (save) => {
       data[box][i] = address;
     }
   }
-  console.log(indexes)
-  console.log(flags)
-  console.log(data)
   return data;
 };
 
