@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onBeforeMount, ref, inject } from "vue";
+import { computed, ref, inject } from "vue";
 import Accordion from "primevue/accordion";
 import AccordionPanel from "primevue/accordionpanel";
 import AccordionHeader from "primevue/accordionheader";
@@ -10,13 +10,8 @@ import Basics from "./boxEditors/Basics.vue";
 import Misc from "./boxEditors/Misc.vue";
 
 const mon = defineModel();
-const pokemon = ref(null);
 const PF = inject("PF");
-onBeforeMount(async () => {
-  pokemon.value = await (
-    await fetch("https://polishededitor-backend.vercel.app/pokemon")
-  ).json();
-});
+const pokemon = inject("pokemon");
 
 //Gets the form's data
 const form = computed(() => {
