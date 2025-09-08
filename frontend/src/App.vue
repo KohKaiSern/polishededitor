@@ -20,17 +20,13 @@ const save = ref(null);
 const PF = ref(true);
 
 //Get Game and Save Versions, as well as the address for sSaveVersion
-const fetchData = async () => {
+onBeforeMount(async () => {
   versions.value = await (
     await fetch("https://polishededitor-backend.vercel.app")
   ).json();
   addresses.value = await (
     await fetch("https://polishededitor-backend.vercel.app/addresses")
   ).json();
-};
-
-onBeforeMount(() => {
-  fetchData();
 });
 
 //Receive File Input
@@ -50,6 +46,7 @@ const readSave = (event) => {
     if (saveVersion === versions.value["Save"]) {
       fileContent.value = hex;
       uploadSuccess.value = true;
+      save.value = parseSave(fileContent.value, PF.value ? "Polished" : "Faithful");
       setTimeout(() => {
         uploadSuccess.value = null;
       }, 1000);
@@ -59,11 +56,6 @@ const readSave = (event) => {
   };
   reader.readAsArrayBuffer(file);
 };
-
-watch(fileContent, () => {
-  //Compile File Data into Pokemon Objects
-  save.value = parseSave(fileContent.value, PF.value ? "Polished" : "Faithful");
-});
 
 //Download File Output
 const downloadSave = () => {
@@ -92,7 +84,7 @@ const downloadSave = () => {
 };
 
 //Provider for PF
-provide('PF', PF ? "Polished" : "Faithful")
+provide("PF", PF ? "Polished" : "Faithful");
 </script>
 
 <template>
