@@ -31,8 +31,7 @@ onBeforeMount(async () => {
 
 //Receive File Input
 const readSave = (event) => {
-  const file = event.files[0];
-  fileName.value = file.name;
+  fileName.value = event.files[0].name;
   const reader = new FileReader();
   reader.onload = (e) => {
     const hex = buf2hex(e.target.result);
@@ -46,7 +45,10 @@ const readSave = (event) => {
     if (saveVersion === versions.value["Save"]) {
       fileContent.value = hex;
       uploadSuccess.value = true;
-      save.value = parseSave(fileContent.value, PF.value ? "Polished" : "Faithful");
+      save.value = parseSave(
+        fileContent.value,
+        PF.value ? "Polished" : "Faithful"
+      );
       setTimeout(() => {
         uploadSuccess.value = null;
       }, 1000);
@@ -54,7 +56,7 @@ const readSave = (event) => {
       uploadSuccess.value = false;
     }
   };
-  reader.readAsArrayBuffer(file);
+  reader.readAsArrayBuffer(event.files[0]);
 };
 
 //Download File Output
