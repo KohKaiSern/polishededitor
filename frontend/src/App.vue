@@ -121,7 +121,7 @@ provide("PF", PF ? "Polished" : "Faithful");
       <Button icon="pi pi-download" label="Download" @click="downloadSave" />
     </div>
     <Divider />
-    <Boxes v-if="save != null" v-model="save" :PF />
+    <Boxes v-if="save != null" v-model="save" />
   </div>
 </template>
 

@@ -1,16 +1,41 @@
 <script setup>
-import { ref } from "vue";
+import { ref, provide, onBeforeMount } from "vue";
 import Button from "primevue/button";
 import Card from "primevue/card";
 import Pokemon from "./Pokemon.vue";
 
-const PF = defineProps();
 const save = defineModel();
 const boxNo = ref(1);
+
+//Fetching data
+const pokemon = ref(null);
+const abilities = ref(null);
+const moves = ref(null);
+const items = ref(null);
+onBeforeMount(async () => {
+  pokemon.value = await (
+    await fetch("https://polishededitor-backend.vercel.app/pokemon")
+  ).json();
+  abilities.value = await (
+    await fetch("https://polishededitor-backend.vercel.app/abilities")
+  ).json();
+  moves.value = await (
+    await fetch("https://polishededitor-backend.vercel.app/moves")
+  ).json();
+  items.value = await (
+    await fetch("https://polishededitor-backend.vercel.app/pokemon")
+  ).json();
+});
+
+//Providers for API endpoints (put here so that we only have to fetch once)
+provide("pokemon", pokemon);
+provide("abilities", abilities);
+provide("moves", moves);
+provide("items", items);
 </script>
 
 <template>
-  <div>
+  <div v-if="items">
     <div class="sticky top-0 mr-auto bg-[#121212] pt-3 pb-3 z-10">
       <Button
         icon="pi pi-caret-left"
@@ -44,4 +69,5 @@ const boxNo = ref(1);
       </div>
     </div>
   </div>
+  <div v-else class="flex justify-center text-2xl mt-20">Loading...</div>
 </template>
