@@ -64,7 +64,7 @@ export const getAddresses = (save) => {
       //If it does, find the memory block
       const block =
         (flags[box][i] === "0" ? "1" : "2") +
-        (indexes[box][i] < 167 ? "A" : indexes[box][i] < 196 ? "B" : "C");
+        (indexes[box][i] < 167 ? "A" : indexes[box][i] < 195 ? "B" : "C");
 
       //Get address
       let address = parseInt(addresses[`sBoxMons${block}`], 16);
@@ -78,6 +78,9 @@ export const getAddresses = (save) => {
       data[box][i] = address;
     }
   }
+  console.log(indexes)
+  console.log(flags)
+  console.log(data)
   return data;
 };
 

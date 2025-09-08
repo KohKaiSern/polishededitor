@@ -31,12 +31,15 @@ const parseMon = (save, address, PF) => {
 
   let formNo = parseInt(byte22.slice(3), 2);
   let species = pokemon[PF][dexNo - 1];
-  //TODO: Figure out why Mr. Mime (Kantonian) has a Form Number of 0.
-  if (formNo === 0) {
-    formNo = 1;
+
+  let form = species["Forms"].find((form) => form["Form Number"] === formNo);
+
+  //TODO: Figure out why some pokemon have random form numbers
+  //For now, default to plain
+  if (!(form)) {
+    form = species["Forms"][0]
   }
 
-  const form = species["Forms"].find((form) => form["Form Number"] === formNo);
 
   mon["Species"] = species["Name"];
   mon["Form"] = form["Name"];
