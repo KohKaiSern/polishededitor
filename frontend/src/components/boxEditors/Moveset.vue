@@ -34,7 +34,7 @@ onBeforeMount(async () => {
       <Select
         class="w-full"
         v-model="mon['Moves'][index]"
-        :options="moves[PF].map((move) => move['Name'])"
+        :options="[...moves[PF].map((move) => move['Name']), '---']"
         filter
       />
       <div class="grid grid-cols-2 gap-1 mt-3">
