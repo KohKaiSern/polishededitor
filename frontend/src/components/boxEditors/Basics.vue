@@ -1,8 +1,7 @@
 <script setup>
-import { inject } from "vue";
+import { inject, watch } from "vue";
 import Select from "primevue/select";
 import InputNumber from "primevue/inputnumber";
-import IftaLabel from "primevue/iftalabel";
 
 const mon = defineModel();
 const PF = inject("PF");
@@ -32,15 +31,23 @@ const getGrowthRate = () => {
 };
 
 const getExpForLevel = (level) => {
-  // Formula: [1]/[2]*n**3 + [3]*n**2 + [4]*n - [5]
+  //Formula: [1]/[2]*n**3 + [3]*n**2 + [4]*n - [5]
   const growthCFs = growthRates.value[getGrowthRate()];
   return Math.ceil(
     (growthCFs[0] / growthCFs[1]) * level ** 3 +
-    growthCFs[2] * level ** 2 +
-    growthCFs[3] * level -
-    growthCFs[4]
+      growthCFs[2] * level ** 2 +
+      growthCFs[3] * level -
+      growthCFs[4]
   );
 };
+
+//Change experience when level changes
+watch(
+  () => mon.value["Level"],
+  () => {
+    mon.value["Experience"] = getExpForLevel(mon.value["Level"]);
+  }
+);
 </script>
 
 <template>
@@ -76,17 +83,15 @@ const getExpForLevel = (level) => {
       }}
     </p>
     <br />
-    <span class="text-lg font-semibold">Level / Experience</span>
-    <IftaLabel class="mt-3 mb-3">
-      <InputNumber
-        id="level"
-        v-model="mon['Level']"
-        :min="0"
-        :max="100"
-        fluid
-      />
-      <label for="level">Level</label>
-    </IftaLabel>
-    <p>{{ getExpForLevel(1) - getExpForLevel(0) }}</p>
+    <span class="text-lg font-semibold">Level</span>
+    <InputNumber
+      class="mt-3"
+      id="level"
+      v-model="mon['Level']"
+      :min="0"
+      :max="100"
+      fluid
+      showButtons
+    />
   </div>
 </template>
