@@ -7,11 +7,14 @@ const PF = inject("PF");
 const pokemon = inject("pokemon");
 
 const formHasGender = () => {
-  let species = pokemon.value[PF].find((pokemon) => pokemon["Name"] === mon.value["Species"])
-  let form = species["Forms"].find((form) => form["Name"] = mon.value["Form"])
-  return form["Has Gender"]
-}
-
+  let species = pokemon.value[PF].find(
+    (pokemon) => pokemon["Name"] === mon.value["Species"]
+  );
+  let form = species["Forms"].find(
+    (form) => (form["Name"] = mon.value["Form"])
+  );
+  return form["Has Gender"];
+};
 </script>
 
 <template>

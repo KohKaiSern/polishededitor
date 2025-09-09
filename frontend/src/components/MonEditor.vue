@@ -30,7 +30,7 @@ const form = computed(() => {
     <AccordionPanel value="basic">
       <AccordionHeader>Basics</AccordionHeader>
       <AccordionContent>
-        <Basics v-model="mon" :form/>
+        <Basics v-model="mon" :form />
       </AccordionContent>
     </AccordionPanel>
     <AccordionPanel value="stats">

@@ -34,10 +34,14 @@ const getGIFURL = () => {
 };
 
 const getType = () => {
-  let species = pokemon.value[PF].find((pokemon) => pokemon["Name"] === mon.value["Species"])
-  let form = species["Forms"].find((form) => form["Name"] = mon.value["Form"])
-  let types = form["Type"]
-  return types
+  let species = pokemon.value[PF].find(
+    (pokemon) => pokemon["Name"] === mon.value["Species"]
+  );
+  let form = species["Forms"].find(
+    (form) => (form["Name"] = mon.value["Form"])
+  );
+  let types = form["Type"];
+  return types;
 };
 </script>
 
