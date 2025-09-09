@@ -23,7 +23,7 @@ onBeforeMount(async () => {
     await fetch("https://polishededitor-backend.vercel.app/moves")
   ).json();
   items.value = await (
-    await fetch("https://polishededitor-backend.vercel.app/pokemon")
+    await fetch("https://polishededitor-backend.vercel.app/items")
   ).json();
 });
 
