@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, inject } from "vue";
 import Card from "primevue/card";
 import Button from "primevue/button";
 import Drawer from "primevue/drawer";
@@ -7,6 +7,8 @@ import { getTypeColour, cammyFormat } from "../lib/helpers.js";
 import MonEditor from "./MonEditor.vue";
 
 const mon = defineModel();
+const PF = inject("PF");
+const pokemon = inject("pokemon");
 const toggleEdit = ref(false);
 const screenSize = ref([window.innerHeight, window.innerWidth]);
 
@@ -30,6 +32,13 @@ const getGIFURL = () => {
   const formPath = form === "plain" ? species : `${species}_${form}`;
   return `https://raw.githubusercontent.com/caomicc/polisheddex/refs/heads/main/public/sprites/pokemon/${formPath}/${shine}_front_animated.gif`;
 };
+
+const getType = () => {
+  let species = pokemon.value[PF].find((pokemon) => pokemon["Name"] === mon.value["Species"])
+  let form = species["Forms"].find((form) => form["Name"] = mon.value["Form"])
+  let types = form["Type"]
+  return types
+};
 </script>
 
 <template>
@@ -47,7 +56,7 @@ const getGIFURL = () => {
               <span>{{ mon["Species"] }}</span>
               <div class="flex gap-3">
                 <div
-                  v-for="type in mon['Type']"
+                  v-for="type in getType()"
                   class="size-[30px] rounded-[50%] flex items-center justify-center"
                   :style="{ backgroundColor: getTypeColour(type) }"
                 >
