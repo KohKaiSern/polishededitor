@@ -6,6 +6,7 @@ import getPokemon from "./pokemon.js";
 import getAbilities from "./abilities.js";
 import getMoves from "./moves.js";
 import getItems from "./items.js";
+import getGrowthRates from "./growth.js";
 const app = express();
 
 //Middleware
@@ -28,6 +29,9 @@ app.get("/moves", (req, res) => res.json(getMoves()));
 
 //Items Route
 app.get("/items", (req, res) => res.json(getItems()));
+
+//Growth Rates Route
+app.get("/growthrates", (req, res) => res.json(getGrowthRates()))
 
 app.listen(3000, () => console.log("Server ready on port 3000."));
 
