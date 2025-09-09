@@ -1,5 +1,4 @@
 <script setup>
-import { computed, ref, inject } from "vue";
 import Accordion from "primevue/accordion";
 import AccordionPanel from "primevue/accordionpanel";
 import AccordionHeader from "primevue/accordionheader";
@@ -10,8 +9,6 @@ import Basics from "./boxEditors/Basics.vue";
 import Misc from "./boxEditors/Misc.vue";
 
 const mon = defineModel();
-const PF = inject("PF");
-const pokemon = inject("pokemon");
 </script>
 
 <template>
