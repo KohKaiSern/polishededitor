@@ -48,7 +48,7 @@ const form = computed(() => {
     <AccordionPanel value="misc">
       <AccordionHeader>Miscellaneous</AccordionHeader>
       <AccordionContent>
-        <Misc v-model="mon" :form/>
+        <Misc v-model="mon" />
       </AccordionContent>
     </AccordionPanel>
   </Accordion>

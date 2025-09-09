@@ -3,8 +3,14 @@ import { inject } from "vue";
 import Select from "primevue/select";
 
 const mon = defineModel();
-const { form } = defineProps(["form"]);
 const PF = inject("PF");
+const pokemon = inject("pokemon");
+
+const formHasGender = () => {
+  let species = pokemon.value[PF].find((pokemon) => pokemon["Name"] === mon.value["Species"])
+  let form = species["Forms"].find((form) => form["Name"] = mon.value["Form"])
+  return form["Has Gender"]
+}
 
 </script>
 
@@ -14,8 +20,8 @@ const PF = inject("PF");
     <Select
       class="mt-3 mb-3"
       v-model="mon['Gender']"
-      :options="form['Has Gender'] ? ['Male', 'Female'] : ['Genderless']"
-      :disabled="!form['Has Gender']"
+      :options="formHasGender() ? ['Male', 'Female'] : ['Genderless']"
+      :disabled="!formHasGender()"
     />
   </div>
 </template>
