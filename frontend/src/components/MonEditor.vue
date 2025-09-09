@@ -12,17 +12,6 @@ import Misc from "./boxEditors/Misc.vue";
 const mon = defineModel();
 const PF = inject("PF");
 const pokemon = inject("pokemon");
-
-//Gets the form's data
-const form = computed(() => {
-  let species = pokemon.value[PF].find(
-    (species) => species["Name"] === mon.value["Species"]
-  );
-  let form = species["Forms"].find(
-    (form) => form["Name"] === mon.value["Form"]
-  );
-  return form;
-});
 </script>
 
 <template>
@@ -30,7 +19,7 @@ const form = computed(() => {
     <AccordionPanel value="basic">
       <AccordionHeader>Basics</AccordionHeader>
       <AccordionContent>
-        <Basics v-model="mon" :form />
+        <Basics v-model="mon" />
       </AccordionContent>
     </AccordionPanel>
     <AccordionPanel value="stats">

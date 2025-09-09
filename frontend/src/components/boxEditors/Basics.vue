@@ -3,15 +3,25 @@ import { inject, ref, onBeforeMount } from "vue";
 import Select from "primevue/select";
 
 const mon = defineModel();
-const { form } = defineProps(["form"]);
 const abilities = ref(null);
 const PF = inject("PF");
+const pokemon = inject("pokemon");
 
 onBeforeMount(async () => {
   abilities.value = await (
     await fetch("https://polishededitor-backend.vercel.app/abilities")
   ).json();
 });
+
+const getAbilities = () => {
+  let species = pokemon.value[PF].find(
+    (species) => species["Name"] === mon.value["Species"]
+  );
+  let form = species["Forms"].find(
+    (form) => form["Name"] === mon.value["Form"]
+  );
+  return form["Abilities"];
+};
 </script>
 
 <template>
@@ -20,7 +30,7 @@ onBeforeMount(async () => {
     <Select
       class="mt-3 mb-3"
       v-model="mon['Ability']"
-      :options="form['Abilities']"
+      :options="getAbilities()"
     />
     <p>
       {{
