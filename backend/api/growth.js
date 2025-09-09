@@ -1,6 +1,7 @@
 import { readFile } from "fs/promises";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import reduce from "../lib/reduce.js"
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -17,7 +18,7 @@ const extractGrowthRates = (data) => {
   data = data.map((line) => line.trim());
   data = data.filter((line) => line.includes("growth_rate "));
   for (let growthRate of data) {
-    growthRates[growthRate.split(";").at(1).trim()] = growthRate
+    growthRates[reduce(growthRate.split(";").at(1).trim())] = growthRate
       .split(";")
       .at(0)
       .slice(12, -1)

@@ -12,6 +12,7 @@ const pokemon = ref(null);
 const abilities = ref(null);
 const moves = ref(null);
 const items = ref(null);
+const growthRates = ref(null);
 onBeforeMount(async () => {
   pokemon.value = await (
     await fetch("https://polishededitor-backend.vercel.app/pokemon")
@@ -25,6 +26,9 @@ onBeforeMount(async () => {
   items.value = await (
     await fetch("https://polishededitor-backend.vercel.app/items")
   ).json();
+  growthRates.value = await (
+    await fetch("https://polishededitor-backend.vercel.app/growthrates")
+  ).json();
 });
 
 //Providers for API endpoints (put here so that we only have to fetch once)
@@ -32,6 +36,7 @@ provide("pokemon", pokemon);
 provide("abilities", abilities);
 provide("moves", moves);
 provide("items", items);
+provide("growthRates", growthRates);
 </script>
 
 <template>

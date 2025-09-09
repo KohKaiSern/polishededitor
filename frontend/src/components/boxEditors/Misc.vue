@@ -25,6 +25,7 @@ const formHasGender = () => {
       v-model="mon['Gender']"
       :options="formHasGender() ? ['Male', 'Female'] : ['Genderless']"
       :disabled="!formHasGender()"
+      fluid
     />
     <br />
     <span class="text-lg font-semibold">Shininess</span> <br />
@@ -32,6 +33,7 @@ const formHasGender = () => {
       class="mt-3 mb-3"
       v-model="mon['Shininess']"
       :options="['Shiny', 'Not Shiny']"
+      fluid
     />
   </div>
 </template>

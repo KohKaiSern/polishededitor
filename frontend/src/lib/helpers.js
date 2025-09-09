@@ -59,13 +59,13 @@ export const getNature = (x) => {
 
 //The opposite of the above
 export const getNatureNo = (nature) => {
-  return NATURES.findIndex((NATURE) => NATURE === nature)
-}
+  return NATURES.findIndex((NATURE) => NATURE === nature);
+};
 
 //Just get a list
 export const getNatures = () => {
-  return NATURES
-}
+  return NATURES;
+};
 
 export const cammyFormat = (str) => {
   if (str === "spiky_eared") {
@@ -103,4 +103,17 @@ export const hex2bin = (hex) => {
 //The opposite of the above
 export const bin2hex = (bin) => {
   return parseInt(bin, 2).toString(16).padStart(2, "0");
+};
+
+export const reduce = (str) => {
+  return str
+    .toLowerCase()
+    .replaceAll(" ", "")
+    .replaceAll("_", "")
+    .replaceAll("-", "")
+    .replaceAll("'", "")
+    .replaceAll(".", "")
+    .replaceAll("♂", "m")
+    .replaceAll("♀", "f")
+    .replaceAll("é", "e");
 };
