@@ -24,7 +24,6 @@ const extractGrowthRates = (data) => {
       .split(",")
       .map((x) => parseInt(x.trim()));
   }
-  console.log(growthRates);
 };
 
 //#1: Growth Rates
@@ -33,7 +32,7 @@ extractGrowthRates(raw);
 
 //Growth Rates GETTER
 const getGrowthRates = () => {
-  return versions;
+  return growthRates;
 };
 
 export default getGrowthRates;
