@@ -28,13 +28,19 @@ const getGrowthRate = () => {
   let form = species["Forms"].find(
     (form) => form["Name"] === mon.value["Form"]
   );
-  return form["Growth Rate"]
-}
+  return form["Growth Rate"].slice(6);
+};
 
 const getExpForLevel = (level) => {
   // Formula: [1]/[2]*n**3 + [3]*n**2 + [4]*n - [5]
-  const growthCoefficients = growthRates.value[getGrowthRate()];
-}
+  const growthCFs = growthRates.value[getGrowthRate()];
+  return Math.ceil(
+    (growthCFs[0] / growthCFs[1]) * level ** 3 +
+    growthCFs[2] * level ** 2 +
+    growthCFs[3] * level -
+    growthCFs[4]
+  );
+};
 </script>
 
 <template>
@@ -69,12 +75,18 @@ const getExpForLevel = (level) => {
         ]
       }}
     </p>
-    <br>
+    <br />
     <span class="text-lg font-semibold">Level / Experience</span>
     <IftaLabel class="mt-3 mb-3">
-      <InputNumber id="level" v-model="mon['Level']" :min="0" :max="100" fluid/>
+      <InputNumber
+        id="level"
+        v-model="mon['Level']"
+        :min="0"
+        :max="100"
+        fluid
+      />
       <label for="level">Level</label>
     </IftaLabel>
-    <p>{{ getExpForLevel() }}</p>
+    <p>{{ getExpForLevel(1) - getExpForLevel(0) }}</p>
   </div>
 </template>
