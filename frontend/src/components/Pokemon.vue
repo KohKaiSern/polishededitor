@@ -38,8 +38,9 @@ const getType = () => {
     (pokemon) => pokemon["Name"] === mon.value["Species"]
   );
   let form = species["Forms"].find(
-    (form) => (form["Name"] === mon.value["Form"])
+    (form) => form["Name"] === mon.value["Form"]
   );
+  console.log(form)
   let types = form["Type"];
   return types;
 };
