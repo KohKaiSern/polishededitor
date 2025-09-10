@@ -40,7 +40,6 @@ const getType = () => {
   let form = species["Forms"].find(
     (form) => form["Name"] === mon.value["Form"]
   );
-  console.log(form)
   let types = form["Type"];
   return types;
 };
