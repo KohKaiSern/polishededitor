@@ -19,6 +19,7 @@ const SYMBOLS = [
   "sBoxMons2A",
   "sBoxMons2B",
   "sBoxMons2C",
+  "wNumItems",
 ];
 
 //Converts wRAM address to sRAM
