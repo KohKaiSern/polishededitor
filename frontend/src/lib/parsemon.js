@@ -40,7 +40,6 @@ const parseMon = (save, address, PF) => {
     form = species["Forms"][0]
   }
 
-
   mon["Species"] = species["Name"];
   mon["Form"] = form["Name"];
 

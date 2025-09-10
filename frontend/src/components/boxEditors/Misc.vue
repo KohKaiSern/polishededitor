@@ -1,6 +1,7 @@
 <script setup>
 import { inject } from "vue";
 import Select from "primevue/select";
+import InputNumber from "primevue/inputnumber";
 
 const mon = defineModel();
 const PF = inject("PF");
@@ -33,7 +34,6 @@ const formHasGender = () => {
       :disabled="!formHasGender()"
       fluid
     />
-    <br />
     <span class="text-lg font-semibold">Shininess</span> <br />
     <Select
       class="mt-3 mb-3"
@@ -41,5 +41,27 @@ const formHasGender = () => {
       :options="['Shiny', 'Not Shiny']"
       fluid
     />
+    <div v-if="!mon['Is Egg']">
+      <span class="text-lg font-semibold">Happiness</span> <br />
+      <InputNumber
+        class="mt-3 mb-3"
+        v-model="mon['Happiness']"
+        :min="0"
+        :max="255"
+        showButtons
+        fluid
+      />
+    </div>
+    <div v-else>
+      <span class="text-lg font-semibold">Hatch Cycles</span> <br />
+      <InputNumber
+        class="mt-3 mb-3"
+        v-model="mon['Hatch Cycles']"
+        :min="0"
+        :max="255"
+        showButtons
+        fluid
+      />
+    </div>
   </div>
 </template>
