@@ -3,7 +3,7 @@ import { inject, ref, onBeforeMount } from "vue";
 import Select from "primevue/select";
 
 const mon = defineModel();
-const moves = ref(null);
+const moves = inject("moves");
 const PF = inject("PF");
 
 const getMove = (moveName) => {
@@ -20,12 +20,6 @@ const getMove = (moveName) => {
   }
   return moves.value[PF].find((move) => moveName === move["Name"]);
 };
-
-onBeforeMount(async () => {
-  moves.value = await (
-    await fetch("https://polishededitor-backend.vercel.app/moves")
-  ).json();
-});
 </script>
 
 <template>
