@@ -16,6 +16,7 @@ const addresses = ref(null);
 const uploadSuccess = ref(null);
 const fileName = ref(null);
 const fileContent = ref(null);
+const saveVersion = ref(null);
 const save = ref(null);
 const PF = ref(true);
 
@@ -37,12 +38,12 @@ const readSave = (event) => {
     const hex = buf2hex(e.target.result);
 
     //Validation: Check save version
-    const saveVersion = parseInt(
+    saveVersion.value = parseInt(
       hex[parseInt(addresses.value["sSaveVersion"], 16)] +
         hex[parseInt(addresses.value["sSaveVersion"], 16) + 1],
       16
     );
-    if (saveVersion === versions.value["Save"]) {
+    if (saveVersion.value === versions.value["Save"]) {
       fileContent.value = hex;
       uploadSuccess.value = true;
       save.value = parseSave(
@@ -115,7 +116,8 @@ provide("PF", PF ? "Polished" : "Faithful");
           v-else-if="uploadSuccess === false"
           severity="error"
           >Invalid save file. Please check if it's from the right version of
-          Polished Crystal.</Message
+          Polished Crystal. Your save version: {{ saveVersion }}. Current save
+          version: {{ versions["Save"] }}.</Message
         >
       </div>
       <Button icon="pi pi-download" label="Download" @click="downloadSave" />
