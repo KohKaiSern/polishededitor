@@ -7,6 +7,7 @@ import Button from "primevue/button";
 import Message from "primevue/message";
 import Select from "primevue/select";
 import parseSave from "./lib/parsesave.js";
+import parseBag from "./lib/parsebag.js";
 import reverseParseSave from "./lib/reverseparsesave.js";
 import checksum from "./lib/checksum.js";
 import { buf2hex, hex2buf } from "./lib/helpers.js";
@@ -54,10 +55,10 @@ const readSave = (event) => {
         fileContent.value,
         PF.value ? "Polished" : "Faithful"
       );
-      bagData.value = parseBag(
-        fileContent.value,
-        PF.value ? "Polished" : "Faithful"
-      );
+      // bagData.value = parseBag(
+      //   fileContent.value,
+      //   PF.value ? "Polished" : "Faithful"
+      // );
       setTimeout(() => {
         uploadSuccess.value = null;
       }, 1000);
@@ -134,12 +135,12 @@ provide("PF", PF ? "Polished" : "Faithful");
       </div>
       <Button icon="pi pi-download" label="Download" @click="downloadSave" />
     </div>
-    <Select
+    <!-- <Select
       v-if="boxData != null"
       class="mt-3"
       v-model="section"
       :options="['Boxes', 'Bag']"
-    />
+    /> -->
     <Divider />
     <div v-if="boxData != null">
       <Boxes v-model="boxData" v-if="section === 'Boxes'" />
