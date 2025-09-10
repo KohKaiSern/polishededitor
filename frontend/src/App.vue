@@ -19,7 +19,8 @@ const uploadSuccess = ref(null);
 const fileName = ref(null);
 const fileContent = ref(null);
 const saveVersion = ref(null);
-const save = ref(null);
+const boxData = ref(null);
+const bagData = ref(null);
 const PF = ref(true);
 const section = ref("Boxes");
 
@@ -49,7 +50,11 @@ const readSave = (event) => {
     if (saveVersion.value === versions.value["Save"]) {
       fileContent.value = hex;
       uploadSuccess.value = true;
-      save.value = parseSave(
+      boxData.value = parseSave(
+        fileContent.value,
+        PF.value ? "Polished" : "Faithful"
+      );
+      bagData.value = parseBag(
         fileContent.value,
         PF.value ? "Polished" : "Faithful"
       );
@@ -71,7 +76,7 @@ const downloadSave = () => {
   const editedSave = checksum(
     reverseParseSave(
       fileContent.value,
-      save.value,
+      boxData.value,
       PF.value ? "Polished" : "Faithful"
     )
   );
@@ -98,7 +103,11 @@ provide("PF", PF ? "Polished" : "Faithful");
     <div class="flex justify-between">
       <h1 class="text-3xl mb-5">Polished Editor v{{ versions["Game"] }}</h1>
       <div class="flex text-center gap-2">
-        <ToggleSwitch class="mt-0.25" v-model="PF" :disabled="save != null" />
+        <ToggleSwitch
+          class="mt-0.25"
+          v-model="PF"
+          :disabled="boxData != null"
+        />
         <span v-if="PF">Polished</span>
         <span v-else>Faithful</span>
       </div>
@@ -126,15 +135,15 @@ provide("PF", PF ? "Polished" : "Faithful");
       <Button icon="pi pi-download" label="Download" @click="downloadSave" />
     </div>
     <Select
-      v-if="save != null"
+      v-if="boxData != null"
       class="mt-3"
       v-model="section"
       :options="['Boxes', 'Bag']"
     />
     <Divider />
-    <div v-if="save != null">
-      <Boxes v-model="save" v-if="section === 'Boxes'" />
-      <Bag v-model="save" v-if="section === 'Bag'"/>
+    <div v-if="boxData != null">
+      <Boxes v-model="boxData" v-if="section === 'Boxes'" />
+      <Bag v-model="boxData" v-if="section === 'Bag'" />
     </div>
   </div>
 </template>

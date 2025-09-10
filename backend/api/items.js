@@ -20,6 +20,10 @@ const descriptionsASM = join(
   __dirname,
   "../public/polishedcrystal/data/items/descriptions.asm"
 );
+const attributesASM = join(
+  __dirname,
+  "../public/polishedcrystal/data/items/attributes.asm"
+);
 
 const extractNames = (data, PF) => {
   data = data.filter((line) => line.startsWith("li "));
@@ -74,6 +78,14 @@ const coverInconsistencies = (PF) => {
   }
 };
 
+const extractAttributes = (data, PF) => {
+  data = data.filter((line) => line.startsWith("item_attribute "));
+  data = data.map((line) => reduce(line.split(",").at(3)));
+  for (let i = 0; i < data.length; i++) {
+    items[PF][i]["Type"] = data[i];
+  }
+};
+
 //#1: Names
 let raw = await readFile(namesASM, "utf-8");
 const namesFILES = splitFile(raw);
@@ -88,6 +100,12 @@ extractDescriptions(descriptionsFILES[1], "Faithful");
 
 coverInconsistencies("Polished");
 coverInconsistencies("Faithful");
+
+//#3: Attributes
+raw = await readFile(attributesASM, "utf-8");
+const attributesFILES = splitFile(raw);
+extractAttributes(attributesFILES[0], "Polished");
+extractAttributes(attributesFILES[1], "Faithful");
 
 //Items GETTER
 const getItems = () => {
