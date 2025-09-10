@@ -1,15 +1,17 @@
 <script setup>
-import { onBeforeMount, ref, watch, provide } from "vue";
+import { onBeforeMount, ref, provide } from "vue";
 import FileUpload from "primevue/fileupload";
 import Divider from "primevue/divider";
 import ToggleSwitch from "primevue/toggleswitch";
 import Button from "primevue/button";
 import Message from "primevue/message";
+import Select from "primevue/select";
 import parseSave from "./lib/parsesave.js";
 import reverseParseSave from "./lib/reverseparsesave.js";
 import checksum from "./lib/checksum.js";
 import { buf2hex, hex2buf } from "./lib/helpers.js";
 import Boxes from "./components/Boxes.vue";
+import Bag from "./components/Bag.vue";
 
 const versions = ref(null);
 const addresses = ref(null);
@@ -19,6 +21,7 @@ const fileContent = ref(null);
 const saveVersion = ref(null);
 const save = ref(null);
 const PF = ref(true);
+const section = ref("Boxes");
 
 //Get Game and Save Versions, as well as the address for sSaveVersion
 onBeforeMount(async () => {
@@ -122,8 +125,17 @@ provide("PF", PF ? "Polished" : "Faithful");
       </div>
       <Button icon="pi pi-download" label="Download" @click="downloadSave" />
     </div>
+    <Select
+      v-if="save != null"
+      class="mt-3"
+      v-model="section"
+      :options="['Boxes', 'Bag']"
+    />
     <Divider />
-    <Boxes v-if="save != null" v-model="save" />
+    <div v-if="save != null">
+      <Boxes v-model="save" v-if="section === 'Boxes'" />
+      <Bag v-model="save" v-if="section === 'Bag'"/>
+    </div>
   </div>
 </template>
 
