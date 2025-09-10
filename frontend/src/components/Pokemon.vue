@@ -40,8 +40,14 @@ const getType = () => {
   let form = species["Forms"].find(
     (form) => form["Name"] === mon.value["Form"]
   );
-  let types = form["Type"];
-  return types;
+
+  // If the specific form isn't found (e.g. "plain" form for Arbok),
+  // fall back to the first form temporarily while watcher runs.
+  if (!form) {
+    form = species["Forms"][0];
+  }
+
+  return form["Type"];
 };
 </script>
 

@@ -24,6 +24,12 @@ const getAbilities = () => {
   let form = species["Forms"].find(
     (form) => form["Name"] === mon.value["Form"]
   );
+
+  //If the specific form isn't found, fall back to the first form temporarily
+  if (!form) {
+    form = species["Forms"][0];
+  }
+
   return form["Abilities"];
 };
 
@@ -48,6 +54,42 @@ const getExpForLevel = (level) => {
   );
 };
 
+//Watch for species changes, reset everything to default
+watch(
+  () => mon.value["Species"],
+  (newSpecies) => {
+    let species = pokemon.value[PF].find(
+      (species) => species["Name"] === newSpecies
+    );
+
+    mon.value["Form"] = species["Forms"][0]["Name"];
+    mon.value["Ability"] = species["Forms"][0]["Abilities"][0];
+    mon.value["Experience"] = getExpForLevel(mon.value["Level"]);
+    if (!(species["Forms"][0]["Has Gender"])) {
+      mon.value["Gender"] = "Genderless"
+    }
+  }
+);
+
+//Watch for form changes, reset everything to default
+watch(
+  () => mon.value["Form"],
+  () => {
+    let species = pokemon.value[PF].find(
+      (species) => species["Name"] === mon.value["Species"]
+    );
+    let form = species["Forms"].find(
+      (form) => form["Name"] === mon.value["Form"]
+    );
+
+    mon.value["Ability"] = form["Abilities"][0];
+    mon.value["Experience"] = getExpForLevel(mon.value["Level"]);
+    if (!(species["Forms"][0]["Has Gender"])) {
+      mon.value["Gender"] = "Genderless"
+    }
+  }
+);
+
 //Change experience when level changes
 watch(
   () => mon.value["Level"],
@@ -55,7 +97,6 @@ watch(
     mon.value["Experience"] = getExpForLevel(mon.value["Level"]);
   }
 );
-
 </script>
 
 <template>
