@@ -65,8 +65,8 @@ watch(
     mon.value["Form"] = species["Forms"][0]["Name"];
     mon.value["Ability"] = species["Forms"][0]["Abilities"][0];
     mon.value["Experience"] = getExpForLevel(mon.value["Level"]);
-    if (!(species["Forms"][0]["Has Gender"])) {
-      mon.value["Gender"] = "Genderless"
+    if (!species["Forms"][0]["Has Gender"]) {
+      mon.value["Gender"] = "Genderless";
     }
   }
 );
@@ -84,8 +84,8 @@ watch(
 
     mon.value["Ability"] = form["Abilities"][0];
     mon.value["Experience"] = getExpForLevel(mon.value["Level"]);
-    if (!(species["Forms"][0]["Has Gender"])) {
-      mon.value["Gender"] = "Genderless"
+    if (!species["Forms"][0]["Has Gender"]) {
+      mon.value["Gender"] = "Genderless";
     }
   }
 );

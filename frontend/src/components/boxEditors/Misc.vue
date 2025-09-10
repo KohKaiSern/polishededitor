@@ -11,14 +11,14 @@ const formHasGender = () => {
     (pokemon) => pokemon["Name"] === mon.value["Species"]
   );
   let form = species["Forms"].find(
-    (form) => (form["Name"] === mon.value["Form"])
+    (form) => form["Name"] === mon.value["Form"]
   );
 
   //If the specific form isn't found, fall back to the first form temporarily
   if (!form) {
     form = species["Forms"][0];
   }
-  
+
   return form["Has Gender"];
 };
 </script>
