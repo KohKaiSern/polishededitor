@@ -23,20 +23,20 @@ const reverseParseMon = (save, address, mon, PF) => {
     pokemon[PF].findIndex((pokemon) => pokemon["Name"] === mon["Species"]) + 1;
 
   //9th-Bit Activated
-  const byte22 = hex2bin(save[address + 21]);
+  let byte22 = hex2bin(save[address + 21]);
   if (dexNo > 254) {
     save[address] = (dexNo - 254).toString(16).padStart(2, "0");
-    save[address + 21] = bin2hex(byte22.slice(0, 2) + "1" + byte22.slice(3));
+    byte22 = byte22.slice(0, 2) + "1" + byte22.slice(3);
   } else {
     save[address] = dexNo.toString(16).padStart(2, "0");
-    save[address + 21] = bin2hex(byte22.slice(0, 2) + "0" + byte22.slice(3));
+    byte22 = byte22.slice(0, 2) + "0" + byte22.slice(3);
   }
 
   //Form
 	const form = pokemon[PF][dexNo - 1]["Forms"].find((form) => form["Name"] === mon["Form"])
   const formNo = form["Form Number"].toString(2)
     .padStart(5, "0");
-  save[address + 21] = bin2hex(byte22.slice(0, 3) + formNo);
+  byte22 = byte22.slice(0, 3) + formNo;
 
   //Byte #2: Held Item
   const item = items[PF].find((item) => item["Name"] === mon["Held Item"]);
@@ -80,30 +80,29 @@ const reverseParseMon = (save, address, mon, PF) => {
 	save[address + 19] = dvs[4] + dvs[5]
 
   //Byte #21: Ability, Nature, Shininess
-
-	const byte21 = hex2bin(save[address + 20])
+	let byte21 = hex2bin(save[address + 20])
 	const abilityNo = form["Abilities"].findIndex((ability) => ability === mon["Ability"])
-	save[address + 20] = bin2hex(byte21.at(0) + (abilityNo + 1).toString(2).padStart(2, "0") + byte21.slice(3))
-
-	save[address + 20] = bin2hex((mon["Shininess"] === "Shiny" ? "1" : "0") + byte21.slice(1))
-
-	save[address + 20] = bin2hex(byte21.slice(0, 3) + getNatureNo(mon["Nature"]).toString(2).padStart(5, "0"))
-  
+	byte21 = byte21.at(0) + (abilityNo + 1).toString(2).padStart(2, "0") + byte21.slice(3)
+	byte21 = (mon["Shininess"] === "Shiny" ? "1" : "0") + byte21.slice(1)
+	byte21 = byte21.slice(0, 3) + getNatureNo(mon["Nature"]).toString(2).padStart(5, "0")
+  save[address + 20] = bin2hex(byte21)
   //Byte #22: Gender, isEgg
 
 	if (!(mon["Gender"] === "Genderless")) {
 		if (mon["Gender"] === "Male") {
-			save[address + 21] = bin2hex("0" + byte22.slice(1))
+			byte22 = "0" + byte22.slice(1)
 		} else {
-			save[address + 21] = bin2hex("1" + byte22.slice(1))
+			byte22 = "1" + byte22.slice(1)
 		}
 	}
 
 	if (mon["Is Egg"]) {
-		save[address + 21] = bin2hex(byte22.at(0) + "1" + byte22.slice(2))
+		byte22 = byte22.at(0) + "1" + byte22.slice(2)
 	} else {
-		save[address + 21] = bin2hex(byte22.at(0) + "0" + byte22.slice(2))
+		byte22 = byte22.at(0) + "0" + byte22.slice(2)
 	}
+
+  save[address + 21] = bin2hex(byte22)
 
   //Byte #23: PP Ups TODO
 
