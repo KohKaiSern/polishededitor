@@ -23,5 +23,8 @@ export default [
 	{
 		files: ['**/*.svelte', '**/*.svelte.js'],
 		languageOptions: { parserOptions: { svelteConfig } }
+	},
+	{
+		ignores: ['polishedcrystal/**/*', 'polishedcrystal-3.1.1.sym']
 	}
 ];

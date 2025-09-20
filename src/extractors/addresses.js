@@ -1,5 +1,4 @@
 import { readFileSync } from 'fs';
-import { path } from './lib/path.js';
 let addresses = {};
 
 //Path
