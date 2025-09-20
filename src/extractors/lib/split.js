@@ -7,12 +7,17 @@
 //#2. Replaces all Poke with Poké
 //#3. Removes all @
 
-export const splitFile = (file) => {
-	let files = [[], []];
-	let data = file.trim().split('\n');
-	data = data.map((line) =>
-		line.trim().replaceAll('#', 'Poké').replaceAll('Poke', 'Poké').replaceAll('@', '')
-	);
+export const split = (file) => {
+	let files = {
+		polished: [],
+		faithful: []
+	};
+	let data = file
+		.trim()
+		.split('\n')
+		.map((line) =>
+			line.trim().replaceAll('#', 'Poké').replaceAll('Poke', 'Poké').replaceAll('@', '')
+		);
 
 	for (let lineNo = 0; lineNo < data.length; lineNo++) {
 		//Polished/Faithful Split
@@ -25,7 +30,7 @@ export const splitFile = (file) => {
 
 			//Then keep adding the faithful lines until we hit the else condition
 			while (data[lineNo] != 'else') {
-				files[1].push(data[lineNo]);
+				files.faithful.push(data[lineNo]);
 				lineNo++;
 			}
 
@@ -34,15 +39,15 @@ export const splitFile = (file) => {
 
 			//Then keep adding the polished lines until we hit the endc condition
 			while (data[lineNo] != 'endc') {
-				files[0].push(data[lineNo]);
+				files.polished.push(data[lineNo]);
 				lineNo++;
 			}
 		} else {
-			files[0].push(data[lineNo]);
-			files[1].push(data[lineNo]);
+			files.polished.push(data[lineNo]);
+			files.faithful.push(data[lineNo]);
 		}
 	}
 	return files;
 };
 
-export default splitFile;
+export default split;
