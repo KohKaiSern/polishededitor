@@ -4,4 +4,5 @@
 	import moves from '$data/moves.json';
 	import items from '$data/items.json';
 	import versions from '$data/versions.json';
+	import growthRates from '$data/growthRates.json';
 </script>
