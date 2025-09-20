@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+	<title>ampharos</title>
+	<defs>
+		<image  width="56" height="56" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4BAMAAABaqCYtAAAAAXNSR0IB2cksfwAAABJQTFRF////rFIIAAAA/////+YAAAAAxS+iKAAAAAZ0Uk5TAP////8AV3sPcwAAAjtJREFUeJx1lM122yAQhQey7bGQso6NsNZtEj9AT9v39gu0UXtOtzVCXseAlbWgg35i/RAvxJE+62q43BkC0x/h1ex2Bik35mOY7gwBbePwaw0gnFQxCALfu+dt7Y2NwNT4O+5UbiyKL2Ce6TfGpRGu3qgl3LNECZCQeyVXBT0BYQAlax7/qQhMcXHK58dVQVmah6Wtka/gnnAAKaBMqvU+s4yDsw13x4gJ9Hv4IOWhmigMsnH4zMIymhuFJx+D5IDQwe8kBmGP+yyTq4YPoFPm6RiF5LCRhKDzS5jShz8gtBXN5/Wb+03VhUeAr9aQeYmUitGgKSx2lv4M8eyPZAE5mIuCQrMJpLy/6Vw/hutENrdEjxAkhp68vkOablVvF+qC4tgPlwnMT8m7Lngs+HLmug81TQ4vg9FCAIRGSmrmteoh3H0adIQX4Q2fgfFlX9DbaBcK+wGCLmdbCfYeuvYMcAy1kDcfRniqBofE2K1YbgeJvOVWDLKUN1/6vw0bDTBjchBt6QrSXZc2+s0CW8M8KcPy7COQ/GgrFc4T7KZZQijaKzZ5wS1srt3TSt+gABwQMhwK1p2GrUwgxuYFw4dQ8qtl4O5/2XcIxVal+AgcbRuEnpwmkLJk702GRw1lyiC59hUNARNBUz38fcRiGFg2g/hVhFvqr1gvsex1CjvqKBiCMKHLmUC5cNTbtGLERgaGwJSgKtHxmVBwd+Y4L+S6BbvAnLloaxGdJjCEt9RxGMLr5ibMKMDQhP8B7oscSArU/bIAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>
