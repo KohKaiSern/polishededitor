@@ -1,9 +1,7 @@
 import { readFileSync } from 'fs';
+import paths from './lib/paths.js';
 
 let addresses = {};
-
-//Path
-const addressesASM = '../../polishedcrystal-3.1.1.sym';
 
 //Symbols
 const SYMBOLS = [
@@ -34,7 +32,7 @@ const extractAddresses = (data) => {
 };
 
 //#1: Addresses
-const raw = readFileSync(addressesASM, 'utf-8');
+const raw = readFileSync(paths.addresses, 'utf-8');
 extractAddresses(raw);
 
 export default addresses;

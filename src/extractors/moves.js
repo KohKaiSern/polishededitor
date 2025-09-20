@@ -1,15 +1,12 @@
 import { readFileSync } from 'fs';
 import split from './lib/split.js';
 import reduce from './lib/reduce.js';
+import paths from './lib/paths.js';
 
 let moves = {
 	polished: [],
 	faithful: []
 };
-
-//Paths
-const namesASM = '../../polishedcrystal/data/moves/names.asm';
-const movesASM = '../../polishedcrystal/data/moves/moves.asm';
 
 const extractNames = (data, PF) => {
 	data = data.filter((line) => line.startsWith('li '));
@@ -45,13 +42,13 @@ const extractMoves = (data, PF) => {
 };
 
 //#1: Names
-let raw = readFileSync(namesASM, 'utf-8');
+let raw = readFileSync(paths.moves.names, 'utf-8');
 const namesFILES = split(raw);
 extractNames(namesFILES.polished, 'polished');
 extractNames(namesFILES.faithful, 'faithful');
 
 //#2: Base Power, Type, Accuracy, Power Points, Effect Chance, Damage Category
-raw = readFileSync(movesASM, 'utf-8');
+raw = readFileSync(paths.moves.moves, 'utf-8');
 const movesFILES = split(raw);
 extractMoves(movesFILES.polished, 'polished');
 extractMoves(movesFILES.faithful, 'faithful');

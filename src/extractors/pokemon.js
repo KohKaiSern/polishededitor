@@ -1,17 +1,13 @@
 import { readFileSync, readdirSync } from 'fs';
 import split from './lib/split.js';
 import reduce from './lib/reduce.js';
+import paths from './lib/paths.js';
 import ABILITIES from './abilities.js';
 
 let pokemon = {
 	polished: [],
 	faithful: []
 };
-
-//Paths
-const namesASM = '../../polishedcrystal/data/pokemon/names.asm';
-const formsASM = '../../polishedcrystal/constants/pokemon_constants.asm';
-const monDIR = '../../polishedcrystal/data/pokemon/base_stats/';
 
 const extractNames = (data, PF) => {
 	let dexNo = 1;
@@ -248,22 +244,22 @@ const extractCosmetic = (PF) => {
 };
 
 //#1: Names, Dex Numbers
-let raw = readFileSync(namesASM, 'utf-8');
+let raw = readFileSync(paths.pokemon.names, 'utf-8');
 const namesFILES = split(raw);
 extractNames(namesFILES.polished, 'polished');
 extractNames(namesFILES.faithful, 'faithful');
 
 //#2: Forms
-raw = readFileSync(formsASM, 'utf-8');
+raw = readFileSync(paths.pokemon.forms, 'utf-8');
 const formsFILES = split(raw);
 extractForms(formsFILES.polished, 'polished');
 extractForms(formsFILES.faithful, 'faithful');
 
 //#3: Type, Abilities, Base Stats, Growth Rate, Gender
-const filenames = readdirSync(monDIR);
+const filenames = readdirSync(paths.pokemon.mons);
 
 filenames.map((filename) => {
-	raw = readFileSync(monDIR + filename, 'utf-8');
+	raw = readFileSync(paths.pokemon.mons + filename, 'utf-8');
 	const monFILES = split(raw);
 	extractMon(monFILES.polished, 'polished');
 	extractMon(monFILES.faithful, 'faithful');

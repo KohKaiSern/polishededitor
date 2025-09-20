@@ -1,10 +1,8 @@
 import { readFileSync } from 'fs';
 import reduce from './lib/reduce.js';
+import paths from './lib/paths.js';
 
 let growthRates = {};
-
-//Paths
-const growthASM = '../../polishedcrystal/data/growth_rates.asm';
 
 const extractGrowthRates = (data) => {
 	data = data.split('\n');
@@ -21,7 +19,7 @@ const extractGrowthRates = (data) => {
 };
 
 //#1: Growth Rates
-let raw = readFileSync(growthASM, 'utf-8');
+let raw = readFileSync(paths.growthRates, 'utf-8');
 extractGrowthRates(raw);
 
 export default growthRates;

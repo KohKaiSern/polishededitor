@@ -1,10 +1,7 @@
 import { readFileSync, readdirSync } from 'fs';
+import paths from './lib/paths.js';
 
 let versions = {};
-
-//Paths
-const versionDIR = '../../';
-const saveASM = '../../polishedcrystal/constants/misc_constants.asm';
 
 const extractGameVersion = (dir) => {
 	for (let filename of dir) {
@@ -22,11 +19,11 @@ const extractSaveVersion = (data) => {
 };
 
 //#1: Game Version
-let raw = readdirSync(versionDIR, 'utf-8');
+let raw = readdirSync(paths.versions.game, 'utf-8');
 extractGameVersion(raw);
 
 //#2 Save Version
-raw = readFileSync(saveASM, 'utf-8');
+raw = readFileSync(paths.versions.save, 'utf-8');
 extractSaveVersion(raw);
 
 export default versions;

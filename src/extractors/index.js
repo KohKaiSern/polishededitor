@@ -4,13 +4,15 @@ import abilities from './abilities.js';
 import moves from './moves.js';
 import items from './items.js';
 import versions from './version.js';
-import growthRates from './growth.js';
+import growthRates from './growthRates.js';
 import pokemon from './pokemon.js';
 
-writeFileSync('../lib/data/addresses.json', JSON.stringify(addresses), 'utf-8');
-writeFileSync('../lib/data/abilities.json', JSON.stringify(abilities), 'utf-8');
-writeFileSync('../lib/data/moves.json', JSON.stringify(moves), 'utf-8');
-writeFileSync('../lib/data/items.json', JSON.stringify(items), 'utf-8');
-writeFileSync('../lib/data/versions.json', JSON.stringify(versions), 'utf-8');
-writeFileSync('../lib/data/growthRates.json', JSON.stringify(growthRates), 'utf-8');
-writeFileSync('../lib/data/pokemon.json', JSON.stringify(pokemon), 'utf-8');
+const root = '../lib/data';
+
+writeFileSync(`${root}/addresses.json`, JSON.stringify(addresses), 'utf-8');
+writeFileSync(`${root}/abilities.json`, JSON.stringify(abilities), 'utf-8');
+writeFileSync(`${root}/moves.json`, JSON.stringify(moves), 'utf-8');
+writeFileSync(`${root}/items.json`, JSON.stringify(items), 'utf-8');
+writeFileSync(`${root}/versions.json`, JSON.stringify(versions), 'utf-8');
+writeFileSync(`${root}/growthRates.json`, JSON.stringify(growthRates), 'utf-8');
+writeFileSync(`${root}/pokemon.json`, JSON.stringify(pokemon), 'utf-8');

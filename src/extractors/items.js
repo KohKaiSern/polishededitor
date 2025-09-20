@@ -1,16 +1,12 @@
 import { readFileSync } from 'fs';
 import split from './lib/split.js';
 import reduce from './lib/reduce.js';
+import paths from './lib/paths.js';
 
 let items = {
 	polished: [],
 	faithful: []
 };
-
-//Paths
-const namesASM = '../../polishedcrystal/data/items/names.asm';
-const descriptionsASM = '../../polishedcrystal/data/items/descriptions.asm';
-const attributesASM = '../../polishedcrystal/data/items/attributes.asm';
 
 const extractNames = (data, PF) => {
 	data = data.filter((line) => line.startsWith('li '));
@@ -73,13 +69,13 @@ const extractAttributes = (data, PF) => {
 };
 
 //#1: Names
-let raw = readFileSync(namesASM, 'utf-8');
+let raw = readFileSync(paths.items.names, 'utf-8');
 const namesFILES = split(raw);
 extractNames(namesFILES.polished, 'polished');
 extractNames(namesFILES.faithful, 'faithful');
 
 //#2: Descriptions
-raw = readFileSync(descriptionsASM, 'utf-8');
+raw = readFileSync(paths.items.descriptions, 'utf-8');
 const descriptionsFILES = split(raw);
 extractDescriptions(descriptionsFILES.polished, 'polished');
 extractDescriptions(descriptionsFILES.faithful, 'faithful');
@@ -88,7 +84,7 @@ coverInconsistencies('polished');
 coverInconsistencies('faithful');
 
 //#3: Attributes
-raw = readFileSync(attributesASM, 'utf-8');
+raw = readFileSync(paths.items.attributes, 'utf-8');
 const attributesFILES = split(raw);
 extractAttributes(attributesFILES.polished, 'polished');
 extractAttributes(attributesFILES.faithful, 'faithful');
