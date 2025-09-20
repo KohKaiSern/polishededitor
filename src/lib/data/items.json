@@ -1,0 +1,3550 @@
+{
+	"polished": [
+		{
+			"id": "pokeball",
+			"name": "Poké Ball",
+			"itemNo": 1,
+			"description": "An item for catching Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "greatball",
+			"name": "Great Ball",
+			"itemNo": 2,
+			"description": "A Ball with a decent success rate.",
+			"type": "ball"
+		},
+		{
+			"id": "ultraball",
+			"name": "Ultra Ball",
+			"itemNo": 3,
+			"description": "A Ball with a high rate of success.",
+			"type": "ball"
+		},
+		{
+			"id": "masterball",
+			"name": "Master Ball",
+			"itemNo": 4,
+			"description": "The best Ball. It never misses.",
+			"type": "ball"
+		},
+		{
+			"id": "safariball",
+			"name": "Safari Ball",
+			"itemNo": 5,
+			"description": "The Safari Game Ball.",
+			"type": "ball"
+		},
+		{
+			"id": "levelball",
+			"name": "Level Ball",
+			"itemNo": 6,
+			"description": "A Ball for lowerlevel Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "lureball",
+			"name": "Lure Ball",
+			"itemNo": 7,
+			"description": "A Ball for Pokémon hooked by a Rod.",
+			"type": "ball"
+		},
+		{
+			"id": "moonball",
+			"name": "Moon Ball",
+			"itemNo": 8,
+			"description": "A Ball for Moon Stone evolvers.",
+			"type": "ball"
+		},
+		{
+			"id": "friendball",
+			"name": "Friend Ball",
+			"itemNo": 9,
+			"description": "A Ball that makes Pokémon friendly.",
+			"type": "ball"
+		},
+		{
+			"id": "fastball",
+			"name": "Fast Ball",
+			"itemNo": 10,
+			"description": "A Ball for catching fast Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "heavyball",
+			"name": "Heavy Ball",
+			"itemNo": 11,
+			"description": "A Ball for catching heavy Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "loveball",
+			"name": "Love Ball",
+			"itemNo": 12,
+			"description": "A Ball for the opposite gender.",
+			"type": "ball"
+		},
+		{
+			"id": "repeatball",
+			"name": "Repeat Ball",
+			"itemNo": 13,
+			"description": "A Ball for Pokémon caught before.",
+			"type": "ball"
+		},
+		{
+			"id": "timerball",
+			"name": "Timer Ball",
+			"itemNo": 14,
+			"description": "A Ball for late in a battle.",
+			"type": "ball"
+		},
+		{
+			"id": "nestball",
+			"name": "Nest Ball",
+			"itemNo": 15,
+			"description": "A Ball for weaker Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "netball",
+			"name": "Net Ball",
+			"itemNo": 16,
+			"description": "A Ball for Water or Bug Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "diveball",
+			"name": "Dive Ball",
+			"itemNo": 17,
+			"description": "A Ball for underwater Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "luxuryball",
+			"name": "Luxury Ball",
+			"itemNo": 18,
+			"description": "A cozy Ball to befriend Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "healball",
+			"name": "Heal Ball",
+			"itemNo": 19,
+			"description": "A remedial Ball to heal Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "quickball",
+			"name": "Quick Ball",
+			"itemNo": 20,
+			"description": "A Ball for early in a battle.",
+			"type": "ball"
+		},
+		{
+			"id": "duskball",
+			"name": "Dusk Ball",
+			"itemNo": 21,
+			"description": "A Ball for nighttime or caves.",
+			"type": "ball"
+		},
+		{
+			"id": "dreamball",
+			"name": "Dream Ball",
+			"itemNo": 22,
+			"description": "A Ball for sleeping Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "premierball",
+			"name": "Premier Ball",
+			"itemNo": 23,
+			"description": "A rare commemorative Ball.",
+			"type": "ball"
+		},
+		{
+			"id": "cherishball",
+			"name": "Cherish Ball",
+			"itemNo": 24,
+			"description": "A quite rare commemorative Ball.",
+			"type": "ball"
+		},
+		{
+			"id": "potion",
+			"name": "Potion",
+			"itemNo": 25,
+			"description": "Restores Pokémon HP by 20.",
+			"type": "medicine"
+		},
+		{
+			"id": "superpotion",
+			"name": "Super Potion",
+			"itemNo": 26,
+			"description": "Restores Pokémon HP by 60.",
+			"type": "medicine"
+		},
+		{
+			"id": "hyperpotion",
+			"name": "Hyper Potion",
+			"itemNo": 27,
+			"description": "Restores Pokémon HP by 120.",
+			"type": "medicine"
+		},
+		{
+			"id": "maxpotion",
+			"name": "Max Potion",
+			"itemNo": 28,
+			"description": "Fully restores Pokémon HP.",
+			"type": "medicine"
+		},
+		{
+			"id": "antidote",
+			"name": "Antidote",
+			"itemNo": 29,
+			"description": "Cures poisoned Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "burnheal",
+			"name": "Burn Heal",
+			"itemNo": 30,
+			"description": "Heals burned Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "paralyzeheal",
+			"name": "ParalyzeHeal",
+			"itemNo": 31,
+			"description": "Heals paralyzed Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "awakening",
+			"name": "Awakening",
+			"itemNo": 32,
+			"description": "Awakens sleeping Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "iceheal",
+			"name": "Ice Heal",
+			"itemNo": 33,
+			"description": "Defrosts frozen Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "fullheal",
+			"name": "Full Heal",
+			"itemNo": 34,
+			"description": "Eliminates all status problems.",
+			"type": "medicine"
+		},
+		{
+			"id": "fullrestore",
+			"name": "Full Restore",
+			"itemNo": 35,
+			"description": "Fully restores HP & status.",
+			"type": "medicine"
+		},
+		{
+			"id": "revive",
+			"name": "Revive",
+			"itemNo": 36,
+			"description": "Restores a fainted Pokémon to 1/2 HP.",
+			"type": "medicine"
+		},
+		{
+			"id": "maxrevive",
+			"name": "Max Revive",
+			"itemNo": 37,
+			"description": "Fully restores a fainted Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "ether",
+			"name": "Ether",
+			"itemNo": 38,
+			"description": "Restores PP of one move by 10.",
+			"type": "medicine"
+		},
+		{
+			"id": "maxether",
+			"name": "Max Ether",
+			"itemNo": 39,
+			"description": "Fully restores PP of one move.",
+			"type": "medicine"
+		},
+		{
+			"id": "elixir",
+			"name": "Elixir",
+			"itemNo": 40,
+			"description": "Restores PP of all moves by 10.",
+			"type": "medicine"
+		},
+		{
+			"id": "maxelixir",
+			"name": "Max Elixir",
+			"itemNo": 41,
+			"description": "Fully restores the PP of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "hpup",
+			"name": "HP Up",
+			"itemNo": 42,
+			"description": "Raises the HP of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "protein",
+			"name": "Protein",
+			"itemNo": 43,
+			"description": "Raises Attack of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "iron",
+			"name": "Iron",
+			"itemNo": 44,
+			"description": "Raises Defense of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "carbos",
+			"name": "Carbos",
+			"itemNo": 45,
+			"description": "Raises Speed of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "calcium",
+			"name": "Calcium",
+			"itemNo": 46,
+			"description": "Raises Sp.Atk of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "zinc",
+			"name": "Zinc",
+			"itemNo": 47,
+			"description": "Raises Sp.Def of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "rarecandy",
+			"name": "Rare Candy",
+			"itemNo": 48,
+			"description": "Raises level of a Pokémon by one.",
+			"type": "medicine"
+		},
+		{
+			"id": "ppup",
+			"name": "PP Up",
+			"itemNo": 49,
+			"description": "Raises max PP of a selected move.",
+			"type": "medicine"
+		},
+		{
+			"id": "ppmax",
+			"name": "PP Max",
+			"itemNo": 50,
+			"description": "Maximizes PP of a selected move.",
+			"type": "medicine"
+		},
+		{
+			"id": "freshwater",
+			"name": "Fresh Water",
+			"itemNo": 51,
+			"description": "Restores Pokémon HP by 30.",
+			"type": "medicine"
+		},
+		{
+			"id": "sodapop",
+			"name": "Soda Pop",
+			"itemNo": 52,
+			"description": "Restores Pokémon HP by 50.",
+			"type": "medicine"
+		},
+		{
+			"id": "lemonade",
+			"name": "Lemonade",
+			"itemNo": 53,
+			"description": "Restores Pokémon HP by 70.",
+			"type": "medicine"
+		},
+		{
+			"id": "moomoomilk",
+			"name": "Moomoo Milk",
+			"itemNo": 54,
+			"description": "Restores Pokémon HP by 100.",
+			"type": "medicine"
+		},
+		{
+			"id": "cakeofrage",
+			"name": "Cake of Rage",
+			"itemNo": 55,
+			"description": "Eliminates all status problems.",
+			"type": "medicine"
+		},
+		{
+			"id": "pewtercrunch",
+			"name": "PewterCrunch",
+			"itemNo": 56,
+			"description": "Eliminates all status problems.",
+			"type": "medicine"
+		},
+		{
+			"id": "energypowder",
+			"name": "EnergyPowder",
+			"itemNo": 57,
+			"description": "Restores Pokémon HP by 60. Bitter.",
+			"type": "medicine"
+		},
+		{
+			"id": "energyroot",
+			"name": "Energy Root",
+			"itemNo": 58,
+			"description": "Restores Pokémon HP by 120. Bitter.",
+			"type": "medicine"
+		},
+		{
+			"id": "healpowder",
+			"name": "Heal Powder",
+			"itemNo": 59,
+			"description": "Cures all status problems. Bitter.",
+			"type": "medicine"
+		},
+		{
+			"id": "revivalherb",
+			"name": "Revival Herb",
+			"itemNo": 60,
+			"description": "Revives fainted Pokémon. Bitter.",
+			"type": "medicine"
+		},
+		{
+			"id": "sacredash",
+			"name": "Sacred Ash",
+			"itemNo": 61,
+			"description": "Fully revives all fainted Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "cheriberry",
+			"name": "Cheri Berry",
+			"itemNo": 62,
+			"description": "A self-cure for paralysis. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "chestoberry",
+			"name": "Chesto Berry",
+			"itemNo": 63,
+			"description": "A self-awakening for sleep. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "pechaberry",
+			"name": "Pecha Berry",
+			"itemNo": 64,
+			"description": "A self-cure for poison. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "rawstberry",
+			"name": "Rawst Berry",
+			"itemNo": 65,
+			"description": "A self-heal for a burn. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "aspearberry",
+			"name": "Aspear Berry",
+			"itemNo": 66,
+			"description": "A self-cure for freezing. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "leppaberry",
+			"name": "Leppa Berry",
+			"itemNo": 67,
+			"description": "A self-restore item. (10<BOLDP><BOLDP>, Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "oranberry",
+			"name": "Oran Berry",
+			"itemNo": 68,
+			"description": "A self-restore item. (10HP, Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "persimberry",
+			"name": "Persim Berry",
+			"itemNo": 69,
+			"description": "A self-cure for confusion. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "lumberry",
+			"name": "Lum Berry",
+			"itemNo": 70,
+			"description": "Cures all status problems. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "sitrusberry",
+			"name": "Sitrus Berry",
+			"itemNo": 71,
+			"description": "Self-restore item. (1/4 max HP, Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "figyberry",
+			"name": "Figy Berry",
+			"itemNo": 72,
+			"description": "Self-restore item. (1/3 max HP, Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "pomegberry",
+			"name": "Pomeg Berry",
+			"itemNo": 73,
+			"description": "Raises friendship but lowers HP.",
+			"type": "berries"
+		},
+		{
+			"id": "kelpsyberry",
+			"name": "Kelpsy Berry",
+			"itemNo": 74,
+			"description": "Raises friendship but lowers Attack.",
+			"type": "berries"
+		},
+		{
+			"id": "qualotberry",
+			"name": "Qualot Berry",
+			"itemNo": 75,
+			"description": "Raises friendship, lowers Defense.",
+			"type": "berries"
+		},
+		{
+			"id": "hondewberry",
+			"name": "Hondew Berry",
+			"itemNo": 76,
+			"description": "Raises friendship but lowers Sp.Atk.",
+			"type": "berries"
+		},
+		{
+			"id": "grepaberry",
+			"name": "Grepa Berry",
+			"itemNo": 77,
+			"description": "Raises friendship but lowers Sp.Def.",
+			"type": "berries"
+		},
+		{
+			"id": "tamatoberry",
+			"name": "Tamato Berry",
+			"itemNo": 78,
+			"description": "Raises friendship but lowers Speed.",
+			"type": "berries"
+		},
+		{
+			"id": "liechiberry",
+			"name": "Liechi Berry",
+			"itemNo": 79,
+			"description": "Raises Attack in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "ganlonberry",
+			"name": "Ganlon Berry",
+			"itemNo": 80,
+			"description": "Raises Defense in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "salacberry",
+			"name": "Salac Berry",
+			"itemNo": 81,
+			"description": "Raises Speed in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "petayaberry",
+			"name": "Petaya Berry",
+			"itemNo": 82,
+			"description": "Raises Sp.Atk in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "apicotberry",
+			"name": "Apicot Berry",
+			"itemNo": 83,
+			"description": "Raises Sp.Def in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "lansatberry",
+			"name": "Lansat Berry",
+			"itemNo": 84,
+			"description": "Ups critical hit ratio in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "starfberry",
+			"name": "Starf Berry",
+			"itemNo": 85,
+			"description": "Ups a random stat in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "enigmaberry",
+			"name": "Enigma Berry",
+			"itemNo": 86,
+			"description": "Restores HP on super-effective hit.",
+			"type": "berries"
+		},
+		{
+			"id": "custapberry",
+			"name": "Custap Berry",
+			"itemNo": 87,
+			"description": "Moves first in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "jabocaberry",
+			"name": "Jaboca Berry",
+			"itemNo": 88,
+			"description": "Damages foe on a physical hit.",
+			"type": "berries"
+		},
+		{
+			"id": "rowapberry",
+			"name": "Rowap Berry",
+			"itemNo": 89,
+			"description": "Damages foe on a special hit.",
+			"type": "berries"
+		},
+		{
+			"id": "keeberry",
+			"name": "Kee Berry",
+			"itemNo": 90,
+			"description": "Raises Defense on a physical hit.",
+			"type": "berries"
+		},
+		{
+			"id": "marangaberry",
+			"name": "MarangaBerry",
+			"itemNo": 91,
+			"description": "Raises Sp.Def on a special hit.",
+			"type": "berries"
+		},
+		{
+			"id": "berryjuice",
+			"name": "Berry Juice",
+			"itemNo": 92,
+			"description": "A self-restore item. (20HP, Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "repel",
+			"name": "Repel",
+			"itemNo": 93,
+			"description": "Repels weak Pokémon for 100 steps.",
+			"type": "item"
+		},
+		{
+			"id": "superrepel",
+			"name": "Super Repel",
+			"itemNo": 94,
+			"description": "Repels weak Pokémon for 200 steps.",
+			"type": "item"
+		},
+		{
+			"id": "maxrepel",
+			"name": "Max Repel",
+			"itemNo": 95,
+			"description": "Repels weak Pokémon for 250 steps.",
+			"type": "item"
+		},
+		{
+			"id": "escaperope",
+			"name": "Escape Rope",
+			"itemNo": 96,
+			"description": "Use for escaping from caves, etc.",
+			"type": "item"
+		},
+		{
+			"id": "pokedoll",
+			"name": "Poké Doll",
+			"itemNo": 97,
+			"description": "Use to escape from a wild Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "mulch",
+			"name": "Mulch",
+			"itemNo": 98,
+			"description": "Plant fertilizer for Berry trees.",
+			"type": "item"
+		},
+		{
+			"id": "sweethoney",
+			"name": "Sweet Honey",
+			"itemNo": 99,
+			"description": "The aroma attracts wild Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "xattack",
+			"name": "X Attack",
+			"itemNo": 100,
+			"description": "Raises Attack. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "xdefend",
+			"name": "X Defend",
+			"itemNo": 101,
+			"description": "Raises Defense. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "xspeed",
+			"name": "X Speed",
+			"itemNo": 102,
+			"description": "Raises Speed. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "xspatk",
+			"name": "X Sp.Atk",
+			"itemNo": 103,
+			"description": "Raises Sp.Atk. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "xspdef",
+			"name": "X Sp.Def",
+			"itemNo": 104,
+			"description": "Raises Sp.Def. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "xaccuracy",
+			"name": "X Accuracy",
+			"itemNo": 105,
+			"description": "Raises accuracy. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "direhit",
+			"name": "Dire Hit",
+			"itemNo": 106,
+			"description": "Ups critical hit ratio. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "guardstats",
+			"name": "Guard Stats",
+			"itemNo": 107,
+			"description": "Prevents stat drops. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "abilitycap",
+			"name": "Ability Cap",
+			"itemNo": 108,
+			"description": "Switches a Pokémon's ability.",
+			"type": "item"
+		},
+		{
+			"id": "abilitypatch",
+			"name": "AbilityPatch",
+			"itemNo": 109,
+			"description": "Switches to a rare ability.",
+			"type": "item"
+		},
+		{
+			"id": "leafstone",
+			"name": "Leaf Stone",
+			"itemNo": 110,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "firestone",
+			"name": "Fire Stone",
+			"itemNo": 111,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "waterstone",
+			"name": "Water Stone",
+			"itemNo": 112,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "thunderstone",
+			"name": "ThunderStone",
+			"itemNo": 113,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "icestone",
+			"name": "Ice Stone",
+			"itemNo": 114,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "moonstone",
+			"name": "Moon Stone",
+			"itemNo": 115,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "sunstone",
+			"name": "Sun Stone",
+			"itemNo": 116,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "duskstone",
+			"name": "Dusk Stone",
+			"itemNo": 117,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "shinystone",
+			"name": "Shiny Stone",
+			"itemNo": 118,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "everstone",
+			"name": "Everstone",
+			"itemNo": 119,
+			"description": "Stops evolution. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "expshare",
+			"name": "Exp.Share",
+			"itemNo": 120,
+			"description": "Shares battle Exp. Points. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "silkscarf",
+			"name": "Silk Scarf",
+			"itemNo": 121,
+			"description": "Powers up Normaltype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "blackbelt",
+			"name": "Black Belt",
+			"itemNo": 122,
+			"description": "Boosts Fightingtype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "sharpbeak",
+			"name": "Sharp Beak",
+			"itemNo": 123,
+			"description": "Powers up Flyingtype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "poisonbarb",
+			"name": "Poison Barb",
+			"itemNo": 124,
+			"description": "Powers up Poisontype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "softsand",
+			"name": "Soft Sand",
+			"itemNo": 125,
+			"description": "Powers up Groundtype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "hardstone",
+			"name": "Hard Stone",
+			"itemNo": 126,
+			"description": "Powers up Rocktype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "silverpowder",
+			"name": "SilverPowder",
+			"itemNo": 127,
+			"description": "Powers up Bug-type moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "spelltag",
+			"name": "Spell Tag",
+			"itemNo": 128,
+			"description": "Powers up Ghosttype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "metalcoat",
+			"name": "Metal Coat",
+			"itemNo": 129,
+			"description": "Powers up Steeltype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "charcoal",
+			"name": "Charcoal",
+			"itemNo": 130,
+			"description": "Powers up Firetype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "mysticwater",
+			"name": "Mystic Water",
+			"itemNo": 131,
+			"description": "Powers up Watertype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "miracleseed",
+			"name": "Miracle Seed",
+			"itemNo": 132,
+			"description": "Powers up Grasstype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "magnet",
+			"name": "Magnet",
+			"itemNo": 133,
+			"description": "Boosts Electrictype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "twistedspoon",
+			"name": "TwistedSpoon",
+			"itemNo": 134,
+			"description": "Powers up Psychictype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "nevermeltice",
+			"name": "NeverMeltIce",
+			"itemNo": 135,
+			"description": "Powers up Ice-type moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "dragonfang",
+			"name": "Dragon Fang",
+			"itemNo": 136,
+			"description": "Powers up Dragontype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "blackglasses",
+			"name": "BlackGlasses",
+			"itemNo": 137,
+			"description": "Powers up Darktype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "pinkbow",
+			"name": "Pink Bow",
+			"itemNo": 138,
+			"description": "Powers up Fairytype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "berserkgene",
+			"name": "Berserk Gene",
+			"itemNo": 139,
+			"description": "Boosts Attack but causes confusion.",
+			"type": "item"
+		},
+		{
+			"id": "brightpowder",
+			"name": "BrightPowder",
+			"itemNo": 140,
+			"description": "Lowers the foe's accuracy. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "quickclaw",
+			"name": "Quick Claw",
+			"itemNo": 141,
+			"description": "Boosts chances of moving 1st. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "kingsrock",
+			"name": "King's Rock",
+			"itemNo": 142,
+			"description": "May make the foe flinch. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "amuletcoin",
+			"name": "Amulet Coin",
+			"itemNo": 143,
+			"description": "Doubles monetary earnings. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "cleansetag",
+			"name": "Cleanse Tag",
+			"itemNo": 144,
+			"description": "Helps repel wild Pokémon. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "smokeball",
+			"name": "Smoke Ball",
+			"itemNo": 145,
+			"description": "Escape from wild Pokémon. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "focusband",
+			"name": "Focus Band",
+			"itemNo": 146,
+			"description": "May prevent fainting. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "luckyegg",
+			"name": "Lucky Egg",
+			"itemNo": 147,
+			"description": "Earns extra Exp. points. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "leftovers",
+			"name": "Leftovers",
+			"itemNo": 148,
+			"description": "Restores HP during battle. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "soothebell",
+			"name": "Soothe Bell",
+			"itemNo": 149,
+			"description": "Calms and fosters friendship. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "shellbell",
+			"name": "Shell Bell",
+			"itemNo": 150,
+			"description": "Self-restore item. (1/8 damage, Hold)",
+			"type": "item"
+		},
+		{
+			"id": "muscleband",
+			"name": "Muscle Band",
+			"itemNo": 151,
+			"description": "Powers up physical moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "wiseglasses",
+			"name": "Wise Glasses",
+			"itemNo": 152,
+			"description": "Powers up special moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "expertbelt",
+			"name": "Expert Belt",
+			"itemNo": 153,
+			"description": "Ups super effective moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "lightclay",
+			"name": "Light Clay",
+			"itemNo": 154,
+			"description": "Extends duration of barrier moves.",
+			"type": "item"
+		},
+		{
+			"id": "lifeorb",
+			"name": "Life Orb",
+			"itemNo": 155,
+			"description": "Powers up moves with HP. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "focussash",
+			"name": "Focus Sash",
+			"itemNo": 156,
+			"description": "Endures one OHKO move at full HP.",
+			"type": "item"
+		},
+		{ "id": "metronome", "name": "Metronome", "itemNo": 157, "type": "item" },
+		{
+			"id": "ironball",
+			"name": "Iron Ball",
+			"itemNo": 158,
+			"description": "Lowers Speed and grounds. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "laggingtail",
+			"name": "Lagging Tail",
+			"itemNo": 159,
+			"description": "Always moves last. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "destinyknot",
+			"name": "Destiny Knot",
+			"itemNo": 160,
+			"description": "Infatuates the foe back. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "gripclaw",
+			"name": "Grip Claw",
+			"itemNo": 161,
+			"description": "Extends duration of trapping moves.",
+			"type": "item"
+		},
+		{
+			"id": "shedshell",
+			"name": "Shed Shell",
+			"itemNo": 162,
+			"description": "Allows switching out. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "bigroot",
+			"name": "Big Root",
+			"itemNo": 163,
+			"description": "Powers up draining moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "eviolite",
+			"name": "Eviolite",
+			"itemNo": 164,
+			"description": "Ups Def and Sp.Def of evolvers.",
+			"type": "item"
+		},
+		{
+			"id": "rockyhelmet",
+			"name": "Rocky Helmet",
+			"itemNo": 165,
+			"description": "Damages foe on contact. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "airballoon",
+			"name": "Air Balloon",
+			"itemNo": 166,
+			"description": "Avoids one Ground attack. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "redcard",
+			"name": "Red Card",
+			"itemNo": 167,
+			"description": "Switches out foe when hit. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "bindingband",
+			"name": "Binding Band",
+			"itemNo": 168,
+			"description": "Powers up trapping moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "ejectbutton",
+			"name": "Eject Button",
+			"itemNo": 169,
+			"description": "Switches out when hit. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "weakpolicy",
+			"name": "Weak Policy",
+			"itemNo": 170,
+			"description": "Super effective hit ups offenses.",
+			"type": "item"
+		},
+		{
+			"id": "assaultvest",
+			"name": "Assault Vest",
+			"itemNo": 171,
+			"description": "Boosts Sp.Def, but bans status moves.",
+			"type": "item"
+		},
+		{
+			"id": "safegoggles",
+			"name": "Safe Goggles",
+			"itemNo": 172,
+			"description": "Protects from weather damage.",
+			"type": "item"
+		},
+		{
+			"id": "protectpads",
+			"name": "Protect Pads",
+			"itemNo": 173,
+			"description": "Protects from contact effects.",
+			"type": "item"
+		},
+		{
+			"id": "throatspray",
+			"name": "Throat Spray",
+			"itemNo": 174,
+			"description": "Raises Sp.Atk on a sound move.",
+			"type": "item"
+		},
+		{
+			"id": "ejectpack",
+			"name": "Eject Pack",
+			"itemNo": 175,
+			"description": "Switches out when stats fall. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "heavyboots",
+			"name": "Heavy Boots",
+			"itemNo": 176,
+			"description": "Protects from traps. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "blundrpolicy",
+			"name": "BlundrPolicy",
+			"itemNo": 177,
+			"description": "Raises Speed when a move misses.",
+			"type": "item"
+		},
+		{
+			"id": "roomservice",
+			"name": "Room Service",
+			"itemNo": 178,
+			"description": "Lowers Speed in Trick Room. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "clearamulet",
+			"name": "Clear Amulet",
+			"itemNo": 179,
+			"description": "Prevents statlowering by foes.",
+			"type": "item"
+		},
+		{
+			"id": "mirrorherb",
+			"name": "Mirror Herb",
+			"itemNo": 180,
+			"description": "Copies foe's statboost once.",
+			"type": "item"
+		},
+		{
+			"id": "punchinglove",
+			"name": "PunchinGlove",
+			"itemNo": 181,
+			"description": "Powers punch moves with no contact.",
+			"type": "item"
+		},
+		{
+			"id": "covertcloak",
+			"name": "Covert Cloak",
+			"itemNo": 182,
+			"description": "Blocks additional attack effects.",
+			"type": "item"
+		},
+		{
+			"id": "loadeddice",
+			"name": "Loaded Dice",
+			"itemNo": 183,
+			"description": "Multi-hit moves hit more often.",
+			"type": "item"
+		},
+		{
+			"id": "lightball",
+			"name": "Light Ball",
+			"itemNo": 184,
+			"description": "Boost Pikachu's Attack and Sp.Atk.",
+			"type": "item"
+		},
+		{
+			"id": "leek",
+			"name": "Leek",
+			"itemNo": 185,
+			"description": "An ordinary leek. Sell low.",
+			"type": "item"
+		},
+		{
+			"id": "thickclub",
+			"name": "Thick Club",
+			"itemNo": 186,
+			"description": "Boost Cubone's and Marowak's Attack.",
+			"type": "item"
+		},
+		{
+			"id": "luckypunch",
+			"name": "Lucky Punch",
+			"itemNo": 187,
+			"description": "Ups critical hit ratio of Chansey.",
+			"type": "item"
+		},
+		{
+			"id": "metalpowder",
+			"name": "Metal Powder",
+			"itemNo": 188,
+			"description": "Raises Defense of Ditto. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "quickpowder",
+			"name": "Quick Powder",
+			"itemNo": 189,
+			"description": "Raises Speed of Ditto. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "armorsuit",
+			"name": "Armor Suit",
+			"itemNo": 190,
+			"description": "A suit of armor for some Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "scopelens",
+			"name": "Scope Lens",
+			"itemNo": 191,
+			"description": "Raises critical hit ratio. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "widelens",
+			"name": "Wide Lens",
+			"itemNo": 192,
+			"description": "Slightly boosts accuracy. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "zoomlens",
+			"name": "Zoom Lens",
+			"itemNo": 193,
+			"description": "Boosts accuracy when moving 2nd.",
+			"type": "item"
+		},
+		{
+			"id": "mentalherb",
+			"name": "Mental Herb",
+			"itemNo": 194,
+			"description": "A self-cure for infatuation.",
+			"type": "item"
+		},
+		{
+			"id": "powerherb",
+			"name": "Power Herb",
+			"itemNo": 195,
+			"description": "Skips charging of moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "whiteherb",
+			"name": "White Herb",
+			"itemNo": 196,
+			"description": "A self-cure for lowered stats.",
+			"type": "item"
+		},
+		{
+			"id": "damprock",
+			"name": "Damp Rock",
+			"itemNo": 197,
+			"description": "Extends duration of rain. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "heatrock",
+			"name": "Heat Rock",
+			"itemNo": 198,
+			"description": "Extends duration of sun. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "smoothrock",
+			"name": "Smooth Rock",
+			"itemNo": 199,
+			"description": "Extends duration of sandstorms.",
+			"type": "item"
+		},
+		{
+			"id": "icyrock",
+			"name": "Icy Rock",
+			"itemNo": 200,
+			"description": "Extends duration of hail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "choiceband",
+			"name": "Choice Band",
+			"itemNo": 201,
+			"description": "Boosts Attack, but allows one move.",
+			"type": "item"
+		},
+		{
+			"id": "choicescarf",
+			"name": "Choice Scarf",
+			"itemNo": 202,
+			"description": "Boosts Speed, but allows one move.",
+			"type": "item"
+		},
+		{
+			"id": "choicespecs",
+			"name": "Choice Specs",
+			"itemNo": 203,
+			"description": "Boosts Sp.Atk, but allows one move.",
+			"type": "item"
+		},
+		{
+			"id": "flameorb",
+			"name": "Flame Orb",
+			"itemNo": 204,
+			"description": "Causes a burn. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "toxicorb",
+			"name": "Toxic Orb",
+			"itemNo": 205,
+			"description": "Causes bad poison. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "blacksludge",
+			"name": "Black Sludge",
+			"itemNo": 206,
+			"description": "Restores HP for Poison Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "machobrace",
+			"name": "Macho Brace",
+			"itemNo": 207,
+			"description": "Boosts stat gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "powerweight",
+			"name": "Power Weight",
+			"itemNo": 208,
+			"description": "Boosts HP gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "powerbracer",
+			"name": "Power Bracer",
+			"itemNo": 209,
+			"description": "Ups Attack gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "powerbelt",
+			"name": "Power Belt",
+			"itemNo": 210,
+			"description": "Ups Defense gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "powerlens",
+			"name": "Power Lens",
+			"itemNo": 211,
+			"description": "Ups Sp.Atk gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "powerband",
+			"name": "Power Band",
+			"itemNo": 212,
+			"description": "Ups Sp.Def gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "poweranklet",
+			"name": "Power Anklet",
+			"itemNo": 213,
+			"description": "Ups Speed gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "dragonscale",
+			"name": "Dragon Scale",
+			"itemNo": 214,
+			"description": "A rare Dragon-type item.",
+			"type": "item"
+		},
+		{
+			"id": "upgrade",
+			"name": "Up-Grade",
+			"itemNo": 215,
+			"description": "A mysterious box made by Silph Co.",
+			"type": "item"
+		},
+		{
+			"id": "dubiousdisc",
+			"name": "Dubious Disc",
+			"itemNo": 216,
+			"description": "A transparent disc of unknown origin.",
+			"type": "item"
+		},
+		{
+			"id": "protector",
+			"name": "Protector",
+			"itemNo": 217,
+			"description": "A protective item. Stiff and heavy.",
+			"type": "item"
+		},
+		{
+			"id": "electirizer",
+			"name": "Electirizer",
+			"itemNo": 218,
+			"description": "A box packed with electric energy.",
+			"type": "item"
+		},
+		{
+			"id": "magmarizer",
+			"name": "Magmarizer",
+			"itemNo": 219,
+			"description": "A box packed with magma energy.",
+			"type": "item"
+		},
+		{
+			"id": "razorfang",
+			"name": "Razor Fang",
+			"itemNo": 220,
+			"description": "May make the foe flinch. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "razorclaw",
+			"name": "Razor Claw",
+			"itemNo": 221,
+			"description": "Raises critical hit ratio. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "ovalstone",
+			"name": "Oval Stone",
+			"itemNo": 222,
+			"description": "A stone as round as a Pokémon Egg.",
+			"type": "item"
+		},
+		{
+			"id": "oddsouvenir",
+			"name": "Odd Souvenir",
+			"itemNo": 223,
+			"description": "An ornament from a far-away place.",
+			"type": "item"
+		},
+		{
+			"id": "linkingcord",
+			"name": "Linking Cord",
+			"itemNo": 224,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "silverleaf",
+			"name": "Silver Leaf",
+			"itemNo": 225,
+			"description": "A strange, silvercolored leaf.",
+			"type": "item"
+		},
+		{
+			"id": "goldleaf",
+			"name": "Gold Leaf",
+			"itemNo": 226,
+			"description": "A strange, goldcolored leaf.",
+			"type": "item"
+		},
+		{
+			"id": "mintleaf",
+			"name": "Mint Leaf",
+			"itemNo": 227,
+			"description": "A fragrant sprig of mint.",
+			"type": "item"
+		},
+		{
+			"id": "bottlecap",
+			"name": "Bottle Cap",
+			"itemNo": 228,
+			"description": "A shiny, rare bottle cap.",
+			"type": "item"
+		},
+		{
+			"id": "nugget",
+			"name": "Nugget",
+			"itemNo": 229,
+			"description": "Made of pure gold. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "bignugget",
+			"name": "Big Nugget",
+			"itemNo": 230,
+			"description": "Made of pure gold. Sell very high.",
+			"type": "item"
+		},
+		{
+			"id": "tinymushroom",
+			"name": "TinyMushroom",
+			"itemNo": 231,
+			"description": "An ordinary mushroom. Sell low.",
+			"type": "item"
+		},
+		{
+			"id": "bigmushroom",
+			"name": "Big Mushroom",
+			"itemNo": 232,
+			"description": "A rare mushroom. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "balmmushroom",
+			"name": "BalmMushroom",
+			"itemNo": 233,
+			"description": "A rare mushroom. Sell very high.",
+			"type": "item"
+		},
+		{
+			"id": "pearl",
+			"name": "Pearl",
+			"itemNo": 234,
+			"description": "A beautiful pearl. Sell low.",
+			"type": "item"
+		},
+		{
+			"id": "bigpearl",
+			"name": "Big Pearl",
+			"itemNo": 235,
+			"description": "A big, beautiful pearl. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "pearlstring",
+			"name": "Pearl String",
+			"itemNo": 236,
+			"description": "Big, shiny pearls. Sell very high.",
+			"type": "item"
+		},
+		{
+			"id": "stardust",
+			"name": "Stardust",
+			"itemNo": 237,
+			"description": "Pretty, red sand. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "starpiece",
+			"name": "Star Piece",
+			"itemNo": 238,
+			"description": "A hunk of red gem. Sell very high.",
+			"type": "item"
+		},
+		{
+			"id": "brickpiece",
+			"name": "Brick Piece",
+			"itemNo": 239,
+			"description": "A chunk of tile. Sell low.",
+			"type": "item"
+		},
+		{
+			"id": "rarebone",
+			"name": "Rare Bone",
+			"itemNo": 240,
+			"description": "A rare bone. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "slowpoketail",
+			"name": "SlowpokeTail",
+			"itemNo": 241,
+			"description": "Very tasty. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "helixfossil",
+			"name": "Helix Fossil",
+			"itemNo": 242,
+			"description": "A fossilized Pokémon shell.",
+			"type": "item"
+		},
+		{
+			"id": "domefossil",
+			"name": "Dome Fossil",
+			"itemNo": 243,
+			"description": "A fossilized Pokémon shell.",
+			"type": "item"
+		},
+		{
+			"id": "oldamber",
+			"name": "Old Amber",
+			"itemNo": 244,
+			"description": "Fossilized resin containing DNA.",
+			"type": "item"
+		},
+		{
+			"id": "flowermail",
+			"name": "Flower Mail",
+			"itemNo": 245,
+			"description": "Flower-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "surfmail",
+			"name": "Surf Mail",
+			"itemNo": 246,
+			"description": "Lapras-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "litebluemail",
+			"name": "LiteBlueMail",
+			"itemNo": 247,
+			"description": "Dratini-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "portraitmail",
+			"name": "PortraitMail",
+			"itemNo": 248,
+			"description": "Mail featuring the holder's likeness.",
+			"type": "item"
+		},
+		{
+			"id": "lovelymail",
+			"name": "Lovely Mail",
+			"itemNo": 249,
+			"description": "Heart-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "eonmail",
+			"name": "Eon Mail",
+			"itemNo": 250,
+			"description": "Eevee-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "morphmail",
+			"name": "Morph Mail",
+			"itemNo": 251,
+			"description": "Ditto-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "blueskymail",
+			"name": "BlueSky Mail",
+			"itemNo": 252,
+			"description": "Sky-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "musicmail",
+			"name": "Music Mail",
+			"itemNo": 253,
+			"description": "Natu-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "miragemail",
+			"name": "Mirage Mail",
+			"itemNo": 254,
+			"description": "Mew-print Mail. (Hold)",
+			"type": "item"
+		}
+	],
+	"faithful": [
+		{
+			"id": "pokeball",
+			"name": "Poké Ball",
+			"itemNo": 1,
+			"description": "An item for catching Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "greatball",
+			"name": "Great Ball",
+			"itemNo": 2,
+			"description": "A Ball with a decent success rate.",
+			"type": "ball"
+		},
+		{
+			"id": "ultraball",
+			"name": "Ultra Ball",
+			"itemNo": 3,
+			"description": "A Ball with a high rate of success.",
+			"type": "ball"
+		},
+		{
+			"id": "masterball",
+			"name": "Master Ball",
+			"itemNo": 4,
+			"description": "The best Ball. It never misses.",
+			"type": "ball"
+		},
+		{
+			"id": "safariball",
+			"name": "Safari Ball",
+			"itemNo": 5,
+			"description": "The Safari Game Ball.",
+			"type": "ball"
+		},
+		{
+			"id": "levelball",
+			"name": "Level Ball",
+			"itemNo": 6,
+			"description": "A Ball for lowerlevel Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "lureball",
+			"name": "Lure Ball",
+			"itemNo": 7,
+			"description": "A Ball for Pokémon hooked by a Rod.",
+			"type": "ball"
+		},
+		{
+			"id": "moonball",
+			"name": "Moon Ball",
+			"itemNo": 8,
+			"description": "A Ball for Moon Stone evolvers.",
+			"type": "ball"
+		},
+		{
+			"id": "friendball",
+			"name": "Friend Ball",
+			"itemNo": 9,
+			"description": "A Ball that makes Pokémon friendly.",
+			"type": "ball"
+		},
+		{
+			"id": "fastball",
+			"name": "Fast Ball",
+			"itemNo": 10,
+			"description": "A Ball for catching fast Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "heavyball",
+			"name": "Heavy Ball",
+			"itemNo": 11,
+			"description": "A Ball for catching heavy Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "loveball",
+			"name": "Love Ball",
+			"itemNo": 12,
+			"description": "A Ball for the opposite gender.",
+			"type": "ball"
+		},
+		{
+			"id": "repeatball",
+			"name": "Repeat Ball",
+			"itemNo": 13,
+			"description": "A Ball for Pokémon caught before.",
+			"type": "ball"
+		},
+		{
+			"id": "timerball",
+			"name": "Timer Ball",
+			"itemNo": 14,
+			"description": "A Ball for late in a battle.",
+			"type": "ball"
+		},
+		{
+			"id": "nestball",
+			"name": "Nest Ball",
+			"itemNo": 15,
+			"description": "A Ball for weaker Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "netball",
+			"name": "Net Ball",
+			"itemNo": 16,
+			"description": "A Ball for Water or Bug Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "diveball",
+			"name": "Dive Ball",
+			"itemNo": 17,
+			"description": "A Ball for underwater Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "luxuryball",
+			"name": "Luxury Ball",
+			"itemNo": 18,
+			"description": "A cozy Ball to befriend Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "healball",
+			"name": "Heal Ball",
+			"itemNo": 19,
+			"description": "A remedial Ball to heal Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "quickball",
+			"name": "Quick Ball",
+			"itemNo": 20,
+			"description": "A Ball for early in a battle.",
+			"type": "ball"
+		},
+		{
+			"id": "duskball",
+			"name": "Dusk Ball",
+			"itemNo": 21,
+			"description": "A Ball for nighttime or caves.",
+			"type": "ball"
+		},
+		{
+			"id": "dreamball",
+			"name": "Dream Ball",
+			"itemNo": 22,
+			"description": "A Ball for sleeping Pokémon.",
+			"type": "ball"
+		},
+		{
+			"id": "premierball",
+			"name": "Premier Ball",
+			"itemNo": 23,
+			"description": "A rare commemorative Ball.",
+			"type": "ball"
+		},
+		{
+			"id": "cherishball",
+			"name": "Cherish Ball",
+			"itemNo": 24,
+			"description": "A quite rare commemorative Ball.",
+			"type": "ball"
+		},
+		{
+			"id": "potion",
+			"name": "Potion",
+			"itemNo": 25,
+			"description": "Restores Pokémon HP by 20.",
+			"type": "medicine"
+		},
+		{
+			"id": "superpotion",
+			"name": "Super Potion",
+			"itemNo": 26,
+			"description": "Restores Pokémon HP by 60.",
+			"type": "medicine"
+		},
+		{
+			"id": "hyperpotion",
+			"name": "Hyper Potion",
+			"itemNo": 27,
+			"description": "Restores Pokémon HP by 120.",
+			"type": "medicine"
+		},
+		{
+			"id": "maxpotion",
+			"name": "Max Potion",
+			"itemNo": 28,
+			"description": "Fully restores Pokémon HP.",
+			"type": "medicine"
+		},
+		{
+			"id": "antidote",
+			"name": "Antidote",
+			"itemNo": 29,
+			"description": "Cures poisoned Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "burnheal",
+			"name": "Burn Heal",
+			"itemNo": 30,
+			"description": "Heals burned Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "paralyzeheal",
+			"name": "ParalyzeHeal",
+			"itemNo": 31,
+			"description": "Heals paralyzed Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "awakening",
+			"name": "Awakening",
+			"itemNo": 32,
+			"description": "Awakens sleeping Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "iceheal",
+			"name": "Ice Heal",
+			"itemNo": 33,
+			"description": "Defrosts frozen Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "fullheal",
+			"name": "Full Heal",
+			"itemNo": 34,
+			"description": "Eliminates all status problems.",
+			"type": "medicine"
+		},
+		{
+			"id": "fullrestore",
+			"name": "Full Restore",
+			"itemNo": 35,
+			"description": "Fully restores HP & status.",
+			"type": "medicine"
+		},
+		{
+			"id": "revive",
+			"name": "Revive",
+			"itemNo": 36,
+			"description": "Restores a fainted Pokémon to 1/2 HP.",
+			"type": "medicine"
+		},
+		{
+			"id": "maxrevive",
+			"name": "Max Revive",
+			"itemNo": 37,
+			"description": "Fully restores a fainted Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "ether",
+			"name": "Ether",
+			"itemNo": 38,
+			"description": "Restores PP of one move by 10.",
+			"type": "medicine"
+		},
+		{
+			"id": "maxether",
+			"name": "Max Ether",
+			"itemNo": 39,
+			"description": "Fully restores PP of one move.",
+			"type": "medicine"
+		},
+		{
+			"id": "elixir",
+			"name": "Elixir",
+			"itemNo": 40,
+			"description": "Restores PP of all moves by 10.",
+			"type": "medicine"
+		},
+		{
+			"id": "maxelixir",
+			"name": "Max Elixir",
+			"itemNo": 41,
+			"description": "Fully restores the PP of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "hpup",
+			"name": "HP Up",
+			"itemNo": 42,
+			"description": "Raises the HP of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "protein",
+			"name": "Protein",
+			"itemNo": 43,
+			"description": "Raises Attack of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "iron",
+			"name": "Iron",
+			"itemNo": 44,
+			"description": "Raises Defense of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "carbos",
+			"name": "Carbos",
+			"itemNo": 45,
+			"description": "Raises Speed of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "calcium",
+			"name": "Calcium",
+			"itemNo": 46,
+			"description": "Raises Sp.Atk of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "zinc",
+			"name": "Zinc",
+			"itemNo": 47,
+			"description": "Raises Sp.Def of one Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "rarecandy",
+			"name": "Rare Candy",
+			"itemNo": 48,
+			"description": "Raises level of a Pokémon by one.",
+			"type": "medicine"
+		},
+		{
+			"id": "ppup",
+			"name": "PP Up",
+			"itemNo": 49,
+			"description": "Raises max PP of a selected move.",
+			"type": "medicine"
+		},
+		{
+			"id": "ppmax",
+			"name": "PP Max",
+			"itemNo": 50,
+			"description": "Maximizes PP of a selected move.",
+			"type": "medicine"
+		},
+		{
+			"id": "freshwater",
+			"name": "Fresh Water",
+			"itemNo": 51,
+			"description": "Restores Pokémon HP by 30.",
+			"type": "medicine"
+		},
+		{
+			"id": "sodapop",
+			"name": "Soda Pop",
+			"itemNo": 52,
+			"description": "Restores Pokémon HP by 50.",
+			"type": "medicine"
+		},
+		{
+			"id": "lemonade",
+			"name": "Lemonade",
+			"itemNo": 53,
+			"description": "Restores Pokémon HP by 70.",
+			"type": "medicine"
+		},
+		{
+			"id": "moomoomilk",
+			"name": "Moomoo Milk",
+			"itemNo": 54,
+			"description": "Restores Pokémon HP by 100.",
+			"type": "medicine"
+		},
+		{
+			"id": "ragecandybar",
+			"name": "RageCandyBar",
+			"itemNo": 55,
+			"description": "Eliminates all status problems.",
+			"type": "medicine"
+		},
+		{
+			"id": "pewtercrunch",
+			"name": "PewterCrunch",
+			"itemNo": 56,
+			"description": "Eliminates all status problems.",
+			"type": "medicine"
+		},
+		{
+			"id": "energypowder",
+			"name": "EnergyPowder",
+			"itemNo": 57,
+			"description": "Restores Pokémon HP by 60. Bitter.",
+			"type": "medicine"
+		},
+		{
+			"id": "energyroot",
+			"name": "Energy Root",
+			"itemNo": 58,
+			"description": "Restores Pokémon HP by 120. Bitter.",
+			"type": "medicine"
+		},
+		{
+			"id": "healpowder",
+			"name": "Heal Powder",
+			"itemNo": 59,
+			"description": "Cures all status problems. Bitter.",
+			"type": "medicine"
+		},
+		{
+			"id": "revivalherb",
+			"name": "Revival Herb",
+			"itemNo": 60,
+			"description": "Revives fainted Pokémon. Bitter.",
+			"type": "medicine"
+		},
+		{
+			"id": "sacredash",
+			"name": "Sacred Ash",
+			"itemNo": 61,
+			"description": "Fully revives all fainted Pokémon.",
+			"type": "medicine"
+		},
+		{
+			"id": "cheriberry",
+			"name": "Cheri Berry",
+			"itemNo": 62,
+			"description": "A self-cure for paralysis. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "chestoberry",
+			"name": "Chesto Berry",
+			"itemNo": 63,
+			"description": "A self-awakening for sleep. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "pechaberry",
+			"name": "Pecha Berry",
+			"itemNo": 64,
+			"description": "A self-cure for poison. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "rawstberry",
+			"name": "Rawst Berry",
+			"itemNo": 65,
+			"description": "A self-heal for a burn. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "aspearberry",
+			"name": "Aspear Berry",
+			"itemNo": 66,
+			"description": "A self-cure for freezing. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "leppaberry",
+			"name": "Leppa Berry",
+			"itemNo": 67,
+			"description": "A self-restore item. (10<BOLDP><BOLDP>, Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "oranberry",
+			"name": "Oran Berry",
+			"itemNo": 68,
+			"description": "A self-restore item. (10HP, Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "persimberry",
+			"name": "Persim Berry",
+			"itemNo": 69,
+			"description": "A self-cure for confusion. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "lumberry",
+			"name": "Lum Berry",
+			"itemNo": 70,
+			"description": "Cures all status problems. (Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "sitrusberry",
+			"name": "Sitrus Berry",
+			"itemNo": 71,
+			"description": "Self-restore item. (1/4 max HP, Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "figyberry",
+			"name": "Figy Berry",
+			"itemNo": 72,
+			"description": "Self-restore item. (1/3 max HP, Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "pomegberry",
+			"name": "Pomeg Berry",
+			"itemNo": 73,
+			"description": "Raises friendship but lowers HP.",
+			"type": "berries"
+		},
+		{
+			"id": "kelpsyberry",
+			"name": "Kelpsy Berry",
+			"itemNo": 74,
+			"description": "Raises friendship but lowers Attack.",
+			"type": "berries"
+		},
+		{
+			"id": "qualotberry",
+			"name": "Qualot Berry",
+			"itemNo": 75,
+			"description": "Raises friendship, lowers Defense.",
+			"type": "berries"
+		},
+		{
+			"id": "hondewberry",
+			"name": "Hondew Berry",
+			"itemNo": 76,
+			"description": "Raises friendship but lowers Sp.Atk.",
+			"type": "berries"
+		},
+		{
+			"id": "grepaberry",
+			"name": "Grepa Berry",
+			"itemNo": 77,
+			"description": "Raises friendship but lowers Sp.Def.",
+			"type": "berries"
+		},
+		{
+			"id": "tamatoberry",
+			"name": "Tamato Berry",
+			"itemNo": 78,
+			"description": "Raises friendship but lowers Speed.",
+			"type": "berries"
+		},
+		{
+			"id": "liechiberry",
+			"name": "Liechi Berry",
+			"itemNo": 79,
+			"description": "Raises Attack in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "ganlonberry",
+			"name": "Ganlon Berry",
+			"itemNo": 80,
+			"description": "Raises Defense in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "salacberry",
+			"name": "Salac Berry",
+			"itemNo": 81,
+			"description": "Raises Speed in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "petayaberry",
+			"name": "Petaya Berry",
+			"itemNo": 82,
+			"description": "Raises Sp.Atk in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "apicotberry",
+			"name": "Apicot Berry",
+			"itemNo": 83,
+			"description": "Raises Sp.Def in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "lansatberry",
+			"name": "Lansat Berry",
+			"itemNo": 84,
+			"description": "Ups critical hit ratio in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "starfberry",
+			"name": "Starf Berry",
+			"itemNo": 85,
+			"description": "Ups a random stat in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "enigmaberry",
+			"name": "Enigma Berry",
+			"itemNo": 86,
+			"description": "Restores HP on super-effective hit.",
+			"type": "berries"
+		},
+		{
+			"id": "custapberry",
+			"name": "Custap Berry",
+			"itemNo": 87,
+			"description": "Moves first in a pinch.",
+			"type": "berries"
+		},
+		{
+			"id": "jabocaberry",
+			"name": "Jaboca Berry",
+			"itemNo": 88,
+			"description": "Damages foe on a physical hit.",
+			"type": "berries"
+		},
+		{
+			"id": "rowapberry",
+			"name": "Rowap Berry",
+			"itemNo": 89,
+			"description": "Damages foe on a special hit.",
+			"type": "berries"
+		},
+		{
+			"id": "keeberry",
+			"name": "Kee Berry",
+			"itemNo": 90,
+			"description": "Raises Defense on a physical hit.",
+			"type": "berries"
+		},
+		{
+			"id": "marangaberry",
+			"name": "MarangaBerry",
+			"itemNo": 91,
+			"description": "Raises Sp.Def on a special hit.",
+			"type": "berries"
+		},
+		{
+			"id": "berryjuice",
+			"name": "Berry Juice",
+			"itemNo": 92,
+			"description": "A self-restore item. (20HP, Hold)",
+			"type": "berries"
+		},
+		{
+			"id": "repel",
+			"name": "Repel",
+			"itemNo": 93,
+			"description": "Repels weak Pokémon for 100 steps.",
+			"type": "item"
+		},
+		{
+			"id": "superrepel",
+			"name": "Super Repel",
+			"itemNo": 94,
+			"description": "Repels weak Pokémon for 200 steps.",
+			"type": "item"
+		},
+		{
+			"id": "maxrepel",
+			"name": "Max Repel",
+			"itemNo": 95,
+			"description": "Repels weak Pokémon for 250 steps.",
+			"type": "item"
+		},
+		{
+			"id": "escaperope",
+			"name": "Escape Rope",
+			"itemNo": 96,
+			"description": "Use for escaping from caves, etc.",
+			"type": "item"
+		},
+		{
+			"id": "pokedoll",
+			"name": "Poké Doll",
+			"itemNo": 97,
+			"description": "Use to escape from a wild Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "mulch",
+			"name": "Mulch",
+			"itemNo": 98,
+			"description": "Plant fertilizer for Berry trees.",
+			"type": "item"
+		},
+		{
+			"id": "honey",
+			"name": "Honey",
+			"itemNo": 99,
+			"description": "The aroma attracts wild Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "xattack",
+			"name": "X Attack",
+			"itemNo": 100,
+			"description": "Raises Attack. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "xdefend",
+			"name": "X Defend",
+			"itemNo": 101,
+			"description": "Raises Defense. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "xspeed",
+			"name": "X Speed",
+			"itemNo": 102,
+			"description": "Raises Speed. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "xspatk",
+			"name": "X Sp.Atk",
+			"itemNo": 103,
+			"description": "Raises Sp.Atk. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "xspdef",
+			"name": "X Sp.Def",
+			"itemNo": 104,
+			"description": "Raises Sp.Def. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "xaccuracy",
+			"name": "X Accuracy",
+			"itemNo": 105,
+			"description": "Raises accuracy. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "direhit",
+			"name": "Dire Hit",
+			"itemNo": 106,
+			"description": "Ups critical hit ratio. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "guardspec",
+			"name": "Guard Spec.",
+			"itemNo": 107,
+			"description": "Prevents stat drops. (1 battle)",
+			"type": "item"
+		},
+		{
+			"id": "abilitycap",
+			"name": "Ability Cap",
+			"itemNo": 108,
+			"description": "Switches a Pokémon's ability.",
+			"type": "item"
+		},
+		{
+			"id": "abilitypatch",
+			"name": "AbilityPatch",
+			"itemNo": 109,
+			"description": "Switches to a rare ability.",
+			"type": "item"
+		},
+		{
+			"id": "leafstone",
+			"name": "Leaf Stone",
+			"itemNo": 110,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "firestone",
+			"name": "Fire Stone",
+			"itemNo": 111,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "waterstone",
+			"name": "Water Stone",
+			"itemNo": 112,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "thunderstone",
+			"name": "ThunderStone",
+			"itemNo": 113,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "icestone",
+			"name": "Ice Stone",
+			"itemNo": 114,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "moonstone",
+			"name": "Moon Stone",
+			"itemNo": 115,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "sunstone",
+			"name": "Sun Stone",
+			"itemNo": 116,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "duskstone",
+			"name": "Dusk Stone",
+			"itemNo": 117,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "shinystone",
+			"name": "Shiny Stone",
+			"itemNo": 118,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "everstone",
+			"name": "Everstone",
+			"itemNo": 119,
+			"description": "Stops evolution. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "expshare",
+			"name": "Exp.Share",
+			"itemNo": 120,
+			"description": "Shares battle Exp. Points. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "silkscarf",
+			"name": "Silk Scarf",
+			"itemNo": 121,
+			"description": "Powers up Normaltype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "blackbelt",
+			"name": "Black Belt",
+			"itemNo": 122,
+			"description": "Boosts Fightingtype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "sharpbeak",
+			"name": "Sharp Beak",
+			"itemNo": 123,
+			"description": "Powers up Flyingtype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "poisonbarb",
+			"name": "Poison Barb",
+			"itemNo": 124,
+			"description": "Powers up Poisontype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "softsand",
+			"name": "Soft Sand",
+			"itemNo": 125,
+			"description": "Powers up Groundtype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "hardstone",
+			"name": "Hard Stone",
+			"itemNo": 126,
+			"description": "Powers up Rocktype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "silverpowder",
+			"name": "SilverPowder",
+			"itemNo": 127,
+			"description": "Powers up Bug-type moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "spelltag",
+			"name": "Spell Tag",
+			"itemNo": 128,
+			"description": "Powers up Ghosttype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "metalcoat",
+			"name": "Metal Coat",
+			"itemNo": 129,
+			"description": "Powers up Steeltype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "charcoal",
+			"name": "Charcoal",
+			"itemNo": 130,
+			"description": "Powers up Firetype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "mysticwater",
+			"name": "Mystic Water",
+			"itemNo": 131,
+			"description": "Powers up Watertype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "miracleseed",
+			"name": "Miracle Seed",
+			"itemNo": 132,
+			"description": "Powers up Grasstype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "magnet",
+			"name": "Magnet",
+			"itemNo": 133,
+			"description": "Boosts Electrictype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "twistedspoon",
+			"name": "TwistedSpoon",
+			"itemNo": 134,
+			"description": "Powers up Psychictype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "nevermeltice",
+			"name": "NeverMeltIce",
+			"itemNo": 135,
+			"description": "Powers up Ice-type moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "dragonfang",
+			"name": "Dragon Fang",
+			"itemNo": 136,
+			"description": "Powers up Dragontype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "blackglasses",
+			"name": "BlackGlasses",
+			"itemNo": 137,
+			"description": "Powers up Darktype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "pinkbow",
+			"name": "Pink Bow",
+			"itemNo": 138,
+			"description": "Powers up Fairytype moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "berserkgene",
+			"name": "Berserk Gene",
+			"itemNo": 139,
+			"description": "Boosts Attack but causes confusion.",
+			"type": "item"
+		},
+		{
+			"id": "brightpowder",
+			"name": "BrightPowder",
+			"itemNo": 140,
+			"description": "Lowers the foe's accuracy. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "quickclaw",
+			"name": "Quick Claw",
+			"itemNo": 141,
+			"description": "Boosts chances of moving 1st. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "kingsrock",
+			"name": "King's Rock",
+			"itemNo": 142,
+			"description": "May make the foe flinch. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "amuletcoin",
+			"name": "Amulet Coin",
+			"itemNo": 143,
+			"description": "Doubles monetary earnings. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "cleansetag",
+			"name": "Cleanse Tag",
+			"itemNo": 144,
+			"description": "Helps repel wild Pokémon. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "smokeball",
+			"name": "Smoke Ball",
+			"itemNo": 145,
+			"description": "Escape from wild Pokémon. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "focusband",
+			"name": "Focus Band",
+			"itemNo": 146,
+			"description": "May prevent fainting. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "luckyegg",
+			"name": "Lucky Egg",
+			"itemNo": 147,
+			"description": "Earns extra Exp. points. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "leftovers",
+			"name": "Leftovers",
+			"itemNo": 148,
+			"description": "Restores HP during battle. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "soothebell",
+			"name": "Soothe Bell",
+			"itemNo": 149,
+			"description": "Calms and fosters friendship. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "shellbell",
+			"name": "Shell Bell",
+			"itemNo": 150,
+			"description": "Self-restore item. (1/8 damage, Hold)",
+			"type": "item"
+		},
+		{
+			"id": "muscleband",
+			"name": "Muscle Band",
+			"itemNo": 151,
+			"description": "Powers up physical moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "wiseglasses",
+			"name": "Wise Glasses",
+			"itemNo": 152,
+			"description": "Powers up special moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "expertbelt",
+			"name": "Expert Belt",
+			"itemNo": 153,
+			"description": "Ups super effective moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "lightclay",
+			"name": "Light Clay",
+			"itemNo": 154,
+			"description": "Extends duration of barrier moves.",
+			"type": "item"
+		},
+		{
+			"id": "lifeorb",
+			"name": "Life Orb",
+			"itemNo": 155,
+			"description": "Powers up moves with HP. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "focussash",
+			"name": "Focus Sash",
+			"itemNo": 156,
+			"description": "Endures one OHKO move at full HP.",
+			"type": "item"
+		},
+		{ "id": "metronome", "name": "Metronome", "itemNo": 157, "type": "item" },
+		{
+			"id": "ironball",
+			"name": "Iron Ball",
+			"itemNo": 158,
+			"description": "Lowers Speed and grounds. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "laggingtail",
+			"name": "Lagging Tail",
+			"itemNo": 159,
+			"description": "Always moves last. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "destinyknot",
+			"name": "Destiny Knot",
+			"itemNo": 160,
+			"description": "Infatuates the foe back. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "gripclaw",
+			"name": "Grip Claw",
+			"itemNo": 161,
+			"description": "Extends duration of trapping moves.",
+			"type": "item"
+		},
+		{
+			"id": "shedshell",
+			"name": "Shed Shell",
+			"itemNo": 162,
+			"description": "Allows switching out. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "bigroot",
+			"name": "Big Root",
+			"itemNo": 163,
+			"description": "Powers up draining moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "eviolite",
+			"name": "Eviolite",
+			"itemNo": 164,
+			"description": "Ups Def and Sp.Def of evolvers.",
+			"type": "item"
+		},
+		{
+			"id": "rockyhelmet",
+			"name": "Rocky Helmet",
+			"itemNo": 165,
+			"description": "Damages foe on contact. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "airballoon",
+			"name": "Air Balloon",
+			"itemNo": 166,
+			"description": "Avoids one Ground attack. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "redcard",
+			"name": "Red Card",
+			"itemNo": 167,
+			"description": "Switches out foe when hit. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "bindingband",
+			"name": "Binding Band",
+			"itemNo": 168,
+			"description": "Powers up trapping moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "ejectbutton",
+			"name": "Eject Button",
+			"itemNo": 169,
+			"description": "Switches out when hit. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "weakpolicy",
+			"name": "Weak Policy",
+			"itemNo": 170,
+			"description": "Super effective hit ups offenses.",
+			"type": "item"
+		},
+		{
+			"id": "assaultvest",
+			"name": "Assault Vest",
+			"itemNo": 171,
+			"description": "Boosts Sp.Def, but bans status moves.",
+			"type": "item"
+		},
+		{
+			"id": "safegoggles",
+			"name": "Safe Goggles",
+			"itemNo": 172,
+			"description": "Protects from weather damage.",
+			"type": "item"
+		},
+		{
+			"id": "protectpads",
+			"name": "Protect Pads",
+			"itemNo": 173,
+			"description": "Protects from contact effects.",
+			"type": "item"
+		},
+		{
+			"id": "throatspray",
+			"name": "Throat Spray",
+			"itemNo": 174,
+			"description": "Raises Sp.Atk on a sound move.",
+			"type": "item"
+		},
+		{
+			"id": "ejectpack",
+			"name": "Eject Pack",
+			"itemNo": 175,
+			"description": "Switches out when stats fall. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "heavyboots",
+			"name": "Heavy Boots",
+			"itemNo": 176,
+			"description": "Protects from traps. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "blundrpolicy",
+			"name": "BlundrPolicy",
+			"itemNo": 177,
+			"description": "Raises Speed when a move misses.",
+			"type": "item"
+		},
+		{
+			"id": "roomservice",
+			"name": "Room Service",
+			"itemNo": 178,
+			"description": "Lowers Speed in Trick Room. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "clearamulet",
+			"name": "Clear Amulet",
+			"itemNo": 179,
+			"description": "Prevents statlowering by foes.",
+			"type": "item"
+		},
+		{
+			"id": "mirrorherb",
+			"name": "Mirror Herb",
+			"itemNo": 180,
+			"description": "Copies foe's statboost once.",
+			"type": "item"
+		},
+		{
+			"id": "punchinglove",
+			"name": "PunchinGlove",
+			"itemNo": 181,
+			"description": "Powers punch moves with no contact.",
+			"type": "item"
+		},
+		{
+			"id": "covertcloak",
+			"name": "Covert Cloak",
+			"itemNo": 182,
+			"description": "Blocks additional attack effects.",
+			"type": "item"
+		},
+		{
+			"id": "loadeddice",
+			"name": "Loaded Dice",
+			"itemNo": 183,
+			"description": "Multi-hit moves hit more often.",
+			"type": "item"
+		},
+		{
+			"id": "lightball",
+			"name": "Light Ball",
+			"itemNo": 184,
+			"description": "Boost Pikachu's Attack and Sp.Atk.",
+			"type": "item"
+		},
+		{
+			"id": "leek",
+			"name": "Leek",
+			"itemNo": 185,
+			"description": "An ordinary leek. Sell low.",
+			"type": "item"
+		},
+		{
+			"id": "thickclub",
+			"name": "Thick Club",
+			"itemNo": 186,
+			"description": "Boost Cubone's and Marowak's Attack.",
+			"type": "item"
+		},
+		{
+			"id": "luckypunch",
+			"name": "Lucky Punch",
+			"itemNo": 187,
+			"description": "Ups critical hit ratio of Chansey.",
+			"type": "item"
+		},
+		{
+			"id": "metalpowder",
+			"name": "Metal Powder",
+			"itemNo": 188,
+			"description": "Raises Defense of Ditto. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "quickpowder",
+			"name": "Quick Powder",
+			"itemNo": 189,
+			"description": "Raises Speed of Ditto. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "armorsuit",
+			"name": "Armor Suit",
+			"itemNo": 190,
+			"description": "A suit of armor for some Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "scopelens",
+			"name": "Scope Lens",
+			"itemNo": 191,
+			"description": "Raises critical hit ratio. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "widelens",
+			"name": "Wide Lens",
+			"itemNo": 192,
+			"description": "Slightly boosts accuracy. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "zoomlens",
+			"name": "Zoom Lens",
+			"itemNo": 193,
+			"description": "Boosts accuracy when moving 2nd.",
+			"type": "item"
+		},
+		{
+			"id": "mentalherb",
+			"name": "Mental Herb",
+			"itemNo": 194,
+			"description": "A self-cure for infatuation.",
+			"type": "item"
+		},
+		{
+			"id": "powerherb",
+			"name": "Power Herb",
+			"itemNo": 195,
+			"description": "Skips charging of moves. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "whiteherb",
+			"name": "White Herb",
+			"itemNo": 196,
+			"description": "A self-cure for lowered stats.",
+			"type": "item"
+		},
+		{
+			"id": "damprock",
+			"name": "Damp Rock",
+			"itemNo": 197,
+			"description": "Extends duration of rain. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "heatrock",
+			"name": "Heat Rock",
+			"itemNo": 198,
+			"description": "Extends duration of sun. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "smoothrock",
+			"name": "Smooth Rock",
+			"itemNo": 199,
+			"description": "Extends duration of sandstorms.",
+			"type": "item"
+		},
+		{
+			"id": "icyrock",
+			"name": "Icy Rock",
+			"itemNo": 200,
+			"description": "Extends duration of hail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "choiceband",
+			"name": "Choice Band",
+			"itemNo": 201,
+			"description": "Boosts Attack, but allows one move.",
+			"type": "item"
+		},
+		{
+			"id": "choicescarf",
+			"name": "Choice Scarf",
+			"itemNo": 202,
+			"description": "Boosts Speed, but allows one move.",
+			"type": "item"
+		},
+		{
+			"id": "choicespecs",
+			"name": "Choice Specs",
+			"itemNo": 203,
+			"description": "Boosts Sp.Atk, but allows one move.",
+			"type": "item"
+		},
+		{
+			"id": "flameorb",
+			"name": "Flame Orb",
+			"itemNo": 204,
+			"description": "Causes a burn. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "toxicorb",
+			"name": "Toxic Orb",
+			"itemNo": 205,
+			"description": "Causes bad poison. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "blacksludge",
+			"name": "Black Sludge",
+			"itemNo": 206,
+			"description": "Restores HP for Poison Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "machobrace",
+			"name": "Macho Brace",
+			"itemNo": 207,
+			"description": "Boosts stat gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "powerweight",
+			"name": "Power Weight",
+			"itemNo": 208,
+			"description": "Boosts HP gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "powerbracer",
+			"name": "Power Bracer",
+			"itemNo": 209,
+			"description": "Ups Attack gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "powerbelt",
+			"name": "Power Belt",
+			"itemNo": 210,
+			"description": "Ups Defense gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "powerlens",
+			"name": "Power Lens",
+			"itemNo": 211,
+			"description": "Ups Sp.Atk gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "powerband",
+			"name": "Power Band",
+			"itemNo": 212,
+			"description": "Ups Sp.Def gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "poweranklet",
+			"name": "Power Anklet",
+			"itemNo": 213,
+			"description": "Ups Speed gain, but lowers Speed.",
+			"type": "item"
+		},
+		{
+			"id": "dragonscale",
+			"name": "Dragon Scale",
+			"itemNo": 214,
+			"description": "A rare Dragon-type item.",
+			"type": "item"
+		},
+		{
+			"id": "upgrade",
+			"name": "Up-Grade",
+			"itemNo": 215,
+			"description": "A mysterious box made by Silph Co.",
+			"type": "item"
+		},
+		{
+			"id": "dubiousdisc",
+			"name": "Dubious Disc",
+			"itemNo": 216,
+			"description": "A transparent disc of unknown origin.",
+			"type": "item"
+		},
+		{
+			"id": "protector",
+			"name": "Protector",
+			"itemNo": 217,
+			"description": "A protective item. Stiff and heavy.",
+			"type": "item"
+		},
+		{
+			"id": "electirizer",
+			"name": "Electirizer",
+			"itemNo": 218,
+			"description": "A box packed with electric energy.",
+			"type": "item"
+		},
+		{
+			"id": "magmarizer",
+			"name": "Magmarizer",
+			"itemNo": 219,
+			"description": "A box packed with magma energy.",
+			"type": "item"
+		},
+		{
+			"id": "razorfang",
+			"name": "Razor Fang",
+			"itemNo": 220,
+			"description": "May make the foe flinch. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "razorclaw",
+			"name": "Razor Claw",
+			"itemNo": 221,
+			"description": "Raises critical hit ratio. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "ovalstone",
+			"name": "Oval Stone",
+			"itemNo": 222,
+			"description": "A stone as round as a Pokémon Egg.",
+			"type": "item"
+		},
+		{
+			"id": "oddsouvenir",
+			"name": "Odd Souvenir",
+			"itemNo": 223,
+			"description": "An ornament from a far-away place.",
+			"type": "item"
+		},
+		{
+			"id": "linkingcord",
+			"name": "Linking Cord",
+			"itemNo": 224,
+			"description": "Evolves certain kinds of Pokémon.",
+			"type": "item"
+		},
+		{
+			"id": "silverleaf",
+			"name": "Silver Leaf",
+			"itemNo": 225,
+			"description": "A strange, silvercolored leaf.",
+			"type": "item"
+		},
+		{
+			"id": "goldleaf",
+			"name": "Gold Leaf",
+			"itemNo": 226,
+			"description": "A strange, goldcolored leaf.",
+			"type": "item"
+		},
+		{
+			"id": "mintleaf",
+			"name": "Mint Leaf",
+			"itemNo": 227,
+			"description": "A fragrant sprig of mint.",
+			"type": "item"
+		},
+		{
+			"id": "bottlecap",
+			"name": "Bottle Cap",
+			"itemNo": 228,
+			"description": "A shiny, rare bottle cap.",
+			"type": "item"
+		},
+		{
+			"id": "nugget",
+			"name": "Nugget",
+			"itemNo": 229,
+			"description": "Made of pure gold. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "bignugget",
+			"name": "Big Nugget",
+			"itemNo": 230,
+			"description": "Made of pure gold. Sell very high.",
+			"type": "item"
+		},
+		{
+			"id": "tinymushroom",
+			"name": "TinyMushroom",
+			"itemNo": 231,
+			"description": "An ordinary mushroom. Sell low.",
+			"type": "item"
+		},
+		{
+			"id": "bigmushroom",
+			"name": "Big Mushroom",
+			"itemNo": 232,
+			"description": "A rare mushroom. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "balmmushroom",
+			"name": "BalmMushroom",
+			"itemNo": 233,
+			"description": "A rare mushroom. Sell very high.",
+			"type": "item"
+		},
+		{
+			"id": "pearl",
+			"name": "Pearl",
+			"itemNo": 234,
+			"description": "A beautiful pearl. Sell low.",
+			"type": "item"
+		},
+		{
+			"id": "bigpearl",
+			"name": "Big Pearl",
+			"itemNo": 235,
+			"description": "A big, beautiful pearl. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "pearlstring",
+			"name": "Pearl String",
+			"itemNo": 236,
+			"description": "Big, shiny pearls. Sell very high.",
+			"type": "item"
+		},
+		{
+			"id": "stardust",
+			"name": "Stardust",
+			"itemNo": 237,
+			"description": "Pretty, red sand. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "starpiece",
+			"name": "Star Piece",
+			"itemNo": 238,
+			"description": "A hunk of red gem. Sell very high.",
+			"type": "item"
+		},
+		{
+			"id": "brickpiece",
+			"name": "Brick Piece",
+			"itemNo": 239,
+			"description": "A chunk of tile. Sell low.",
+			"type": "item"
+		},
+		{
+			"id": "rarebone",
+			"name": "Rare Bone",
+			"itemNo": 240,
+			"description": "A rare bone. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "slowpoketail",
+			"name": "SlowpokeTail",
+			"itemNo": 241,
+			"description": "Very tasty. Sell high.",
+			"type": "item"
+		},
+		{
+			"id": "helixfossil",
+			"name": "Helix Fossil",
+			"itemNo": 242,
+			"description": "A fossilized Pokémon shell.",
+			"type": "item"
+		},
+		{
+			"id": "domefossil",
+			"name": "Dome Fossil",
+			"itemNo": 243,
+			"description": "A fossilized Pokémon shell.",
+			"type": "item"
+		},
+		{
+			"id": "oldamber",
+			"name": "Old Amber",
+			"itemNo": 244,
+			"description": "Fossilized resin containing DNA.",
+			"type": "item"
+		},
+		{
+			"id": "flowermail",
+			"name": "Flower Mail",
+			"itemNo": 245,
+			"description": "Flower-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "surfmail",
+			"name": "Surf Mail",
+			"itemNo": 246,
+			"description": "Lapras-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "litebluemail",
+			"name": "LiteBlueMail",
+			"itemNo": 247,
+			"description": "Dratini-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "portraitmail",
+			"name": "PortraitMail",
+			"itemNo": 248,
+			"description": "Mail featuring the holder's likeness.",
+			"type": "item"
+		},
+		{
+			"id": "lovelymail",
+			"name": "Lovely Mail",
+			"itemNo": 249,
+			"description": "Heart-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "eonmail",
+			"name": "Eon Mail",
+			"itemNo": 250,
+			"description": "Eevee-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "morphmail",
+			"name": "Morph Mail",
+			"itemNo": 251,
+			"description": "Ditto-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "blueskymail",
+			"name": "BlueSky Mail",
+			"itemNo": 252,
+			"description": "Sky-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "musicmail",
+			"name": "Music Mail",
+			"itemNo": 253,
+			"description": "Natu-print Mail. (Hold)",
+			"type": "item"
+		},
+		{
+			"id": "miragemail",
+			"name": "Mirage Mail",
+			"itemNo": 254,
+			"description": "Mew-print Mail. (Hold)",
+			"type": "item"
+		}
+	]
+}
