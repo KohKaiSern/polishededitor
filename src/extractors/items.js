@@ -58,7 +58,7 @@ const extractDescriptions = (data, PF) => {
 const coverInconsistencies = (PF) => {
 	let altPF = PF === 'polished' ? 'faithful' : 'polished';
 	for (let item of items[PF]) {
-		if (!item.hasOwnProperty('description')) {
+		if (!Object.hasOwn(item, 'description')) {
 			item.description = items[altPF][item.itemNo - 1].description;
 		}
 	}
