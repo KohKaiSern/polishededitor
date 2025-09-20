@@ -5,4 +5,5 @@
 	import items from '$data/items.json';
 	import versions from '$data/versions.json';
 	import growthRates from '$data/growthRates.json';
+	import pokemon from '$data/pokemon.json';
 </script>
