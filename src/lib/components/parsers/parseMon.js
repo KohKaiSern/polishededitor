@@ -103,7 +103,7 @@ const parseMon = (fileHex, address, PF) => {
 
 	//Byte #23: PP Ups TODO
 
-	//Byte #24: Happiness
+	//Byte #24: Happiness / Hatch Cycles
 
 	if (mon.isEgg) {
 		mon.hatchCycles = parseInt(fileHex[address + 23], 16);
