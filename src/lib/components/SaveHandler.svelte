@@ -7,7 +7,7 @@
 
 	let file = $state(null);
 	let checked = $state(true);
-	let isDisabled = $derived(!!file);
+	let disabled = $state(false);
 	let PF = $derived(checked ? 'polished' : 'faithful');
 	let toastMsg = $state(null);
 	let mons = $state(null);
@@ -31,6 +31,7 @@
 				toastMsg = null;
 			}, 3000);
 		}
+		disabled = true;
 		mons = parseMons(fileHex, PF);
 		items = parseItems(fileHex, PF);
 		return;
@@ -50,9 +51,7 @@
 <header>
 	<div class="mb-5 flex flex-wrap items-start justify-between gap-5">
 		<Heading tag="h1">Polished Editor</Heading>
-		<Toggle color="purple" bind:checked disabled={isDisabled}
-			>{PF.at(0).toUpperCase() + PF.slice(1)}</Toggle
-		>
+		<Toggle color="purple" bind:checked {disabled}>{PF.at(0).toUpperCase() + PF.slice(1)}</Toggle>
 	</div>
 	<Label class="mb-2">Upload Save</Label>
 	<div class="mb-2 flex gap-3">
