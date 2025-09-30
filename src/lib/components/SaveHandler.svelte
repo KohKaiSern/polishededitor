@@ -7,7 +7,7 @@
 
 	let file = $state(null);
 	let checked = $state(true);
-	let disabled = $derived(!!file);
+	let isDisabled = $derived(!!file);
 	let PF = $derived(checked ? 'polished' : 'faithful');
 	let toastMsg = $state(null);
 	let mons = $state(null);
@@ -50,12 +50,14 @@
 <header>
 	<div class="mb-5 flex flex-wrap items-start justify-between gap-5">
 		<Heading tag="h1">Polished Editor</Heading>
-		<Toggle color="purple" bind:checked {disabled}>{PF.at(0).toUpperCase() + PF.slice(1)}</Toggle>
+		<Toggle color="purple" bind:checked disabled={isDisabled}
+			>{PF.at(0).toUpperCase() + PF.slice(1)}</Toggle
+		>
 	</div>
 	<Label class="mb-2">Upload Save</Label>
 	<div class="mb-2 flex gap-3">
 		<Fileupload bind:files={file} onchange={handleSave} />
 		<Button color="purple" class="whitespace-nowrap">Download Save</Button>
 	</div>
-	<Helper>.SAV or .SRM (Max 33KB).</Helper>
+	<Helper>.SAV or .SRM (Max 33kB).</Helper>
 </header>
