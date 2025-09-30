@@ -6,8 +6,8 @@
 	import { blur } from 'svelte/transition';
 
 	let file = $state(null);
-	let PF = $derived(checked ? 'polished' : 'faithful');
 	let checked = $state(true);
+	let PF = $derived(checked ? 'polished' : 'faithful');
 	let toastMsg = $state(null);
 	let mons = $state(null);
 	let items = $state(null);
