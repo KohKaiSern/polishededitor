@@ -6,6 +6,7 @@
 	import { blur } from 'svelte/transition';
 
 	let file = $state(null);
+	let PF = $state('polished');
 	let toastMsg = $state(null);
 	let mons = $state(null);
 	let items = $state(null);
@@ -28,10 +29,12 @@
 				toastMsg = null;
 			}, 3000);
 		}
-		mons = parseMons(fileHex);
-		items = parseItems(fileHex);
+		mons = parseMons(fileHex, PF);
+		items = parseItems(fileHex, PF);
 		return;
 	};
+
+	$inspect(mons);
 </script>
 
 {#if toastMsg}
