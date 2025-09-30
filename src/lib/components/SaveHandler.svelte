@@ -49,7 +49,7 @@
 <header>
 	<div class="mb-5 flex flex-wrap items-start justify-between gap-5">
 		<Heading tag="h1">Polished Editor</Heading>
-		<Toggle color="purple" bind:checked disabled={file ? true : false}
+		<Toggle color="purple" bind:checked disabled={file === null ? false : true}
 			>{PF.at(0).toUpperCase() + PF.slice(1)}</Toggle
 		>
 	</div>
