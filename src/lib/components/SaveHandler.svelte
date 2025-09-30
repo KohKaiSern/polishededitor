@@ -3,6 +3,7 @@
 	import { buf2hex, checkSaveVersion } from './SaveHandler.svelte.js';
 	import parseMons from './parsers/parseMons.js';
 	import parseItems from './parsers/parseItems.js';
+	import { blur } from 'svelte/transition';
 
 	let file = $state(null);
 	let toastMsg = $state(null);
@@ -34,7 +35,7 @@
 </script>
 
 {#if toastMsg}
-	<Toast class="absolute top-5 right-5">
+	<Toast transition={blur} params={{ amount: 10 }} class="absolute top-5 right-5">
 		{toastMsg}
 	</Toast>
 {/if}
