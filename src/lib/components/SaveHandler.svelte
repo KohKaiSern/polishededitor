@@ -1,12 +1,13 @@
 <script>
-	import { Heading, P, Label, Fileupload, Button, Helper, Toast } from 'flowbite-svelte';
+	import { Heading, Label, Fileupload, Button, Helper, Toast, Toggle } from 'flowbite-svelte';
 	import { buf2hex, checkSaveVersion } from './SaveHandler.svelte.js';
 	import parseMons from './parsers/parseMons.js';
 	import parseItems from './parsers/parseItems.js';
 	import { blur } from 'svelte/transition';
 
 	let file = $state(null);
-	let PF = $state('polished');
+	let PF = $derived(checked ? 'polished' : 'faithful');
+	let checked = $state(true);
 	let toastMsg = $state(null);
 	let mons = $state(null);
 	let items = $state(null);
@@ -38,17 +39,24 @@
 </script>
 
 {#if toastMsg}
-	<Toast transition={blur} params={{ amount: 10 }} class="absolute top-5 right-5">
-		{toastMsg}
-	</Toast>
+	<div transition:blur={{ amount: 10 }} class="absolute top-5 right-5">
+		<Toast>
+			{toastMsg}
+		</Toast>
+	</div>
 {/if}
 
 <header>
-	<Heading tag="h1" class="mb-5">Polished Editor</Heading>
+	<div class="mb-5 flex flex-wrap items-start justify-between gap-5">
+		<Heading tag="h1">Polished Editor</Heading>
+		<Toggle color="purple" bind:checked disabled={file ? true : false}
+			>{PF.at(0).toUpperCase() + PF.slice(1)}</Toggle
+		>
+	</div>
 	<Label class="mb-2">Upload Save</Label>
 	<div class="mb-2 flex gap-3">
 		<Fileupload bind:files={file} onchange={handleSave} />
-		<Button color="green" class="whitespace-nowrap">Download Save</Button>
+		<Button color="purple" class="whitespace-nowrap">Download Save</Button>
 	</div>
 	<Helper>.SAV or .SRM (Max 33KB).</Helper>
 </header>
