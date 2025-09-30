@@ -1,14 +1,19 @@
 <script>
 	import { Heading, P, Label, Fileupload, Button, Helper, Toast } from 'flowbite-svelte';
 	import { buf2hex, checkSaveVersion } from './SaveHandler.svelte.js';
+	import parseMons from './parsers/parseMons.js';
+	import parseItems from './parsers/parseItems.js';
 
 	let file = $state(null);
 	let toastMsg = $state(null);
+	let mons = $state(null);
+	let items = $state(null);
 
 	// This function should:
 	// #1: Verify the size of the file
 	// #2: Parse and verify the save number of the file
 	// #3: Run the mon parse
+	// #4: Run the item parse
 	const handleSave = async () => {
 		if (file[0].size > 33000) {
 			toastMsg =
@@ -17,6 +22,13 @@
 		}
 		const fileHex = buf2hex(await file[0].arrayBuffer());
 		toastMsg = checkSaveVersion(fileHex);
+		if (toastMsg === 'Save Validated!') {
+			setTimeout(() => {
+				toastMsg = null;
+			}, 3000);
+		}
+		mons = parseMons(fileHex);
+		items = parseItems(fileHex);
 		return;
 	};
 </script>
