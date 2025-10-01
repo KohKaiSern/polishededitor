@@ -2,7 +2,9 @@
 	import { Heading, Label, Fileupload, Button, Helper, Toast, Toggle } from 'flowbite-svelte';
 	import { buf2hex, checkSaveVersion } from './SaveHandler.svelte.js';
 	import parseMons from './parsers/parseMons.js';
+	import reverseParseMons from './parsers/reverseParseMons.js';
 	import parseBag from './parsers/parseBag.js';
+	import reverseParseBag from './parsers/reverseParseBag.js';
 	import { blur } from 'svelte/transition';
 
 	let file = $state(null);
@@ -37,6 +39,12 @@
 		return;
 	};
 
+	const downloadSave = async () => {
+		let fileHex = buf2hex(await file[0].arrayBuffer());
+		fileHex = reverseParseBag(reverseParseMons(fileHex, mons, PF), bag, PF);
+		console.log(fileHex);
+	};
+
 	$inspect(mons);
 	$inspect(bag);
 </script>
@@ -57,7 +65,7 @@
 	<Label class="mb-2">Upload Save</Label>
 	<div class="mb-2 flex gap-3">
 		<Fileupload bind:files={file} onchange={handleSave} />
-		<Button color="purple" class="whitespace-nowrap">Download Save</Button>
+		<Button color="purple" class="whitespace-nowrap" onclick={downloadSave}>Download Save</Button>
 	</div>
 	<Helper>.SAV or .SRM (Max 33kB).</Helper>
 </header>
