@@ -22,7 +22,7 @@
 	// #3: Run the mon parse
 	// #4: Run the bag parse
 	const handleSave = async () => {
-		if (file[0].size > 33000) {
+		if (file[0].size > 33000 || file[0].size < 32000) {
 			toastMsg =
 				"This doesn't seem like a save file. Make sure it's a battery save and not a save state.";
 			return;
