@@ -38,6 +38,7 @@
 	};
 
 	$inspect(mons);
+	$inspect(bag);
 </script>
 
 {#if toastMsg}
