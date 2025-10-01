@@ -27,7 +27,7 @@
 	};
 </script>
 
-<Card class="p-3">
+<Card class="p-5">
 	<div class="mb-3 flex">
 		<div class="mr-5 flex size-[70px] items-center justify-center rounded-lg bg-white">
 			<img src={getGIFURL()} alt={`GIF of the front sprite of ${mon.name}`} />

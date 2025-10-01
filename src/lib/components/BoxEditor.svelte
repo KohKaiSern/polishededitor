@@ -32,7 +32,7 @@
 			{#if !!mon}
 				<Mon bind:mon={mons[boxNo - 1][i]} {PF} />
 			{:else}
-				<Card class="p-3"><Heading tag="h5">Empty</Heading></Card>
+				<Card class="p-5"><Heading tag="h5">Empty</Heading></Card>
 			{/if}
 		{/each}
 	</div>
