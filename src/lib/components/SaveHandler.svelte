@@ -99,20 +99,21 @@
 	<P>
 		Polished Editor is a save editor for Polished Crystal. It auto-updates by scraping game files. <br
 		/> <br />
-		Instructions for use:
-		<List tag="ol">
-			<Li>Toggle the Polished/Faithful toggler depending on your game version.</Li>
-			<Li>Upload your save file. It should be a battery save, not an emulator save state.</Li>
-			<Li>Edit your PC Boxes and Bag Contents as desired.</Li>
-			<Li
-				>Download the edited save and replace your original save with it. Remember to backup your
-				original save.</Li
-			>
-			<Li>Rename your edited save to match the original one.</Li>
-		</List> <br />
-		Contact Rev3lation on the Polished Crystal Discord to report any bugs (Bad Eggs, Game Corruption,
-		etc.) I am not responsible for any corrupted saves, so please backup your original saves.
+		Instructions for use: Contact Rev3lation on the Polished Crystal Discord to report any bugs (Bad
+		Eggs, Game Corruption, etc.) I am not responsible for any corrupted saves, so please backup your
+		original saves.
 	</P>
+	<br />
+	<List tag="ol" class="text-white">
+		<Li>Toggle the Polished/Faithful toggler depending on your game version.</Li>
+		<Li>Upload your save file. It should be a battery save, not an emulator save state.</Li>
+		<Li>Edit your PC Boxes and Bag Contents as desired.</Li>
+		<Li
+			>Download the edited save and replace your original save with it. Remember to backup your
+			original save.</Li
+		>
+		<Li>Rename your edited save to match the original one.</Li>
+	</List>
 	<br />
 	<P>
 		<em class="font-italic">Credits: Rev3lation, Sylvie (Rangi42), Cammy, Emi, FIQ, Darsh</em>
@@ -131,5 +132,5 @@
 		/>
 	</Label>
 	<Hr />
-	{#if selectedEditor === 'boxes'}<BoxEditor />{/if}
+	{#if selectedEditor === 'boxes'}<BoxEditor bind:mons />{/if}
 </header>
