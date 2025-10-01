@@ -10,7 +10,8 @@
 		P,
 		List,
 		Li,
-		Hr
+		Hr,
+		Select
 	} from 'flowbite-svelte';
 	import { buf2hex, hex2buf, checkSaveVersion } from './SaveHandler.svelte.js';
 	import parseMons from './parsers/parseMons.js';
@@ -20,6 +21,7 @@
 	import { blur } from 'svelte/transition';
 	import checksumNB from './parsers/checksumNB.js';
 	import checksumPD from './parsers/checksumPD.js';
+	import BoxEditor from '$components/BoxEditor.svelte';
 
 	let file = $state(null);
 	let checked = $state(true);
@@ -28,6 +30,7 @@
 	let toastMsg = $state(null);
 	let mons = $state(null);
 	let bag = $state(null);
+	let selectedEditor = $state(null);
 
 	// This function should:
 	// #1: Verify the size of the file
@@ -114,5 +117,19 @@
 	<P>
 		<em class="font-italic">Credits: Rev3lation, Sylvie (Rangi42), Cammy, Emi, FIQ, Darsh</em>
 	</P>
+	<br />
+	<Label>
+		Select an Editor:
+		<Select
+			class="mt-2"
+			items={[
+				{ value: 'boxes', name: 'PC Boxes' },
+				{ value: 'bag', name: 'Bag' }
+			]}
+			bind:value={selectedEditor}
+			disabled={!file}
+		/>
+	</Label>
 	<Hr />
+	{#if selectedEditor === 'boxes'}<BoxEditor />{/if}
 </header>
