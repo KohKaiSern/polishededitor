@@ -133,5 +133,5 @@
 		/>
 	</Label>
 	<Hr />
-	{#if selectedEditor === 'boxes'}<BoxEditor bind:mons />{/if}
+	{#if selectedEditor === 'boxes'}<BoxEditor bind:mons {PF} />{/if}
 </header>
