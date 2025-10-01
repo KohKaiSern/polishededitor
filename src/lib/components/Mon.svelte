@@ -1,8 +1,12 @@
 <script>
-	import { Card, Heading, P } from 'flowbite-svelte';
+	import { Card, Heading, P, Button, Drawer } from 'flowbite-svelte';
+	import { EditSolid } from 'flowbite-svelte-icons';
 	import pokemon from '$data/pokemon.json';
 	import { getTypeColour, cammyFormat } from '$components/helpers';
 	let { mon = $bindable(), PF } = $props();
+	let open = $state(false);
+	let innerWidth = $state(0);
+	let innerHeight = $state(0);
 
 	const getGIFURL = () => {
 		// Format names to Cammy's format
@@ -27,7 +31,7 @@
 	};
 </script>
 
-<Card class="p-5">
+<Card class="relative p-5">
 	<div class="mb-3 flex">
 		<div class="mr-5 flex size-[70px] items-center justify-center rounded-lg bg-white">
 			<img src={getGIFURL()} alt={`GIF of the front sprite of ${mon.name}`} />
@@ -54,4 +58,15 @@
 	<P>Held Item: {mon.heldItem}</P>
 	<P>Ability: {mon.ability}</P>
 	<P>Nature: {mon.nature}</P>
+	<Button class="absolute right-5 bottom-5 p-2!" outline color="dark" onclick={() => (open = true)}
+		><EditSolid /></Button
+	>
 </Card>
+
+<Drawer
+	bind:open
+	placement={innerWidth > innerHeight ? 'right' : 'bottom'}
+	class={innerWidth > innerHeight ? 'h-full w-[75%]' : 'h-[75%] w-full'}
+></Drawer>
+
+<svelte:window bind:innerWidth bind:innerHeight />

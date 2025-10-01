@@ -8,7 +8,7 @@
 </script>
 
 <section>
-	<Card class="sticky top-3 w-fit p-3">
+	<Card class="sticky top-3 z-10 w-fit p-3">
 		<div class="flex flex-nowrap items-center gap-3">
 			<Button color="purple" class="p-2!"
 				><CaretLeftSolid
