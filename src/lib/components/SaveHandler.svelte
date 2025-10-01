@@ -97,13 +97,13 @@
 	<Helper>.SAV or .SRM (Max 33kB).</Helper>
 	<br />
 	<P>
-		Polished Editor is a save editor for Polished Crystal. It auto-updates by scraping game files. <br
+		Polished Editor is a save editor for Polished Crystal. It auto-updates by scraping game files.
+		Contact Rev3lation on the Polished Crystal Discord Server to report bugs (bad eggs, corrupted
+		saves, etc.) I am not responsible for any corrupted saves - please backup your original saves. <br
 		/> <br />
-		Instructions for use: Contact Rev3lation on the Polished Crystal Discord to report any bugs (Bad
-		Eggs, Game Corruption, etc.) I am not responsible for any corrupted saves, so please backup your
-		original saves.
+		Instructions for use:
 	</P>
-	<br />
+
 	<List tag="ol" class="text-white">
 		<Li>Toggle the Polished/Faithful toggler depending on your game version.</Li>
 		<Li>Upload your save file. It should be a battery save, not an emulator save state.</Li>
@@ -114,6 +114,7 @@
 		>
 		<Li>Rename your edited save to match the original one.</Li>
 	</List>
+
 	<br />
 	<P>
 		<em class="font-italic">Credits: Rev3lation, Sylvie (Rangi42), Cammy, Emi, FIQ, Darsh</em>
