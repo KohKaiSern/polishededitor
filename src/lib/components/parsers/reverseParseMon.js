@@ -26,45 +26,45 @@ const reverseParseMon = (fileHex, address, mon, PF) => {
 
 
 	//Byte #2: Held Item
-	// const item = items[PF].find((item) => item.name === mon.heldItem);
-	// if (item) {
-	// 	fileHex[address + 1] = item.itemNo.toString(16).padStart(2, '0');
-	// } else {
-	// 	fileHex[address + 1] = '00';
-	// }
+	const item = items[PF].find((item) => item.name === mon.heldItem);
+	if (item) {
+		fileHex[address + 1] = item.itemNo.toString(16).padStart(2, '0');
+	} else {
+		fileHex[address + 1] = '00';
+	}
 
 	//Byte #3-6: Moveset
 
-	// for (let i = 0; i < 4; i++) {
-	// 	if (mon.moves[i] === null) {
-	// 		fileHex[address + 2 + i] = '00';
-	// 	} else {
-	// 		const move = moves[PF].find((move) => move.name === mon.moves[i]);
-	// 		fileHex[address + 2 + i] = move.moveNo.toString(16).padStart(2, '0');
-	// 	}
-	// }
+	for (let i = 0; i < 4; i++) {
+		if (mon.moves[i] === null) {
+			fileHex[address + 2 + i] = '00';
+		} else {
+			const move = moves[PF].find((move) => move.name === mon.moves[i]);
+			fileHex[address + 2 + i] = move.moveNo.toString(16).padStart(2, '0');
+		}
+	}
 
 	//Byte #7-8: ID [UNSUPPORTED]
 
 	//Byte #9-11: EXP
 
-	// const exp = mon.exp.toString(16).padStart(6, '0');
-	// fileHex[address + 8] = exp.slice(0, 2);
-	// fileHex[address + 9] = exp.slice(2, 4);
-	// fileHex[address + 10] = exp.slice(4);
+	const exp = mon.exp.toString(16).padStart(6, '0');
+	fileHex[address + 8] = exp.slice(0, 2);
+	fileHex[address + 9] = exp.slice(2, 4);
+	fileHex[address + 10] = exp.slice(4);
 
 	//Byte #12-17: EVs
 
-	// for (let i = 0; i < 6; i++) {
-	// 	fileHex[address + 11 + i] = mon.evs.map((ev) => ev.toString(16).padStart(2, '0')).at(i);
-	// }
+	for (let i = 0; i < 6; i++) {
+		fileHex[address + 11 + i] = mon.evs.map((ev) => ev.toString(16).padStart(2, '0')).at(i);
+	}
 
 	//Byte #18-20: DVs
 
-	// const dvs = mon.dvs.map((dv) => dv.toString(16));
-	// fileHex[address + 17] = dvs[0] + dvs[1];
-	// fileHex[address + 18] = dvs[2] + dvs[3];
-	// fileHex[address + 19] = dvs[4] + dvs[5];
+	const dvs = mon.dvs.map((dv) => dv.toString(16));
+	fileHex[address + 17] = dvs[0] + dvs[1];
+	fileHex[address + 18] = dvs[2] + dvs[3];
+	fileHex[address + 19] = dvs[4] + dvs[5];
 
 	//Byte #21: Ability, Nature, Shininess
 
