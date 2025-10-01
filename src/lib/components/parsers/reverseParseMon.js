@@ -68,40 +68,40 @@ const reverseParseMon = (fileHex, address, mon, PF) => {
 
 	//Byte #21: Ability, Nature, Shininess
 
-	// let byte21 = hex2bin(fileHex[address + 20]);
-	// const abilityNo = form.abilities.findIndex((ability) => ability === mon.ability);
-	// byte21 = byte21.at(0) + (abilityNo + 1).toString(2).padStart(2, '0') + byte21.slice(3);
-	// byte21 = (mon.shininess === 'Shiny' ? '1' : '0') + byte21.slice(1);
-	// byte21 = byte21.slice(0, 3) + getNatureNo(mon.nature).toString(2).padStart(5, '0');
-	// fileHex[address + 20] = bin2hex(byte21);
+	let byte21 = hex2bin(fileHex[address + 20]);
+	const abilityNo = form.abilities.findIndex((ability) => ability === mon.ability);
+	byte21 = byte21.at(0) + (abilityNo + 1).toString(2).padStart(2, '0') + byte21.slice(3);
+	byte21 = (mon.shininess === 'Shiny' ? '1' : '0') + byte21.slice(1);
+	byte21 = byte21.slice(0, 3) + getNatureNo(mon.nature).toString(2).padStart(5, '0');
+	fileHex[address + 20] = bin2hex(byte21);
 
 	//Byte #22: Gender, isEgg
 
-	// if (!(mon.gender === 'Genderless')) {
-	// 	if (mon.gender === 'Male') {
-	// 		byte22 = '0' + byte22.slice(1);
-	// 	} else {
-	// 		byte22 = '1' + byte22.slice(1);
-	// 	}
-	// }
-	//
-	// if (mon.gender) {
-	// 	byte22 = byte22.at(0) + '1' + byte22.slice(2);
-	// } else {
-	// 	byte22 = byte22.at(0) + '0' + byte22.slice(2);
-	// }
-	//
-	// fileHex[address + 21] = bin2hex(byte22);
+	if (!(mon.gender === 'Genderless')) {
+		if (mon.gender === 'Male') {
+			byte22 = '0' + byte22.slice(1);
+		} else {
+			byte22 = '1' + byte22.slice(1);
+		}
+	}
+
+	if (mon.isEgg) {
+		byte22 = byte22.at(0) + '1' + byte22.slice(2);
+	} else {
+		byte22 = byte22.at(0) + '0' + byte22.slice(2);
+	}
+
+	fileHex[address + 21] = bin2hex(byte22);
 
 	//Byte #23: PP Ups TODO
 
 	//Byte #24: Happiness
 
-	// if (mon.isEgg) {
-	// 	fileHex[address + 23] = mon.hatchCycles.toString(16).padStart(2, '0');
-	// } else {
-	// 	fileHex[address + 23] = mon.happiness.toString(16).padStart(2, '0');
-	// }
+	if (mon.isEgg) {
+		fileHex[address + 23] = mon.hatchCycles.toString(16).padStart(2, '0');
+	} else {
+		fileHex[address + 23] = mon.happiness.toString(16).padStart(2, '0');
+	}
 
 	//Byte #25: Pokerus [UNSUPPORTED]
 
@@ -113,7 +113,7 @@ const reverseParseMon = (fileHex, address, mon, PF) => {
 
 	////Byte #29: Level
 	
-	//fileHex[address + 28] = mon.level.toString(16).padStart(2, '0');
+	fileHex[address + 28] = mon.level.toString(16).padStart(2, '0');
 
 	//Byte #30: Hyper Training TODO
 
