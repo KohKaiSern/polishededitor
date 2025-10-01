@@ -1,5 +1,17 @@
 <script>
-	import { Heading, Label, Fileupload, Button, Helper, Toast, Toggle } from 'flowbite-svelte';
+	import {
+		Heading,
+		Label,
+		Fileupload,
+		Button,
+		Helper,
+		Toast,
+		Toggle,
+		P,
+		List,
+		Li,
+		Hr
+	} from 'flowbite-svelte';
 	import { buf2hex, hex2buf, checkSaveVersion } from './SaveHandler.svelte.js';
 	import parseMons from './parsers/parseMons.js';
 	import reverseParseMons from './parsers/reverseParseMons.js';
@@ -80,4 +92,27 @@
 		<Button color="purple" class="whitespace-nowrap" onclick={downloadSave}>Download Save</Button>
 	</div>
 	<Helper>.SAV or .SRM (Max 33kB).</Helper>
+	<br />
+	<P>
+		Polished Editor is a save editor for Polished Crystal. It auto-updates by scraping game files. <br
+		/> <br />
+		Instructions for use:
+		<List tag="ol">
+			<Li>Toggle the Polished/Faithful toggler depending on your game version.</Li>
+			<Li>Upload your save file. It should be a battery save, not an emulator save state.</Li>
+			<Li>Edit your PC Boxes and Bag Contents as desired.</Li>
+			<Li
+				>Download the edited save and replace your original save with it. Remember to backup your
+				original save.</Li
+			>
+			<Li>Rename your edited save to match the original one.</Li>
+		</List> <br />
+		Contact Rev3lation on the Polished Crystal Discord to report any bugs (Bad Eggs, Game Corruption,
+		etc.) I am not responsible for any corrupted saves, so please backup your original saves.
+	</P>
+	<br />
+	<P>
+		<em class="font-italic">Credits: Rev3lation, Sylvie (Rangi42), Cammy, Emi, FIQ, Darsh</em>
+	</P>
+	<Hr />
 </header>
