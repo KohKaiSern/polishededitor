@@ -66,12 +66,12 @@ const reverseParseMon = (fileHex, address, mon, PF) => {
 	fileHex[address + 19] = dvs[4] + dvs[5];
 
 	//Byte #21: Ability, Nature, Shininess
-	let byte21 = hex2bin(fileHex[address + 20]);
-	const abilityNo = form.abilities.findIndex((ability) => ability === mon.ability);
-	byte21 = byte21.at(0) + (abilityNo + 1).toString(2).padStart(2, '0') + byte21.slice(3);
-	byte21 = (mon.shininess === 'Shiny' ? '1' : '0') + byte21.slice(1);
-	byte21 = byte21.slice(0, 3) + getNatureNo(mon.nature).toString(2).padStart(5, '0');
-	fileHex[address + 20] = bin2hex(byte21);
+	// let byte21 = hex2bin(fileHex[address + 20]);
+	// const abilityNo = form.abilities.findIndex((ability) => ability === mon.ability);
+	// byte21 = byte21.at(0) + (abilityNo + 1).toString(2).padStart(2, '0') + byte21.slice(3);
+	// byte21 = (mon.shininess === 'Shiny' ? '1' : '0') + byte21.slice(1);
+	// byte21 = byte21.slice(0, 3) + getNatureNo(mon.nature).toString(2).padStart(5, '0');
+	// fileHex[address + 20] = bin2hex(byte21);
 	//Byte #22: Gender, isEgg
 
 	if (!(mon.gender === 'Genderless')) {

@@ -7,6 +7,11 @@ export const buf2hex = (buffer) => {
 	);
 };
 
+export const hex2buf = (hex) => {
+	const bytes = new Uint8Array(hex.map((byte) => parseInt(byte, 16)));
+	return bytes.buffer;
+};
+
 export const checkSaveVersion = (fileHex) => {
 	const saveVersion = parseInt(fileHex[parseInt(addresses.sSaveVersion, 16) + 1], 16);
 	if (saveVersion === parseInt(versions.save)) {

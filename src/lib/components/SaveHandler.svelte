@@ -1,6 +1,6 @@
 <script>
 	import { Heading, Label, Fileupload, Button, Helper, Toast, Toggle } from 'flowbite-svelte';
-	import { buf2hex, checkSaveVersion } from './SaveHandler.svelte.js';
+	import { buf2hex, hex2buf, checkSaveVersion } from './SaveHandler.svelte.js';
 	import parseMons from './parsers/parseMons.js';
 	import reverseParseMons from './parsers/reverseParseMons.js';
 	import parseBag from './parsers/parseBag.js';
@@ -40,9 +40,18 @@
 	};
 
 	const downloadSave = async () => {
+		if (!file) return;
 		let fileHex = buf2hex(await file[0].arrayBuffer());
 		fileHex = reverseParseBag(reverseParseMons(fileHex, mons, PF), bag, PF);
-		console.log(fileHex);
+		//Create Blob
+		const buffer = hex2buf(fileHex);
+		const blob = new Blob([buffer]);
+		const link = URL.createObjectURL(blob);
+
+		const a = document.createElement('a');
+		a.href = link;
+		a.download = `${file[0].name.slice(0, -4)}_EDITED${file[0].name.slice(-4)}`;
+		a.click();
 	};
 
 	$inspect(mons);
