@@ -6,6 +6,7 @@
 	import parseBag from './parsers/parseBag.js';
 	import reverseParseBag from './parsers/reverseParseBag.js';
 	import { blur } from 'svelte/transition';
+	import checksumNB from './parsers/checksumNB.js';
 
 	let file = $state(null);
 	let checked = $state(true);
@@ -43,6 +44,7 @@
 		if (!file) return;
 		let fileHex = buf2hex(await file[0].arrayBuffer());
 		fileHex = reverseParseBag(reverseParseMons(fileHex, mons, PF), bag, PF);
+		fileHex = checksumNB(fileHex);
 		//Create Blob
 		const buffer = hex2buf(fileHex);
 		const blob = new Blob([buffer]);
