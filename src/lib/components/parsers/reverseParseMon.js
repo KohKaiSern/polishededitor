@@ -12,18 +12,17 @@ const reverseParseMon = (fileHex, address, mon, PF) => {
 	//9th-Bit Activated
 	let byte22 = hex2bin(fileHex[address + 21]);
 	if (dexNo > 254) {
-    fileHex[address] = (dexNo - 254).toString(16).padStart(2, '0');
-    byte22 = byte22.slice(0, 2) + '1' + byte22.slice(3);
+		fileHex[address] = (dexNo - 254).toString(16).padStart(2, '0');
+		byte22 = byte22.slice(0, 2) + '1' + byte22.slice(3);
 	} else {
-    fileHex[address] = dexNo.toString(16).padStart(2, '0');
-    byte22 = byte22.slice(0, 2) + '0' + byte22.slice(3);
+		fileHex[address] = dexNo.toString(16).padStart(2, '0');
+		byte22 = byte22.slice(0, 2) + '0' + byte22.slice(3);
 	}
 	//Form
 	const form = pokemon[PF][dexNo - 1].forms.find((form) => form.name === mon.form);
 	const formNo = form.formNo.toString(2).padStart(5, '0');
 	byte22 = byte22.slice(0, 3) + formNo;
 	fileHex[address + 21] = bin2hex(byte22);
-
 
 	//Byte #2: Held Item
 	const item = items[PF].find((item) => item.name === mon.heldItem);
@@ -112,7 +111,7 @@ const reverseParseMon = (fileHex, address, mon, PF) => {
 	//Byte #28: Caught Location [UNSUPPORTED]
 
 	////Byte #29: Level
-	
+
 	fileHex[address + 28] = mon.level.toString(16).padStart(2, '0');
 
 	//Byte #30: Hyper Training TODO

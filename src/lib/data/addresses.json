@@ -8,5 +8,10 @@
 	"sBoxMons2B": "0bf1",
 	"sBoxMons2C": "3858",
 	"sBackupPlayerData": "1208",
-	"sBackupChecksum": "1f0d"
+	"sBackupChecksum": "1f0d",
+	"sChecksum": "2d0d",
+	"sGameData": "2008",
+	"sGameDataEnd": "2b83",
+	"sBackupGameData": "1208",
+	"sBackupGameDataEnd": "1d83"
 }

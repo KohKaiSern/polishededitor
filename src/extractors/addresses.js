@@ -14,7 +14,12 @@ const SYMBOLS = [
 	'sBoxMons2B',
 	'sBoxMons2C',
 	'sBackupPlayerData',
-	'sBackupChecksum'
+	'sBackupChecksum',
+	'sChecksum',
+	'sGameData',
+	'sGameDataEnd',
+	'sBackupGameData',
+	'sBackupGameDataEnd'
 ];
 
 //Converts wRAM address to sRAM
