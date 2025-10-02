@@ -11,7 +11,8 @@
 		List,
 		Li,
 		Hr,
-		ButtonGroup
+		ButtonGroup,
+		RadioButton
 	} from 'flowbite-svelte';
 	import { buf2hex, hex2buf, checkSaveVersion } from './SaveHandler.svelte.js';
 	import parseMons from './parsers/parseMons.js';
@@ -122,10 +123,24 @@
 		<em class="font-italic">Credits: Rev3lation, Sylvie (Rangi42), Cammy, Emi, FIQ, Darsh</em>
 	</P>
 	<br />
-	<ButtonGroup>
-		<Button onclick={() => (selectedEditor = 'boxes')} disabled={!disabled}>PC Boxes</Button>
-		<Button onclick={() => (selectedEditor = 'bag')} disabled={!disabled}>Bag</Button>
-	</ButtonGroup>
+	{#if disabled}
+		<ButtonGroup>
+			<RadioButton
+				value="boxes"
+				bind:group={selectedEditor}
+				checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
+			>
+				PC Boxes
+			</RadioButton>
+			<RadioButton
+				value="bag"
+				bind:group={selectedEditor}
+				checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
+			>
+				Bag
+			</RadioButton>
+		</ButtonGroup>
+	{/if}
 </header>
 <Hr />
 {#if selectedEditor === 'boxes'}<BoxEditor bind:mons {PF} />{/if}
