@@ -2,6 +2,7 @@
 	import { Heading, Accordion, AccordionItem } from 'flowbite-svelte';
 	import DVEVNature from './monEditors/DVEVNature.svelte';
 	import Misc from './monEditors/Misc.svelte';
+	import Moveset from './monEditors/Moveset.svelte';
 	let { mon = $bindable(), PF } = $props();
 </script>
 
@@ -18,7 +19,7 @@
 	</AccordionItem>
 	<AccordionItem>
 		{#snippet header()}Moveset{/snippet}
-		Test
+		<Moveset bind:mon {PF} />
 	</AccordionItem>
 	<AccordionItem>
 		{#snippet header()}Miscellaneous{/snippet}

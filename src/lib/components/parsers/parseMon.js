@@ -42,7 +42,7 @@ const parseMon = (fileHex, address, PF) => {
 	let moveset = [];
 	for (let i = 2; i < 6; i++) {
 		if (fileHex[address + i] === '00') {
-			moveset.push(null);
+			moveset.push('Empty');
 			continue;
 		}
 		moveset.push(moves[PF][parseInt(fileHex[address + i], 16) - 1].name);

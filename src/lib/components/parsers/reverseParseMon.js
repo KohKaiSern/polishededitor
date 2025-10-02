@@ -35,7 +35,7 @@ const reverseParseMon = (fileHex, address, mon, PF) => {
 	//Byte #3-6: Moveset
 
 	for (let i = 0; i < 4; i++) {
-		if (mon.moves[i] === null) {
+		if (mon.moves[i] === 'Empty') {
 			fileHex[address + 2 + i] = '00';
 		} else {
 			const move = moves[PF].find((move) => move.name === mon.moves[i]);
