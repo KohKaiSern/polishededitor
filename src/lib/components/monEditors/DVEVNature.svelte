@@ -3,6 +3,7 @@
 	import DropdownSearch from '$components/DropdownSearch.svelte';
 	import { PlusOutline, MinusOutline } from 'flowbite-svelte-icons';
 	import { getNatures } from '$components/helpers';
+	import NatureTable from './NatureTable.svelte';
 	let { mon = $bindable() } = $props();
 
 	const increment = (x, min, max) => (x === max ? min : x + 1);
@@ -79,3 +80,6 @@
 
 <Heading tag="h6" class="mt-5 mb-3">Nature</Heading>
 <DropdownSearch bind:value={mon.nature} options={getNatures().map((x) => x.value)} />
+<div class="mt-5">
+	<NatureTable />
+</div>
