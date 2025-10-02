@@ -21,7 +21,7 @@
 		<div>
 			<DropdownSearch
 				bind:value={mon.moves[i]}
-				options={[...moves[PF].map((move) => move.name), 'Empty']}
+				options={['Empty', ...moves[PF].map((move) => move.name)]}
 			/>
 			{#if move === 'Empty'}
 				<P class="mt-3">This moveslot is empty.</P>
