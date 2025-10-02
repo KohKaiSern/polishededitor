@@ -3,6 +3,7 @@
 	import { EditSolid } from 'flowbite-svelte-icons';
 	import pokemon from '$data/pokemon.json';
 	import { getTypeColour, cammyFormat } from '$components/helpers';
+	import MonEditor from '$components/MonEditor.svelte';
 	let { mon = $bindable(), PF } = $props();
 	let open = $state(false);
 	let innerWidth = $state(0);
@@ -67,6 +68,7 @@
 	bind:open
 	placement={innerWidth > innerHeight ? 'right' : 'bottom'}
 	class={innerWidth > innerHeight ? 'h-full w-[75%]' : 'h-[75%] w-full'}
-></Drawer>
+	><MonEditor bind:mon {PF} /></Drawer
+>
 
 <svelte:window bind:innerWidth bind:innerHeight />

@@ -2,3 +2,4 @@
 export { default as SaveHandler } from '$components/SaveHandler.svelte';
 export { default as BoxEditor } from '$components/BoxEditor.svelte';
 export { default as Mon } from '$components/Mon.svelte';
+export { default as MonEditor } from '$components/MonEditor.svelte';

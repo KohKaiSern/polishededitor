@@ -26,40 +26,40 @@ export const getTypeColour = (type) => {
 };
 
 const NATURES = [
-	'Hardy',
-	'Lonely',
-	'Brave',
-	'Adamant',
-	'Naughty',
-	'Bold',
-	'Docile',
-	'Relaxed',
-	'Impish',
-	'Lax',
-	'Timid',
-	'Hasty',
-	'Serious',
-	'Jolly',
-	'Naive',
-	'Modest',
-	'Mild',
-	'Quiet',
-	'Bashful',
-	'Rash',
-	'Calm',
-	'Gentle',
-	'Sassy',
-	'Careful',
-	'Quirky'
+	{ value: 'Hardy', name: 'Hardy' },
+	{ value: 'Lonely', name: 'Lonely +Atk -Def' },
+	{ value: 'Adamant', name: 'Adamant +Atk -Sat' },
+	{ value: 'Naughty', name: 'Naughty +Atk -Sde' },
+	{ value: 'Brave', name: 'Brave +Atk -Spe' },
+	{ value: 'Bold', name: 'Bold +Def -Atk' },
+	{ value: 'Docile', name: 'Docile' },
+	{ value: 'Impish', name: 'Impish +Def -Sat' },
+	{ value: 'Lax', name: 'Lax +Def -Sde' },
+	{ value: 'Relaxed', name: 'Relaxed +Def -Spe' },
+	{ value: 'Modest', name: 'Modest +Sat -Atk' },
+	{ value: 'Mild', name: 'Mild +Sat -Def' },
+	{ value: 'Bashful', name: 'Bashful' },
+	{ value: 'Rash', name: 'Rash +Sat -Sde' },
+	{ value: 'Quiet', name: 'Quiet +Sat -Spe' },
+	{ value: 'Calm', name: 'Calm +Sde -Atk' },
+	{ value: 'Gentle', name: 'Gentle +Sde -Def' },
+	{ value: 'Careful', name: 'Careful +Sde -Sat' },
+	{ value: 'Quirky', name: 'Quirky' },
+	{ value: 'Sassy', name: 'Sassy +Sde -Spe' },
+	{ value: 'Timid', name: 'Timid +Spe -Atk' },
+	{ value: 'Hasty', name: 'Hasty +Spe -Def' },
+	{ value: 'Jolly', name: 'Jolly +Spe -Sat' },
+	{ value: 'Naive', name: 'Naive +Spe -Sde' },
+	{ value: 'Serious', name: 'Serious' }
 ];
 
 export const getNature = (x) => {
-	return NATURES[x];
+	return NATURES[x].value;
 };
 
 //The opposite of the above
 export const getNatureNo = (nature) => {
-	return NATURES.findIndex((NATURE) => NATURE === nature);
+	return NATURES.findIndex((NATURE) => NATURE.value === nature);
 };
 
 //Just get a list
