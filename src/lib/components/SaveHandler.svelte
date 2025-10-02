@@ -11,7 +11,7 @@
 		List,
 		Li,
 		Hr,
-		Select
+		ButtonGroup
 	} from 'flowbite-svelte';
 	import { buf2hex, hex2buf, checkSaveVersion } from './SaveHandler.svelte.js';
 	import parseMons from './parsers/parseMons.js';
@@ -22,6 +22,7 @@
 	import checksumNB from './parsers/checksumNB.js';
 	import checksumPD from './parsers/checksumPD.js';
 	import BoxEditor from '$components/BoxEditor.svelte';
+	import BagEditor from '$components/BagEditor.svelte';
 
 	let file = $state(null);
 	let checked = $state(true);
@@ -120,18 +121,11 @@
 		<em class="font-italic">Credits: Rev3lation, Sylvie (Rangi42), Cammy, Emi, FIQ, Darsh</em>
 	</P>
 	<br />
-	<Label>
-		Select an Editor:
-		<Select
-			class="mt-2"
-			items={[
-				{ value: 'boxes', name: 'PC Boxes' },
-				{ value: 'bag', name: 'Bag' }
-			]}
-			bind:value={selectedEditor}
-			disabled={!file}
-		/>
-	</Label>
-	<Hr />
-	{#if selectedEditor === 'boxes'}<BoxEditor bind:mons {PF} />{/if}
+	<ButtonGroup>
+		<Button onclick={() => (selectedEditor = 'boxes')} disabled={!disabled}>PC Boxes</Button>
+		<Button onclick={() => (selectedEditor = 'bag')} disabled={!disabled}>Bag</Button>
+	</ButtonGroup>
 </header>
+<Hr />
+{#if selectedEditor === 'boxes'}<BoxEditor bind:mons {PF} />{/if}
+{#if selectedEditor === 'bag'}<BagEditor bind:bag {PF} />{/if}
