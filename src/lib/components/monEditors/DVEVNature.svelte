@@ -3,17 +3,9 @@
 	import DropdownSearch from '$components/DropdownSearch.svelte';
 	import { PlusOutline, MinusOutline } from 'flowbite-svelte-icons';
 	import { getNatures } from '$components/helpers';
+	import { increment, decrement, enforce } from './numberInputHelpers';
 	import NatureTable from './NatureTable.svelte';
 	let { mon = $bindable() } = $props();
-
-	const increment = (x, min, max) => (x === max ? min : x + 1);
-	const decrement = (x, min, max) => (x === min ? max : x - 1);
-	const enforce = (x, min, max) => {
-		if (typeof x != 'number') return max;
-		if (!Number.isInteger(x)) return max;
-		if (x < min || x > max) return max;
-		return x;
-	};
 </script>
 
 <Heading tag="h6">Determinant Values</Heading>
