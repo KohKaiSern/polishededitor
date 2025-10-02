@@ -1,5 +1,6 @@
 <script>
-	import { Label, Input, Heading, Button, ButtonGroup, Select } from 'flowbite-svelte';
+	import { Label, Input, Heading, Button, ButtonGroup } from 'flowbite-svelte';
+	import DropdownSearch from '$components/DropdownSearch.svelte';
 	import { PlusOutline, MinusOutline } from 'flowbite-svelte-icons';
 	import { getNatures } from '$components/helpers';
 	let { mon = $bindable() } = $props();
@@ -77,4 +78,4 @@
 </div>
 
 <Heading tag="h6" class="mt-5 mb-3">Nature</Heading>
-<Select items={getNatures()} bind:value={mon.nature} />
+<DropdownSearch bind:value={mon.nature} options={getNatures().map((x) => x.value)} />
