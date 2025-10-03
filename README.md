@@ -19,12 +19,15 @@ Polished Editor is a save editor for the Pokémon Polished Crystal ROM Hack by S
 ## Project Structure
 
 `src/extractors`
+
 - Extracts data from game files and outputs JSON files
 
 `src/lib/data`
+
 - Said JSON files
 
 `src/lib/components`
+
 - Contains the frontend of the project
 - `parsers` contains the functions that convert the raw save files into formatted data and vice versa
 
@@ -36,7 +39,7 @@ This project is licensed under the MIT License.
 
 - Pokémon Polished Crystal by Sylvie (Rangi42) and contributors
 - Cammy for setting the technical groundwork in data extraction, and providing the sprite GIFs
-- Emi for setting the technical groundwork in NewBox parsing and save editing 
-- FIQ for developing NewBox and writing the relevant documentation for its structure, and for coming up with the idea for this project 
+- Emi for setting the technical groundwork in NewBox parsing and save editing
+- FIQ for developing NewBox and writing the relevant documentation for its structure, and for coming up with the idea for this project
 - Darsh for helping me with the NewBox extraction algorithm
 - Svelte, Flowbite-Svelte and Tailwind CSS
