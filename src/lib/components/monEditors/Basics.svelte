@@ -1,5 +1,5 @@
 <script>
-	import { Heading, Input, ButtonGroup, Button } from 'flowbite-svelte';
+	import { Heading, Input, ButtonGroup, Button, RadioButton } from 'flowbite-svelte';
 	import { PlusOutline, MinusOutline } from 'flowbite-svelte-icons';
 	import items from '$data/items.json';
 	import pokemon from '$data/pokemon.json';
@@ -66,12 +66,41 @@
 />
 
 <Heading tag="h6" class="mt-3 mb-3">Ability</Heading>
-<DropdownSearch
-	bind:value={mon.ability}
-	options={pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
-		(form) => form.name === mon.form
-	).abilities}
-/>
+<ButtonGroup>
+	<RadioButton
+		value={pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
+			(form) => form.name === mon.form
+		).abilities[0]}
+		bind:group={mon.ability}
+		checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
+	>
+		{pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
+			(form) => form.name === mon.form
+		).abilities[0]}
+	</RadioButton>
+	<RadioButton
+		value={pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
+			(form) => form.name === mon.form
+		).abilities[1]}
+		bind:group={mon.ability}
+		checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
+	>
+		{pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
+			(form) => form.name === mon.form
+		).abilities[1]}
+	</RadioButton>
+	<RadioButton
+		value={pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
+			(form) => form.name === mon.form
+		).abilities[2]}
+		bind:group={mon.ability}
+		checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
+	>
+		{pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
+			(form) => form.name === mon.form
+		).abilities[2]}
+	</RadioButton>
+</ButtonGroup>
 
 <Heading tag="h6" class="mt-3 mb-3">Level</Heading>
 <ButtonGroup>
