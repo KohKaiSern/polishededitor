@@ -1,5 +1,6 @@
 import addresses from '$data/addresses.json';
 import items from '$data/items.json';
+import { hex2bin } from '../helpers.js'
 
 export const parseBag = (fileHex, PF) => {
 	const address = parseInt(addresses.sBackupPlayerData, 16) + 943;
@@ -27,7 +28,10 @@ export const parseBag = (fileHex, PF) => {
 			contents: Array(31)
 				.fill(null)
 				.map(() => ({ name: null, qty: null }))
-		}
+		},
+    TMsHMs: {
+      contents: null
+    }
 	};
 	// Items
 	for (let i = 0; i < bag.items.count; i++) {
@@ -54,6 +58,12 @@ export const parseBag = (fileHex, PF) => {
 		bag.berries.contents[i].name = name;
 		bag.berries.contents[i].qty = qty;
 	}
+  //TMsHMs
+  let TMHMData = []
+  for (let i = 0; i < 12; i++) {
+    TMHMData = TMHMData.concat([...hex2bin(fileHex[address - 50 + i])].reverse())
+  }
+  bag.TMsHMs.contents = TMHMData.slice(0, 81)
 	return bag;
 };
 
