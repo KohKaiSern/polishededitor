@@ -1,7 +1,7 @@
 <script>
 	import { P } from 'flowbite-svelte';
 	import { DropdownSearch } from '$components/UI';
-	import moves from '$data/moves.json';
+	import { moves } from '$data';
 	let { mon = $bindable(), PF } = $props();
 	let MOVES = $derived.by(() => {
 		const result = [];

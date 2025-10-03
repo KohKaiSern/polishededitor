@@ -1,9 +1,8 @@
 <script>
 	import { Heading } from 'flowbite-svelte';
-	import items from '$data/items.json';
-	import pokemon from '$data/pokemon.json';
-	import growthRates from '$data/growthRates.json';
 	import { DropdownSearch, NumberInput, RadioSelect } from '$components/UI';
+	import { items, pokemon, growthRates } from '$data';
+	import { getPokemon, getForm } from '../utils.js';
 	let { mon = $bindable(), PF } = $props();
 
 	const setExpForLvl = () => {
@@ -16,25 +15,20 @@
 				growthCFs[4]
 		);
 	};
+
 	const getGrowthRate = () => {
-		return pokemon[PF].find((pokemon) => pokemon.name === mon.species)
-			.forms.find((form) => form.name === mon.form)
-			.growthRate.slice(6);
+		return getForm(mon.species, mon.form, PF).growthRate.slice(6);
 	};
 
 	const resetSpecies = () => {
-		const species = pokemon[PF].find((pokemon) => pokemon.name === mon.species);
-		const form = species.forms[0];
+		const form = getPokemon(mon.species, PF).forms[0];
 		mon.form = form.name;
 		mon.ability = form.abilities[0];
 		setExpForLvl();
 	};
 
 	const resetForm = () => {
-		const form = pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
-			(form) => form.name === mon.form
-		);
-		mon.ability = form.abilities[0];
+		mon.ability = getForm(mon.species, mon.form, PF).abilities[0];
 		setExpForLvl();
 	};
 </script>
@@ -50,9 +44,7 @@
 	<DropdownSearch
 		class="flex-1"
 		bind:value={mon.form}
-		options={pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.map(
-			(form) => form.name
-		)}
+		options={getPokemon(mon.species, PF).forms.map((form) => form.name)}
 		onchange={resetForm}
 	/>
 </div>
@@ -64,12 +56,7 @@
 />
 
 <Heading tag="h6" class="mt-3 mb-3">Ability</Heading>
-<RadioSelect
-	bind:value={mon.ability}
-	options={pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
-		(form) => form.name === mon.form
-	).abilities}
-/>
+<RadioSelect bind:value={mon.ability} options={getForm(mon.species, mon.form, PF).abilities} />
 
 <Heading tag="h6" class="mt-3 mb-3">Level</Heading>
 <NumberInput bind:value={mon.level} min={1} max={100} onchange={() => setExpForLvl()} />
