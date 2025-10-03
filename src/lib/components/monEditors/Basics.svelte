@@ -1,9 +1,9 @@
 <script>
-	import { Heading, ButtonGroup, RadioButton } from 'flowbite-svelte';
+	import { Heading } from 'flowbite-svelte';
 	import items from '$data/items.json';
 	import pokemon from '$data/pokemon.json';
 	import growthRates from '$data/growthRates.json';
-	import { DropdownSearch, NumberInput } from '$components/UI';
+	import { DropdownSearch, NumberInput, RadioSelect } from '$components/UI';
 	let { mon = $bindable(), PF } = $props();
 
 	const setExpForLvl = () => {
@@ -64,41 +64,12 @@
 />
 
 <Heading tag="h6" class="mt-3 mb-3">Ability</Heading>
-<ButtonGroup>
-	<RadioButton
-		value={pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
-			(form) => form.name === mon.form
-		).abilities[0]}
-		bind:group={mon.ability}
-		checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
-	>
-		{pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
-			(form) => form.name === mon.form
-		).abilities[0]}
-	</RadioButton>
-	<RadioButton
-		value={pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
-			(form) => form.name === mon.form
-		).abilities[1]}
-		bind:group={mon.ability}
-		checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
-	>
-		{pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
-			(form) => form.name === mon.form
-		).abilities[1]}
-	</RadioButton>
-	<RadioButton
-		value={pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
-			(form) => form.name === mon.form
-		).abilities[2]}
-		bind:group={mon.ability}
-		checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
-	>
-		{pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
-			(form) => form.name === mon.form
-		).abilities[2]}
-	</RadioButton>
-</ButtonGroup>
+<RadioSelect
+	bind:value={mon.ability}
+	options={pokemon[PF].find((pokemon) => pokemon.name === mon.species).forms.find(
+		(form) => form.name === mon.form
+	).abilities}
+/>
 
 <Heading tag="h6" class="mt-3 mb-3">Level</Heading>
 <NumberInput bind:value={mon.level} min={1} max={100} onchange={() => setExpForLvl()} />

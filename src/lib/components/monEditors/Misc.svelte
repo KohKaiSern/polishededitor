@@ -1,6 +1,6 @@
 <script>
-	import { Heading, ButtonGroup, P, RadioButton } from 'flowbite-svelte';
-	import { NumberInput } from '$components/UI';
+	import { Heading, P } from 'flowbite-svelte';
+	import { NumberInput, RadioSelect } from '$components/UI';
 	let { mon = $bindable() } = $props();
 </script>
 
@@ -8,23 +8,7 @@
 {#if mon.gender === 'Genderless'}
 	<P>This species has no gender.</P>
 {:else}
-	<ButtonGroup>
-		<RadioButton
-			value="Male"
-			bind:group={mon.gender}
-			checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
-		>
-			Male
-		</RadioButton>
-		<RadioButton
-			value="Female"
-			bind:group={mon.gender}
-			checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
-		>
-			Female
-		</RadioButton>
-	</ButtonGroup>
-{/if}
+	<RadioSelect bind:value={mon.gender} options={['Male', 'Female']} />{/if}
 
 {#if !!mon.happiness}
 	<Heading tag="h6" class="mt-3 mb-3">Happiness</Heading>
@@ -35,19 +19,4 @@
 {/if}
 
 <Heading tag="h6" class="mt-3 mb-3">Shininess</Heading>
-<ButtonGroup>
-	<RadioButton
-		value="Shiny"
-		bind:group={mon.shininess}
-		checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
-	>
-		Shiny
-	</RadioButton>
-	<RadioButton
-		value="Not Shiny"
-		bind:group={mon.shininess}
-		checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
-	>
-		Not Shiny
-	</RadioButton>
-</ButtonGroup>
+<RadioSelect bind:value={mon.shininess} options={['Shiny', 'Not Shiny']} />
