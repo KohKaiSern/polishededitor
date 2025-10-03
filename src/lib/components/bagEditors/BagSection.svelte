@@ -2,7 +2,7 @@
 	import { Listgroup, ListgroupItem, P, Button } from 'flowbite-svelte';
 	import { PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
 	import { DropdownSearch, NumberInput } from '$components/UI';
-	import { items } from '$data';
+	import items from '$data/items.json';
 
 	let { bag = $bindable(), PF, type, label, key, size } = $props();
 

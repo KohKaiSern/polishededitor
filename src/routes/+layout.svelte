@@ -3,7 +3,7 @@
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
-	import { SaveHandler } from '$lib';
+	import SaveHandler from '$components/SaveHandler.svelte';
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
 	let { children } = $props();
