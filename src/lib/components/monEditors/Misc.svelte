@@ -1,8 +1,7 @@
 <script>
-	import { Heading, Input, ButtonGroup, Button, P, RadioButton } from 'flowbite-svelte';
-	import { MinusOutline, PlusOutline } from 'flowbite-svelte-icons';
-	import { increment, decrement, enforce } from './numberInputHelpers';
-	let { mon = $bindable(), PF } = $props();
+	import { Heading, ButtonGroup, P, RadioButton } from 'flowbite-svelte';
+	import { NumberInput } from '$components/UI';
+	let { mon = $bindable() } = $props();
 </script>
 
 <Heading tag="h6" class="mb-3">Gender</Heading>
@@ -29,52 +28,10 @@
 
 {#if !!mon.happiness}
 	<Heading tag="h6" class="mt-3 mb-3">Happiness</Heading>
-	<ButtonGroup>
-		<Button
-			type="button"
-			onclick={() => (mon.happiness = decrement(mon.happiness, 0, 255))}
-			class="p-2!"
-		>
-			<MinusOutline class="size-6" />
-		</Button>
-		<Input
-			bind:value={mon.happiness}
-			type="number"
-			onfocusout={() => (mon.happiness = enforce(mon.happiness, 0, 255))}
-			class="w-15 [appearance:textfield] text-center [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-		/>
-		<Button
-			type="button"
-			onclick={() => (mon.happiness = increment(mon.happiness, 0, 255))}
-			class="p-2!"
-		>
-			<PlusOutline class="size-6" />
-		</Button>
-	</ButtonGroup>
+	<NumberInput bind:value={mon.happiness} min={0} max={255} />
 {:else}
 	<Heading tag="h6" class="mb-3">Hatch Cycles</Heading>
-	<ButtonGroup>
-		<Button
-			type="button"
-			onclick={() => (mon.hatchCycles = decrement(mon.hatchCycles, 0, 255))}
-			class="p-2!"
-		>
-			<MinusOutline class="size-6" />
-		</Button>
-		<Input
-			bind:value={mon.hatchCycles}
-			type="number"
-			onfocusout={() => (mon.hatchCycles = enforce(mon.hatchCycles, 0, 255))}
-			class="w-15 [appearance:textfield] text-center [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-		/>
-		<Button
-			type="button"
-			onclick={() => (mon.hatchCycles = increment(mon.hatchCycles, 0, 255))}
-			class="p-2!"
-		>
-			<PlusOutline class="size-6" />
-		</Button>
-	</ButtonGroup>
+	<NumberInput bind:value={mon.hatchCycles} min={0} max={255} />
 {/if}
 
 <Heading tag="h6" class="mt-3 mb-3">Shininess</Heading>

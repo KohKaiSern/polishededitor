@@ -1,5 +1,5 @@
 <script>
-	import { Dropdown, DropdownItem, Search } from 'flowbite-svelte';
+	import { Dropdown, Search } from 'flowbite-svelte';
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 
 	let { options, value = $bindable(), onchange } = $props();

@@ -24,6 +24,6 @@
 	</AccordionItem>
 	<AccordionItem>
 		{#snippet header()}Miscellaneous{/snippet}
-		<Misc bind:mon {PF} />
+		<Misc bind:mon />
 	</AccordionItem>
 </Accordion>

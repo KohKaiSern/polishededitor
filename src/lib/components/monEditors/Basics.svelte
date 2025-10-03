@@ -1,11 +1,9 @@
 <script>
-	import { Heading, Input, ButtonGroup, Button, RadioButton } from 'flowbite-svelte';
-	import { PlusOutline, MinusOutline } from 'flowbite-svelte-icons';
+	import { Heading, ButtonGroup, RadioButton } from 'flowbite-svelte';
 	import items from '$data/items.json';
 	import pokemon from '$data/pokemon.json';
 	import growthRates from '$data/growthRates.json';
-	import DropdownSearch from '$components/DropdownSearch.svelte';
-	import { increment, decrement, enforce } from './numberInputHelpers';
+	import { DropdownSearch, NumberInput } from '$components/UI';
 	let { mon = $bindable(), PF } = $props();
 
 	const setExpForLvl = () => {
@@ -103,34 +101,4 @@
 </ButtonGroup>
 
 <Heading tag="h6" class="mt-3 mb-3">Level</Heading>
-<ButtonGroup>
-	<Button
-		type="button"
-		onclick={() => {
-			mon.level = decrement(mon.level, 1, 100);
-			setExpForLvl();
-		}}
-		class="p-2!"
-	>
-		<MinusOutline class="size-6" />
-	</Button>
-	<Input
-		bind:value={mon.level}
-		type="number"
-		onfocusout={() => {
-			mon.level = enforce(mon.level, 1, 100);
-			setExpForLvl();
-		}}
-		class="w-15 [appearance:textfield] text-center [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-	/>
-	<Button
-		type="button"
-		onclick={() => {
-			mon.level = increment(mon.level, 1, 100);
-			setExpForLvl();
-		}}
-		class="p-2!"
-	>
-		<PlusOutline class="size-6" />
-	</Button>
-</ButtonGroup>
+<NumberInput bind:value={mon.level} min={1} max={100} onchange={() => setExpForLvl()} />

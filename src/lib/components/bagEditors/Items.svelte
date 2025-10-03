@@ -1,16 +1,7 @@
 <script>
-	import {
-		Listgroup,
-		ListgroupItem,
-		Heading,
-		P,
-		Input,
-		Button,
-		ButtonGroup
-	} from 'flowbite-svelte';
-	import { PlusOutline, MinusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
-	import DropdownSearch from '$components/DropdownSearch.svelte';
-	import { increment, decrement, enforce } from '$components/monEditors/numberInputHelpers';
+	import { Listgroup, ListgroupItem, P, Button } from 'flowbite-svelte';
+	import { TrashBinSolid, PlusOutline } from 'flowbite-svelte-icons';
+	import { DropdownSearch, NumberInput } from '$components/UI';
 	import items from '$data/items.json';
 	let { bag = $bindable(), PF } = $props();
 	const addItem = (i) => {
@@ -50,31 +41,7 @@
 					<Button class="p-2!" color="red" outline onclick={() => deleteItem(i)}
 						><TrashBinSolid class="h-6 w-6" /></Button
 					>
-					<ButtonGroup>
-						<Button
-							type="button"
-							onclick={() =>
-								(bag.items.contents[i].qty = decrement(bag.items.contents[i].qty, 1, 99))}
-							class="p-2!"
-						>
-							<MinusOutline class="size-6" />
-						</Button>
-						<Input
-							bind:value={bag.items.contents[i].qty}
-							type="number"
-							onfocusout={() =>
-								(bag.items.contents[i].qty = enforce(bag.items.contents[i].qty, 1, 99))}
-							class="w-15 [appearance:textfield] text-center [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-						/>
-						<Button
-							type="button"
-							onclick={() =>
-								(bag.items.contents[i].qty = increment(bag.items.contents[i].qty, 1, 99))}
-							class="p-2!"
-						>
-							<PlusOutline class="size-6" />
-						</Button>
-					</ButtonGroup>
+					<NumberInput bind:value={bag.items.contents[i].qty} min={1} max={99} />
 				</div>
 			</ListgroupItem>
 		{:else}

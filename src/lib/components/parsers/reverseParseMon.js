@@ -1,5 +1,4 @@
 import pokemon from '$data/pokemon.json';
-import abilities from '$data/abilities.json';
 import moves from '$data/moves.json';
 import items from '$data/items.json';
 import { hex2bin, bin2hex, getNatureNo } from '$components/helpers.js';
