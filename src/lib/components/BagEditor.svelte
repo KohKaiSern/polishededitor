@@ -1,5 +1,5 @@
 <script>
-	import { BagSection } from '$components/bagEditors';
+	import BagSection from './bagEditors/BagSection.svelte';
 	import { RadioSelect } from '$components/UI';
 	let { bag = $bindable(), PF } = $props();
 	let selectedSlot = $state('Items');

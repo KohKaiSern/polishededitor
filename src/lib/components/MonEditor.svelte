@@ -1,6 +1,9 @@
 <script>
 	import { Heading, Accordion, AccordionItem } from 'flowbite-svelte';
-	import { Basics, DVEVNature, Moveset, Misc } from '$components/monEditors';
+	import DVEVNature from './monEditors/DVEVNature.svelte';
+	import Misc from './monEditors/Misc.svelte';
+	import Moveset from './monEditors/Moveset.svelte';
+	import Basics from './monEditors/Basics.svelte';
 	let { mon = $bindable(), PF } = $props();
 </script>
 
