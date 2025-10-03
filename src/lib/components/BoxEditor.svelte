@@ -10,20 +10,18 @@
 <section>
 	<Card class="sticky top-3 z-10 w-fit p-3">
 		<div class="flex flex-nowrap items-center gap-3">
-			<Button color="purple" class="p-2!"
-				><CaretLeftSolid
-					class="size-4"
-					onclick={() => {
-						boxNo = boxNo === 1 ? 20 : boxNo - 1;
-					}}
-				/></Button
-			><P>Box {boxNo}</P><Button color="purple" class="p-2!"
-				><CaretRightSolid
-					class="size-4"
-					onclick={() => {
-						boxNo = boxNo === 20 ? 1 : boxNo + 1;
-					}}
-				/></Button
+			<Button
+				color="purple"
+				class="p-2!"
+				onclick={() => {
+					boxNo = boxNo === 1 ? 20 : boxNo - 1;
+				}}><CaretLeftSolid class="size-4" /></Button
+			><P>Box {boxNo}</P><Button
+				color="purple"
+				class="p-2!"
+				onclick={() => {
+					boxNo = boxNo === 20 ? 1 : boxNo + 1;
+				}}><CaretRightSolid class="size-4" /></Button
 			>
 		</div>
 	</Card>

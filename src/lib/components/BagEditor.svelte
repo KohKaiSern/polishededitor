@@ -8,7 +8,7 @@
 		{ type: 'medicine', label: 'Medicine', key: 'meds', size: 37, option: 'Medicines' },
 		{ type: 'ball', label: 'Ball', key: 'balls', size: 25, option: 'Balls' },
 		{ type: 'berries', label: 'Berry', key: 'berries', size: 31, option: 'Berries' },
-    { option: 'TMs & HMs'}
+		{ option: 'TMs & HMs' }
 	];
 </script>
 

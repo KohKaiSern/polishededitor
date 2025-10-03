@@ -1,6 +1,6 @@
 import addresses from '$data/addresses.json';
 import items from '$data/items.json';
-import { bin2hex } from '../helpers.js'
+import { bin2hex } from '../helpers.js';
 
 export const reverseParseBag = (fileHex, bag, PF) => {
 	const address = parseInt(addresses.sBackupPlayerData, 16) + 943;
@@ -53,10 +53,14 @@ export const reverseParseBag = (fileHex, bag, PF) => {
 			fileHex[address + 2 * (i + 1)] = '01';
 		}
 	}
-  const TMsHMs = bag.TMsHMs.contents.concat(Array(7).fill('0'))
-  for (let i = 0; i < 11; i++) {
-    fileHex[address - 50 + i] = bin2hex(TMsHMs.slice(i * 8, (i + 1) * 8).toReversed().join(''))
-  }
+	const TMsHMs = bag.TMsHMs.contents.concat(Array(7).fill('0'));
+	for (let i = 0; i < 11; i++) {
+		fileHex[address - 50 + i] = bin2hex(
+			TMsHMs.slice(i * 8, (i + 1) * 8)
+				.toReversed()
+				.join('')
+		);
+	}
 
 	return fileHex;
 };
