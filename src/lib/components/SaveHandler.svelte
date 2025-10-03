@@ -10,9 +10,7 @@
 		P,
 		List,
 		Li,
-		Hr,
-		ButtonGroup,
-		RadioButton
+		Hr
 	} from 'flowbite-svelte';
 	import { buf2hex, hex2buf, checkSaveVersion } from './SaveHandler.svelte.js';
 	import parseMons from './parsers/parseMons.js';
@@ -24,6 +22,7 @@
 	import checksumPD from './parsers/checksumPD.js';
 	import BoxEditor from '$components/BoxEditor.svelte';
 	import BagEditor from '$components/BagEditor.svelte';
+	import { RadioSelect } from '$components/UI';
 
 	let file = $state(null);
 	let checked = $state(true);
@@ -124,24 +123,9 @@
 	</P>
 	<br />
 	{#if disabled}
-		<ButtonGroup>
-			<RadioButton
-				value="boxes"
-				bind:group={selectedEditor}
-				checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
-			>
-				PC Boxes
-			</RadioButton>
-			<RadioButton
-				value="bag"
-				bind:group={selectedEditor}
-				checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
-			>
-				Bag
-			</RadioButton>
-		</ButtonGroup>
+		<RadioSelect bind:value={selectedEditor} options={['PC Boxes', 'Bag']} />
 	{/if}
 </header>
 <Hr />
-{#if selectedEditor === 'boxes'}<BoxEditor bind:mons {PF} />{/if}
-{#if selectedEditor === 'bag'}<BagEditor bind:bag {PF} />{/if}
+{#if selectedEditor === 'PC Boxes'}<BoxEditor bind:mons {PF} />{/if}
+{#if selectedEditor === 'Bag'}<BagEditor bind:bag {PF} />{/if}
