@@ -55,9 +55,11 @@
 		{:else}
 			<ListgroupItem class="flex justify-between">
 				<P class="mt-3 mb-3">Empty</P>
-				<Button class="p-2!" onclick={() => addItem(i)} color="purple">
-					<PlusOutline class="h-5 w-5" />
-				</Button>
+				{#if i === bag[key].count}
+					<Button class="p-2!" onclick={() => addItem(i)} color="purple">
+						<PlusOutline class="h-5 w-5" />
+					</Button>
+				{/if}
 			</ListgroupItem>
 		{/if}
 	{/each}
