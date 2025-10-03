@@ -25,8 +25,8 @@ export const reverseParseBag = (fileHex, bag, PF) => {
 			fileHex[address + 152 + (2 * i + 1)] = itemNo;
 			fileHex[address + 152 + 2 * (i + 1)] = bag.meds.contents[i].qty.toString(16);
 		} else {
-			fileHex[address + (2 * i + 1)] = 'FF';
-			fileHex[address + 2 * (i + 1)] = '01';
+			fileHex[address + 152 + (2 * i + 1)] = 'FF';
+			fileHex[address + 152 + 2 * (i + 1)] = '01';
 		}
 	}
 	for (let i = 0; i < 25; i++) {
@@ -37,8 +37,8 @@ export const reverseParseBag = (fileHex, bag, PF) => {
 			fileHex[address + 228 + (2 * i + 1)] = itemNo;
 			fileHex[address + 228 + 2 * (i + 1)] = bag.balls.contents[i].qty.toString(16);
 		} else {
-			fileHex[address + (2 * i + 1)] = 'FF';
-			fileHex[address + 2 * (i + 1)] = '01';
+			fileHex[address + 228 + (2 * i + 1)] = 'FF';
+			fileHex[address + 228 + 2 * (i + 1)] = '01';
 		}
 	}
 	for (let i = 0; i < 31; i++) {
@@ -49,8 +49,8 @@ export const reverseParseBag = (fileHex, bag, PF) => {
 			fileHex[address + 280 + (2 * i + 1)] = itemNo;
 			fileHex[address + 280 + 2 * (i + 1)] = bag.berries.contents[i].qty.toString(16);
 		} else {
-			fileHex[address + (2 * i + 1)] = 'FF';
-			fileHex[address + 2 * (i + 1)] = '01';
+			fileHex[address + 280 + (2 * i + 1)] = 'FF';
+			fileHex[address + 280 + 2 * (i + 1)] = '01';
 		}
 	}
 	const TMsHMs = bag.TMsHMs.contents.concat(Array(7).fill('0'));
