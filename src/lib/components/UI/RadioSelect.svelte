@@ -8,7 +8,7 @@
 		<RadioButton
 			value={option}
 			bind:group={value}
-			checkedClass="bg-purple-500 text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
+			checkedClass="bg-purple-500 !text-white dark:bg-purple-500 hover:bg-purple-600 dark:hover:bg-purple-600"
 		>
 			{option}
 		</RadioButton>

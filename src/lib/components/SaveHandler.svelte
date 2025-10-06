@@ -47,13 +47,20 @@
 		const fileHex = buf2hex(await file[0].arrayBuffer());
 		toastMsg = checkSaveVersion(fileHex);
 		if (toastMsg === 'Save Validated!') {
-			setTimeout(() => {
-				toastMsg = null;
-			}, 3000);
+			try {
+				mons = parseMons(fileHex, PF);
+				bag = parseBag(fileHex, PF);
+			} catch (error) {
+				toastMsg =
+					"This save file couldn't be parsed. Make sure that it's from the latest stable release version of Polished Crystal.";
+			}
+			if (toastMsg === 'Save Validated!') {
+				setTimeout(() => {
+					toastMsg = null;
+				}, 3000);
+			}
 		}
 		disabled = true;
-		mons = parseMons(fileHex, PF);
-		bag = parseBag(fileHex, PF);
 		return;
 	};
 
