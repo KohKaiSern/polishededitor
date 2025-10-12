@@ -21,12 +21,12 @@
 	{#each ['HP', 'Atk', 'Def', 'Speed', 'Sp. Def', 'Sp. Atk'] as stat, i}
 		<div>
 			<Label class="mb-2 text-sm">{stat}</Label>
-			<NumberInput bind:value={mon.evs[i]} min={0} max={15} />
+			<NumberInput bind:value={mon.evs[i]} min={0} max={252} />
 		</div>
 	{/each}
 </div>
 
-<Heading tag="h6" class="mt-5 mb-3">Nature</Heading>
+<Heading tag="h6" class="mb-3 mt-5">Nature</Heading>
 <DropdownSearch bind:value={mon.nature} options={getNatures().map((x) => x.value)} />
 <div class="mt-5">
 	<NatureTable />
