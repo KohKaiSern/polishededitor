@@ -1,9 +1,11 @@
 export interface Base {
-  id: string;
-  index: string;
-  name: string;
+	id: string;
+	index: number;
+	name: string;
 }
 
-export interface Items extends Base {
-  category: string;
+export interface Item extends Base {
+	description: string;
+	category: string;
+	spritePath: string;
 }
