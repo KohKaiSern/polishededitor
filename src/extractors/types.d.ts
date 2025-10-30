@@ -1,24 +1,34 @@
 export interface Base {
-  id: string;
-  index: number;
-  name: string;
+	id: string;
+	index: number;
+	name: string;
 }
 
 export interface Item extends Base {
-  description: string;
-  category: string;
-  spritePath: string;
+	description: string;
+	category: string;
+	spritePath: string;
 }
 
 export interface Ability extends Base {
-  description: string;
+	description: string;
+}
+
+export interface Move extends Base {
+	description: string;
+	basePower: number;
+	type: string;
+	accuracy: number;
+	powerPoints: number;
+	effectChance: number;
+	category: string;
 }
 
 export interface Form extends Base {
-  bsts: number[];
-  abilities: string[]
+	bsts: number[];
+	abilities: string[];
 }
 
 export interface Species extends Base {
-  forms: Form[]
+	forms: Form[];
 }
