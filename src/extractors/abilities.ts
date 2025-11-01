@@ -24,7 +24,7 @@ const NULL_ABILITY: Ability = {
 for (const PF of ['polished', 'faithful'] as const) {
   abilities[PF] = extractIDs(abilities[PF], IDS[PF], NULL_ABILITY)
   abilities[PF] = extractNames(abilities[PF], NAMES[PF], 0)
-  abilities[PF] = extractDescs(abilities[PF], DESCS[PF])
+  abilities[PF] = extractDescs(abilities[PF], DESCS[PF], 0)
 }
 
 export default abilities

@@ -1453,7 +1453,7 @@
 			"id": "HONEY_GATHER",
 			"index": 102,
 			"name": "Honey Gather",
-			"description": "The Pokémon may"
+			"description": "The Pokémon may gather Honey."
 		},
 		{ "id": "FRISK", "index": 103, "name": "Frisk", "description": "Checks the foe's held item." },
 		{

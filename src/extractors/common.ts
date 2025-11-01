@@ -38,10 +38,10 @@ export function extractNames<T extends Base & { name: string }>(data: T[], NAMES
   return data
 }
 
-export function extractDescs<T extends Base & { description: string }>(data: T[], DESCS: string[], start?: string, end?: string): T[] {
+export function extractDescs<T extends Base & { description: string }>(data: T[], DESCS: string[], initial: number, start?: string, end?: string): T[] {
   let lineNo = 0
   if (start) while (!DESCS[lineNo].includes(start)) lineNo++;
-  let index = 0
+  let index = initial
   for (; lineNo < DESCS.length; lineNo++) {
     if (end) if (DESCS[lineNo].includes(end)) break;
     if (!DESCS[lineNo].startsWith('dw')) continue

@@ -24,6 +24,7 @@ export function splitRead(path: string): { polished: string[]; faithful: string[
     //Check for PF split
     if (/if !?DEF\(FAITHFUL\)/.test(contents[lineNo])) {
       const PF = contents[lineNo].includes('!') ? 'polished' : 'faithful'
+      lineNo++;
       while (!/else|endc/.test(contents[lineNo])) {
         files[PF].push(contents[lineNo])
         lineNo++
@@ -34,7 +35,6 @@ export function splitRead(path: string): { polished: string[]; faithful: string[
           lineNo++
         }
       }
-      lineNo++
       continue
     }
     files.polished.push(contents[lineNo])
