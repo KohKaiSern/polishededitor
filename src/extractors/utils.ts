@@ -3,9 +3,10 @@ import { readFileSync, writeFileSync } from "fs";
 //process. It replaces some important values, splits every file into individual lines,
 //and most importantly, produces a Polished & Faithful version of each file.
 //Every file must go through this pre-processor, with the exception of:
-//1. polishedcrystal.sym
+//1. Symbols
 //2. [SAVE VERSION FILE]
 //3. [GAME VERSION FILE]
+//4. Charmap
 //The data here is guaranteed to be equivalent between the PF split.
 export function splitRead(path: string): { polished: string[]; faithful: string[]; } {
   const files: { polished: string[]; faithful: string[] } = { polished: [], faithful: [] }
