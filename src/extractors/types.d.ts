@@ -7,3 +7,7 @@ export interface Ability extends Base {
   name: string
   description: string
 }
+
+export interface Location extends Base {
+  name: string
+}

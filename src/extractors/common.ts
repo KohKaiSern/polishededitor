@@ -15,7 +15,7 @@ export function extractIDs<T extends Base>(data: T[], IDS: string[], empty: T, s
     if (IDS[lineNo].startsWith('const')) {
       data.push({
         ...empty,
-        id: IDS[lineNo].startsWith('const_skip') ? null : IDS[lineNo].match(/[A-Z_]+/)!.at(0)!,
+        id: IDS[lineNo].startsWith('const_skip') ? null : IDS[lineNo].match(/[A-Z_\d]+/)!.at(0)!,
         index
       });
       index++
