@@ -14,7 +14,7 @@
 	function onadd(): void {
 		party.push({
 			species: 'Bulbasaur',
-			form: 'plain',
+			form: 'Plain',
 			heldItem: 'None',
 			moveset: ['Tackle', 'None', 'None', 'None'],
 			OTID: player.id,
@@ -46,13 +46,21 @@
 		});
 	}
 
-	function ondelete(): void {}
+	function deleteMon(index: number): void {
+		party.splice(index, 1);
+	}
 </script>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 	{#each Array(6) as _, i}
 		{#if party[i]}
-			<MonCard bind:mon={party[i]} {PF} {ondelete} />
+			<MonCard
+				bind:mon={party[i]}
+				{PF}
+				ondelete={() => {
+					deleteMon(i);
+				}}
+			/>
 		{:else}
 			<EmptyMonCard first={Boolean(party[i - 1]) || i === 0} {onadd} />
 		{/if}
