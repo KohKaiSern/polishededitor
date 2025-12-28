@@ -1,0 +1,256 @@
+{
+  "polished": [
+    {
+      "id": "HARDY",
+      "index": 0,
+      "name": "Hardy"
+    },
+    {
+      "id": "LONELY",
+      "index": 1,
+      "name": "Lonely"
+    },
+    {
+      "id": "BRAVE",
+      "index": 2,
+      "name": "Brave"
+    },
+    {
+      "id": "ADAMANT",
+      "index": 3,
+      "name": "Adamant"
+    },
+    {
+      "id": "NAUGHTY",
+      "index": 4,
+      "name": "Naughty"
+    },
+    {
+      "id": "BOLD",
+      "index": 5,
+      "name": "Bold"
+    },
+    {
+      "id": "DOCILE",
+      "index": 6,
+      "name": "Docile"
+    },
+    {
+      "id": "RELAXED",
+      "index": 7,
+      "name": "Relaxed"
+    },
+    {
+      "id": "IMPISH",
+      "index": 8,
+      "name": "Impish"
+    },
+    {
+      "id": "LAX",
+      "index": 9,
+      "name": "Lax"
+    },
+    {
+      "id": "TIMID",
+      "index": 10,
+      "name": "Timid"
+    },
+    {
+      "id": "HASTY",
+      "index": 11,
+      "name": "Hasty"
+    },
+    {
+      "id": "SERIOUS",
+      "index": 12,
+      "name": "Serious"
+    },
+    {
+      "id": "JOLLY",
+      "index": 13,
+      "name": "Jolly"
+    },
+    {
+      "id": "NAIVE",
+      "index": 14,
+      "name": "Naive"
+    },
+    {
+      "id": "MODEST",
+      "index": 15,
+      "name": "Modest"
+    },
+    {
+      "id": "MILD",
+      "index": 16,
+      "name": "Mild"
+    },
+    {
+      "id": "QUIET",
+      "index": 17,
+      "name": "Quiet"
+    },
+    {
+      "id": "BASHFUL",
+      "index": 18,
+      "name": "Bashful"
+    },
+    {
+      "id": "RASH",
+      "index": 19,
+      "name": "Rash"
+    },
+    {
+      "id": "CALM",
+      "index": 20,
+      "name": "Calm"
+    },
+    {
+      "id": "GENTLE",
+      "index": 21,
+      "name": "Gentle"
+    },
+    {
+      "id": "SASSY",
+      "index": 22,
+      "name": "Sassy"
+    },
+    {
+      "id": "CAREFUL",
+      "index": 23,
+      "name": "Careful"
+    },
+    {
+      "id": "QUIRKY",
+      "index": 24,
+      "name": "Quirky"
+    }
+  ],
+  "faithful": [
+    {
+      "id": "HARDY",
+      "index": 0,
+      "name": "Hardy"
+    },
+    {
+      "id": "LONELY",
+      "index": 1,
+      "name": "Lonely"
+    },
+    {
+      "id": "BRAVE",
+      "index": 2,
+      "name": "Brave"
+    },
+    {
+      "id": "ADAMANT",
+      "index": 3,
+      "name": "Adamant"
+    },
+    {
+      "id": "NAUGHTY",
+      "index": 4,
+      "name": "Naughty"
+    },
+    {
+      "id": "BOLD",
+      "index": 5,
+      "name": "Bold"
+    },
+    {
+      "id": "DOCILE",
+      "index": 6,
+      "name": "Docile"
+    },
+    {
+      "id": "RELAXED",
+      "index": 7,
+      "name": "Relaxed"
+    },
+    {
+      "id": "IMPISH",
+      "index": 8,
+      "name": "Impish"
+    },
+    {
+      "id": "LAX",
+      "index": 9,
+      "name": "Lax"
+    },
+    {
+      "id": "TIMID",
+      "index": 10,
+      "name": "Timid"
+    },
+    {
+      "id": "HASTY",
+      "index": 11,
+      "name": "Hasty"
+    },
+    {
+      "id": "SERIOUS",
+      "index": 12,
+      "name": "Serious"
+    },
+    {
+      "id": "JOLLY",
+      "index": 13,
+      "name": "Jolly"
+    },
+    {
+      "id": "NAIVE",
+      "index": 14,
+      "name": "Naive"
+    },
+    {
+      "id": "MODEST",
+      "index": 15,
+      "name": "Modest"
+    },
+    {
+      "id": "MILD",
+      "index": 16,
+      "name": "Mild"
+    },
+    {
+      "id": "QUIET",
+      "index": 17,
+      "name": "Quiet"
+    },
+    {
+      "id": "BASHFUL",
+      "index": 18,
+      "name": "Bashful"
+    },
+    {
+      "id": "RASH",
+      "index": 19,
+      "name": "Rash"
+    },
+    {
+      "id": "CALM",
+      "index": 20,
+      "name": "Calm"
+    },
+    {
+      "id": "GENTLE",
+      "index": 21,
+      "name": "Gentle"
+    },
+    {
+      "id": "SASSY",
+      "index": 22,
+      "name": "Sassy"
+    },
+    {
+      "id": "CAREFUL",
+      "index": 23,
+      "name": "Careful"
+    },
+    {
+      "id": "QUIRKY",
+      "index": 24,
+      "name": "Quirky"
+    }
+  ]
+}

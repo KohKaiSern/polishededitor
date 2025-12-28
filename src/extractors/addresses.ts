@@ -1,0 +1,73 @@
+import { splitRead } from './utils';
+
+//This file extracts the memory addresses of the relevant data via the symbol file.
+//This is the main reason why Polished Editor can exist - without it, the save editor
+//would update the wrong memory addresses every time the game updated.
+
+//Symbols
+//It is important that wGameData be the last symbol.
+const SYMBOLS = [
+  'sSaveVersion',
+  'sBackupNewBox1',
+  'sBoxMons1A',
+  'sBoxMons1B',
+  'sBoxMons1C',
+  'sBoxMons2A',
+  'sBoxMons2B',
+  'sBoxMons2C',
+  'sBackupPlayerData',
+  'sBackupChecksum',
+  'sChecksum',
+  'sGameData',
+  'sGameDataEnd',
+  'sBackupGameData',
+  'sBackupGameDataEnd',
+  'sBackupPokémonData',
+  'wNumItems',
+  'wNumMedicine',
+  'wNumBalls',
+  'wNumBerries',
+  'wTMsHMs',
+  'wKeyItems',
+  'wCoins',
+  'wApricorns',
+  'wWingAmounts',
+  'wCandyAmounts',
+  'wBlueCardBalance',
+  'wPlayerID',
+  'wPlayerGender',
+  'wPlayerName',
+  'wRivalName',
+  'wMoney',
+  'wPartyMonOTs',
+  'wPartyMon1HyperTraining',
+  'wPartyMon1Nickname',
+  'wGameData'
+];
+
+function makeAddress(address: string): number {
+  //M = (0x2000 * PP) + (QQQQ - 0xA000), where the original memory address was PP:QQQQ
+  return 8192 * parseInt(address.slice(0, 2), 16) + (parseInt(address.slice(2), 16) - 40960);
+}
+
+//Converts wRAM address to sRAM
+function wToSRAM(addresses: Record<string, number>): Record<string, number> {
+  for (const [symbol, address] of Object.entries(addresses)) {
+    if (symbol.startsWith('s')) continue;
+    addresses[symbol] = address + addresses.sBackupGameData - addresses.wGameData;
+  }
+  return addresses;
+}
+
+function extractAddresses(ADDRESSES: string[]): Record<string, number> {
+  const addresses: Record<string, number> = {};
+  for (const entry of SYMBOLS) {
+    const symbol = ADDRESSES.find((line) => line.endsWith(entry))!;
+    addresses[entry] = makeAddress(symbol.split(' ').at(0)!.replace(':', ''));
+  }
+  return addresses;
+}
+
+const ADDRESSES = await splitRead('../polishedcrystal.sym');
+const addresses = wToSRAM(extractAddresses(ADDRESSES.polished));
+export default addresses;
