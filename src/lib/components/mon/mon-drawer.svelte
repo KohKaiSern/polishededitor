@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Form } from '$extractors/types';
 	import type { BoxMon, PartyMon } from '$parsers/types';
-	import { Button, Heading } from 'flowbite-svelte';
-	import RadioSelect from '$ui/radio-select.svelte';
+	import { Button, Heading, Hr } from 'flowbite-svelte';
+	import Combobox from '$ui/combobox.svelte';
 
 	interface MonDrawerProps {
 		mon: PartyMon | BoxMon;
@@ -18,10 +18,9 @@
 
 <Heading tag="h4" class="mb-5">Edit {mon.nickname.join('')}</Heading>
 
-<RadioSelect
-	bind:value={editor}
-	options={['Basics', 'Stats', 'Moves', 'Caught Data', 'Misc'].map((x) => ({ id: x, text: x }))}
-/>
+<Combobox bind:value={editor} options={['Basics', 'Stats', 'Moveset', 'Caught Data', 'Misc']} />
+
+<Hr class="my-5" />
 
 <div class="absolute bottom-5 left-5">
 	<Button color="red" onclick={ondelete}>Delete Pokémon</Button>
