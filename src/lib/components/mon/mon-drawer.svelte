@@ -32,6 +32,9 @@
 		<TabItem title="Caught"></TabItem>
 		<TabItem title="Misc"></TabItem>
 	</Tabs>
+	<div class="ml-4">
+		<Button color="red" onclick={ondelete}>Delete Pokémon</Button>
+	</div>
 </div>
 
 <div class="sm:hidden">
@@ -40,8 +43,7 @@
 	{#if editor === 'Basics'}
 		<Basics bind:mon {species} {form} {PF} />
 	{:else if editor === 'Stats'}{:else if editor === 'Moves'}{:else if editor === 'Caught'}{:else if editor === 'Misc'}{/if}
-</div>
-
-<div class="absolute bottom-5 left-5">
-	<Button color="red" onclick={ondelete}>Delete Pokémon</Button>
+	<div class="mt-7">
+		<Button color="red" onclick={ondelete}>Delete Pokémon</Button>
+	</div>
 </div>

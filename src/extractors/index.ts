@@ -1,5 +1,6 @@
 import { writeJSON } from "./utils";
 import addresses from "./addresses";
+import abilities from "./abilities";
 import apricorns from "./apricorns";
 import boxThemes from "./boxThemes";
 import charmap from './charmap';
@@ -17,6 +18,7 @@ import wings from "./wings";
 
 for (const [name, obj] of Object.entries({
   addresses,
+  abilities,
   apricorns,
   boxThemes,
   charmap,

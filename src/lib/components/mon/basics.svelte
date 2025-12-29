@@ -7,8 +7,10 @@
 	import { Heading, P } from 'flowbite-svelte';
 	import pokemon from '$data/pokemon.json';
 	import items from '$data/items.json';
+	import abilities from '$data/abilities.json';
 	import DropdownSelect from '$ui/dropdown-select.svelte';
 	import Combobox from '$ui/combobox.svelte';
+	import RadioSelect from '$ui/radio-select.svelte';
 
 	interface BasicsProps {
 		mon: PartyMon | BoxMon;
@@ -18,6 +20,7 @@
 	}
 
 	let { mon = $bindable(), species, form, PF }: BasicsProps = $props();
+	let hpRatio = $state('currentHP' in mon ? Math.ceil(mon.currentHP / mon.stats[0]) * 100 : 0);
 
 	function resetMon(): void {
 		mon.form = species.forms.find((f) => f.index === 1)!.name;
@@ -80,5 +83,46 @@
 	{/if}
 </div>
 
+<Heading tag="h5" class="mt-5 mb-5">Ability</Heading>
+<RadioSelect options={form.abilities.map((a) => ({ text: a, id: a }))} bind:value={mon.ability} />
+<P class="mt-5" italic>{abilities[PF].find((a) => a.name === mon.ability)!.description}</P>
+
 <Heading tag="h5" class="mt-5 mb-[-10px]">Level</Heading>
 <NumberInput bind:value={mon.level} min={1} max={100} onchange={setExpForLvl} />
+
+{#if 'currentHP' in mon && !mon.isEgg}
+	<Heading tag="h5" class="mt-5 mb-[-10px]">Current HP%</Heading>
+	<NumberInput
+		bind:value={hpRatio}
+		min={0}
+		max={100}
+		onchange={() => {
+			mon.currentHP = Math.ceil((hpRatio / 100) * mon.stats[0]);
+			if (mon.currentHP === 0) {
+				mon.status.name = 'None';
+			}
+		}}
+	/>
+	{#if mon.currentHP != 0}
+		<div class="flex gap-5 items-start flex-wrap sm:flex-nowrap my-5">
+			<div>
+				<Heading tag="h5" class="mb-5">Status</Heading>
+				<DropdownSelect
+					options={['None', 'Paralysis', 'Burn', 'Freeze', 'Poison', 'Sleep']}
+					bind:value={mon.status.name}
+					onchange={() => {
+						if (mon.status.name === 'Sleep') {
+							mon.status.turnsRemaining = 1;
+						}
+					}}
+				/>
+			</div>
+			{#if mon.status.name === 'Sleep'}
+				<div>
+					<Heading tag="h5" class="mb-[-10px] sm:mb-0">Sleep Duration</Heading>
+					<NumberInput bind:value={mon.status.turnsRemaining!} min={1} max={7} />
+				</div>
+			{/if}
+		</div>
+	{/if}
+{/if}
