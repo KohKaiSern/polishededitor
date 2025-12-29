@@ -1,6 +1,10 @@
 <script lang="ts">
 	import items from '$data/items.json';
-	let { heldItem, PF }: { heldItem: string; PF: 'polished' | 'faithful' } = $props();
+	let {
+		heldItem,
+		PF,
+		class: className = ''
+	}: { heldItem: string; PF: 'polished' | 'faithful'; class?: string } = $props();
 
 	let itemSrc = $derived.by(() => {
 		const spritePath = items[PF].find((i) => i.name === heldItem)!.spritePath;
@@ -9,7 +13,7 @@
 </script>
 
 <div
-	class="size-[30px] flex bg-white rounded-lg justify-center items-center border border-gray-300 dark:border-none"
+	class="size-[30px] flex bg-white rounded-lg justify-center items-center border border-gray-300 dark:border-none {className}"
 >
 	{#if heldItem != 'None'}
 		<img class="rounded-sm" src={itemSrc} alt={`Sprite of ${heldItem}`} />

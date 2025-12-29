@@ -100,6 +100,7 @@ export interface FormMap extends Base {
 }
 
 export interface Form extends Base {
+  name: string;
   bsts: number[];
   types: string[];
   hasGender: boolean;
