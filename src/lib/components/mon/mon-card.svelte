@@ -51,7 +51,7 @@
 			<Heal bind:mon {PF} />
 		{/if}
 		<Button
-			class="p-2! border-gray-300 hover:bg-gray-300"
+			class="p-2! border-gray-300 hover:bg-gray-300 size-11"
 			outline
 			color="dark"
 			onclick={() => (open = true)}><EditSolid class="text-gray-600 dark:text-gray-400" /></Button

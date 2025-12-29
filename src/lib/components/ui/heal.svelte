@@ -21,4 +21,6 @@
 	}
 </script>
 
-<Button color="dark" outline onclick={heal}>Heal</Button>
+<Button color="dark" class="hover:text-green-600 hover:dark:text-green-500" outline onclick={heal}
+	>Heal</Button
+>
