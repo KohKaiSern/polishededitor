@@ -2,6 +2,7 @@
 	import type { Form, Species } from '$extractors/types';
 	import type { BoxMon, PartyMon } from '$parsers/types';
 	import NumberInput from '$ui/number-input.svelte';
+	import TextInput from '$ui/text-input.svelte';
 	import { Heading } from 'flowbite-svelte';
 
 	interface BasicsProps {
@@ -23,6 +24,9 @@
 		);
 	}
 </script>
+
+<Heading tag="h5">Nickname</Heading>
+<TextInput bind:value={mon.nickname} maxLength={10} class="my-5" />
 
 <Heading tag="h5" class="mb-[-10px]">Level</Heading>
 <NumberInput bind:value={mon.level} min={1} max={100} onchange={setExpForLvl} />
