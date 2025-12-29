@@ -65,6 +65,7 @@
 	class={innerWidth > innerHeight ? 'h-full w-[75%]' : 'h-[85%] w-full'}
 	><MonDrawer
 		bind:mon
+		{species}
 		{form}
 		{PF}
 		ondelete={() => {
