@@ -64,7 +64,7 @@
 </script>
 
 <Heading tag="h5">Moves</Heading>
-<div class="flex flex-col gap-5 mt-5 w-full">
+<div class="flex flex-col gap-5 mt-7 w-full">
 	{#each Array(4) as _, i}
 		{#if mon.moveset[i] === 'None'}
 			<Card class="p-5 min-h-40 w-full max-w-none">
