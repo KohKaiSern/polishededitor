@@ -26,7 +26,7 @@
 <div class="hidden sm:block">
 	<Tabs
 		tabStyle="underline"
-		classes={{ active: 'text-black dark:text-white rounded-t-lg dark:bg-purple-500 bg-purple-600' }}
+		classes={{ active: 'text-white rounded-t-lg dark:bg-purple-500 bg-purple-600' }}
 	>
 		<TabItem title="Basics">
 			<Basics bind:mon {species} {form} {PF} />
