@@ -89,7 +89,16 @@
 						resetPP();
 					}}
 				>
-					{option}
+					<div class="w-full flex justify-between">
+						<span>
+							{option}
+						</span>
+						<span>
+							{#if selectedGroup === 'Level-Up Moves'}
+								Lv. {form.learnsets.level.find((m) => m.name === option)!.level}
+							{/if}
+						</span>
+					</div>
 				</Button>
 			{/each}
 		</div>

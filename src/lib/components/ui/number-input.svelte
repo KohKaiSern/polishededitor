@@ -28,7 +28,7 @@
 <div class="flex items-center gap-3">
 	<input
 		bind:value
-		class="number-input !bg-transparent text-black dark:text-white font-bold focus:!outline-none"
+		class="number-input !bg-transparent border rounded-md border-gray-100 dark:border-gray-700 text-center py-0.5 text-black dark:text-white font-bold focus:!outline-none"
 		style:--input-width={inputWidth}
 		onchange={() => {
 			value = validate(value);
@@ -47,7 +47,7 @@
 
 <style>
 	.number-input {
-		width: calc(var(--input-width) * 1ch);
+		width: calc(var(--input-width) * 1.7ch);
 	}
 
 	input[type='range'] {
