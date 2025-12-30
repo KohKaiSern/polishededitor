@@ -7,6 +7,7 @@
 	import DropdownSelect from '$ui/dropdown-select.svelte';
 	import Moves from '$components/mon/moves.svelte';
 	import Caught from '$components/mon/caught.svelte';
+	import Misc from '$components/mon/misc.svelte';
 
 	interface MonDrawerProps {
 		mon: PartyMon | BoxMon;
@@ -39,7 +40,9 @@
 		<TabItem title="Caught">
 			<Caught bind:mon {PF} />
 		</TabItem>
-		<TabItem title="Misc"></TabItem>
+		<TabItem title="Misc">
+			<Misc bind:mon {form} />
+		</TabItem>
 	</Tabs>
 	<div class="ml-4">
 		<Button color="red" onclick={ondelete}>Delete Pokémon</Button>
@@ -57,7 +60,9 @@
 		<Moves bind:mon {form} {PF} />
 	{:else if editor === 'Caught'}
 		<Caught bind:mon {PF} />
-	{:else if editor === 'Misc'}{/if}
+	{:else if editor === 'Misc'}
+		<Misc bind:mon {form} />
+	{/if}
 	<div class="mt-7">
 		<Button color="red" onclick={ondelete}>Delete Pokémon</Button>
 	</div>
