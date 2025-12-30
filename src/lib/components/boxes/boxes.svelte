@@ -47,7 +47,7 @@
 	}
 </script>
 
-<header class="flex gap-5 mb-5 bg-white dark:bg-gray-900 sticky top-0 pt-3 pb-4 z-10">
+<header class="flex gap-5 mb-5 bg-white dark:bg-gray-900 sticky top-0 pt-3 pb-4 z-10 flex-wrap">
 	<div class="flex flex-col gap-2">
 		<Label>Box</Label>
 		<Carousel bind:value={selectedBox} min={1} max={20} />
