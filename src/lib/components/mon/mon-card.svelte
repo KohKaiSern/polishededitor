@@ -44,9 +44,9 @@
 	});
 	let wrapperStyle = $derived.by(() => {
 		if (borderColors.length === 1) {
-			return `background: ${borderColors[0]}; padding: 4px; border-radius: 0.4rem;`;
+			return `background: ${borderColors[0]}; padding: 4px; border-radius: 0.65rem;`;
 		} else {
-			return `background: linear-gradient(to bottom right, ${borderColors[0]}, ${borderColors[1]}); padding: 4px; border-radius: 0.4rem;`;
+			return `background: linear-gradient(to bottom right, ${borderColors[0]}, ${borderColors[1]}); padding: 4px; border-radius: 0.65rem;`;
 		}
 	});
 	let open = $state(false);

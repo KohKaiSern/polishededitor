@@ -25,7 +25,9 @@
 
 <div class="flex align-middle">
 	<div>
-		<Button class="h-full bg-purple-600 dark:bg-purple-500 {className}">
+		<Button
+			class="h-full bg-purple-600 dark:bg-purple-500 {className} focus:ring-4 ring-purple-300"
+		>
 			{value}
 			<ChevronDownOutline class="ms-3 h-5 w-5" />
 		</Button>
