@@ -10,6 +10,7 @@
 	import addresses from '$data/addresses.json';
 	import versions from '$data/versions.json';
 	import Boxes from '$components/boxes/boxes.svelte';
+	import Bag from '$components/bag/bag.svelte';
 
 	let PF: 'polished' | 'faithful' = $state('polished');
 	let data: Data | null = $state(null);
@@ -107,6 +108,6 @@
 	<Hr class="my-5" />
 	{#if editor === 'Party'}<Party bind:party={data.party} player={data.player} {PF} />{/if}
 	{#if editor === 'Boxes'}<Boxes bind:boxes={data.boxes} player={data.player} {PF} />{/if}
-	<!-- {#if editor === 'Bag'}<Bag bind:bag={data.bag} {PF} />{/if} -->
+	{#if editor === 'Bag'}<Bag bind:bag={data.bag} {PF} />{/if}
 	<!-- {#if editor === 'Player'}<PlayerEditor bind:player={data.player} {PF} />{/if} -->
 {/if}
