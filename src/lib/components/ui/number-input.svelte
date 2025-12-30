@@ -41,7 +41,7 @@
 		{min}
 		{max}
 		{onchange}
-		style:background="linear-gradient(to right, #9333ea {percent}%, #e5e7eb {percent}%)"
+		style:background="linear-gradient(to right, #ad46ff {percent}%, #e5e7eb {percent}%)"
 	/>
 </div>
 
@@ -62,7 +62,7 @@
 		width: 20px;
 		height: 20px;
 		background: white;
-		border: 3px solid #9333ea;
+		border: 3px solid #ad46ff;
 		border-radius: 50%;
 		cursor: pointer;
 	}
@@ -70,7 +70,7 @@
 		width: 20px;
 		height: 20px;
 		background: white;
-		border: 3px solid #9333ea;
+		border: 3px solid #ad46ff;
 		border-radius: 50%;
 		cursor: pointer;
 	}

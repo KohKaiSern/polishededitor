@@ -1,8 +1,22 @@
 <script lang="ts">
-	import { Label, Heading, P, ButtonGroup, Button } from 'flowbite-svelte';
+	import {
+		Label,
+		Heading,
+		P,
+		ButtonGroup,
+		Button,
+		Table,
+		TableHead,
+		TableHeadCell,
+		TableBody,
+		TableBodyRow,
+		TableBodyCell,
+		RadioButton
+	} from 'flowbite-svelte';
 	import NumberInput from '$ui/number-input.svelte';
 	import type { BoxMon, PartyMon } from '$parsers/types';
 	import TypeIcon from '$ui/type-icon.svelte';
+	import natures from '$data/natures.json';
 
 	interface StatsProps {
 		mon: PartyMon | BoxMon;
@@ -108,3 +122,38 @@
 		{/each}
 	</ButtonGroup>
 </div>
+
+<Heading tag="h5" class="my-5">Nature</Heading>
+<Table border={false}>
+	<TableHead>
+		<TableHeadCell class="text-center p-0">↑ \ ↓</TableHeadCell>
+		{#each ['Atk', 'Def', 'Speed', 'Sp. Atk', 'Sp. Def'] as stat}
+			<TableHeadCell class="text-center text-blue-600 dark:text-blue-400 font-semibold py-2 px-1"
+				>↓ {stat}</TableHeadCell
+			>
+		{/each}
+	</TableHead>
+	<TableBody>
+		{#each ['Atk', 'Def', 'Speed', 'Sp. Atk', 'Sp. Def'] as increasedStat, rowIndex}
+			<TableBodyRow>
+				<TableBodyCell
+					class="text-center text-red-600 dark:text-red-400 font-semibold text-xs whitespace-nowrap py-2 px-2"
+					>↑ {increasedStat.toUpperCase()}</TableBodyCell
+				>
+				{#each Array(5).fill(null) as _, columnIndex}
+					<TableBodyCell class="text-center p-0">
+						<RadioButton
+							value={natures[PF].find((n) => n.index === rowIndex * 5 + columnIndex)!.name}
+							outline
+							bind:group={mon.nature}
+							class="w-full h-full px-2 rounded-none border-0 text-black dark:text-gray-400"
+							checkedClass="bg-purple-600 !text-white dark:bg-purple-500 dark:text-white hover:bg-primary-700 hover:text-white dark:hover:bg-primary-600 dark:hover:text-white"
+						>
+							{natures[PF].find((n) => n.index === rowIndex * 5 + columnIndex)!.name}
+						</RadioButton>
+					</TableBodyCell>
+				{/each}
+			</TableBodyRow>
+		{/each}
+	</TableBody>
+</Table>
