@@ -2,7 +2,8 @@
 	import type { Form, Species } from '$extractors/types';
 	import type { BoxMon, PartyMon } from '$parsers/types';
 	import { Button, Heading, Hr, Tabs, TabItem } from 'flowbite-svelte';
-	import Basics from './basics.svelte';
+	import Basics from '$components/mon/basics.svelte';
+	import Stats from '$components/mon/stats.svelte';
 	import DropdownSelect from '$ui/dropdown-select.svelte';
 
 	interface MonDrawerProps {
@@ -27,7 +28,9 @@
 		<TabItem title="Basics">
 			<Basics bind:mon {species} {form} {PF} />
 		</TabItem>
-		<TabItem title="Stats"></TabItem>
+		<TabItem title="Stats">
+			<Stats bind:mon {PF} />
+		</TabItem>
 		<TabItem title="Moves"></TabItem>
 		<TabItem title="Caught"></TabItem>
 		<TabItem title="Misc"></TabItem>
@@ -42,7 +45,9 @@
 	<Hr class="my-5" />
 	{#if editor === 'Basics'}
 		<Basics bind:mon {species} {form} {PF} />
-	{:else if editor === 'Stats'}{:else if editor === 'Moves'}{:else if editor === 'Caught'}{:else if editor === 'Misc'}{/if}
+	{:else if editor === 'Stats'}
+		<Stats bind:mon {PF} />
+	{:else if editor === 'Moves'}{:else if editor === 'Caught'}{:else if editor === 'Misc'}{/if}
 	<div class="mt-7">
 		<Button color="red" onclick={ondelete}>Delete Pokémon</Button>
 	</div>
