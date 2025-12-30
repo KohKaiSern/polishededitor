@@ -4,7 +4,7 @@
 
 	let { mon }: { mon: PartyMon } = $props();
 
-	let HPPercent = $derived((mon.currentHP / mon.stats[0]) * 100);
+	let HPPercent = $derived(Math.round((mon.currentHP / mon.stats[0]) * 100));
 
 	let status = $derived(
 		{
@@ -30,7 +30,7 @@
 <div class="flex items-center gap-3 w-[70%]">
 	<P>HP</P><Progressbar
 		color={HPPercent > 50 ? 'green' : HPPercent > 20 ? 'yellow' : 'red'}
-		progress={HPPercent.toString()}
+		progress={HPPercent}
 	/>
 	{#if mon.status.name != 'None'}
 		<div style:background-color={statusColor} class="rounded-md pl-2 pr-2">

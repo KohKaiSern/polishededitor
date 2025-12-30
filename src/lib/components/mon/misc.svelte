@@ -70,7 +70,7 @@
 <Heading tag="h5" class="mt-5 mb-5 sm:mb-2">Pokerus</Heading>
 
 <div class="flex gap-x-8 gap-y-5 flex-wrap items-center">
-	<div class="hidden sm:block">
+	<div class="hidden sm:block my-3">
 		<RadioSelect
 			bind:value={mon.pokerus.strain}
 			options={[

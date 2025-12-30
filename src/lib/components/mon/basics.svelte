@@ -20,7 +20,7 @@
 	}
 
 	let { mon = $bindable(), species, form, PF }: BasicsProps = $props();
-	let hpRatio = $state('currentHP' in mon ? Math.ceil(mon.currentHP / mon.stats[0]) * 100 : 0);
+	let hpRatio = $state('currentHP' in mon ? Math.ceil((mon.currentHP / mon.stats[0]) * 100) : 0);
 
 	function resetMon(): void {
 		mon.form = species.forms.find((f) => f.index === 1)!.name;
