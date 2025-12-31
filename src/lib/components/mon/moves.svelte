@@ -30,13 +30,11 @@
 
 	function resetPP(i: number): void {
 		if ('currentHP' in mon) {
-			mon.powerPoints[i] = Math.min(63, (data(i).powerPoints * (5 + mon.PPUPs[i])) / 5);
+			mon.powerPoints[i] = Math.min(63, (data[i].powerPoints * (5 + mon.PPUPs[i])) / 5);
 		}
 	}
 
-	function data(i: number): Move {
-		return moves[PF].find((m) => m.name === mon.moveset[i])!;
-	}
+	let data = $derived(mon.moveset.map((move) => moves[PF].find((m) => m.name === move)!));
 
 	function borderColor(i: number): string {
 		return {
@@ -59,7 +57,7 @@
 			STEEL: '#5695A3',
 			WATER: '#539DDF',
 			UNKNOWN_T: '#666666'
-		}[data(i).type]!;
+		}[data[i].type]!;
 	}
 </script>
 
@@ -88,7 +86,7 @@
 			>
 				<MoveCard
 					bind:move={mon.moveset[i]}
-					data={data(i)}
+					data={data[i]}
 					{form}
 					{PF}
 					resetPP={() => resetPP(i)}
@@ -100,7 +98,7 @@
 							<NumberInput
 								bind:value={mon.powerPoints[i]}
 								min={0}
-								max={Math.min(63, (data(i).powerPoints * (5 + mon.PPUPs[i])) / 5)}
+								max={Math.min(63, (data[i].powerPoints * (5 + mon.PPUPs[i])) / 5)}
 							/>
 						</div>
 					{/if}
@@ -114,11 +112,11 @@
 								if ('powerPoints' in mon) {
 									if (
 										mon.powerPoints[i] >
-										Math.min(63, (data(i).powerPoints * (5 + mon.PPUPs[i])) / 5)
+										Math.min(63, (data[i].powerPoints * (5 + mon.PPUPs[i])) / 5)
 									) {
 										mon.powerPoints[i] = Math.min(
 											63,
-											(data(i).powerPoints * (5 + mon.PPUPs[i])) / 5
+											(data[i].powerPoints * (5 + mon.PPUPs[i])) / 5
 										);
 									}
 								}
@@ -126,29 +124,29 @@
 						/>
 					</div>
 				</div>
-				<P italic>{data(i).description}</P>
+				<P italic>{data[i].description}</P>
 				<div class="grid grid-cols-2 md:grid-cols-5 gap-3">
 					<div>
 						<Label>Base Power</Label>
-						<P class="text-2xl">{data(i).basePower}</P>
+						<P class="text-2xl">{data[i].basePower}</P>
 					</div>
 					<div>
 						<Label>Accuracy</Label>
-						<P class="text-2xl">{data(i).accuracy}%</P>
+						<P class="text-2xl">{data[i].accuracy}%</P>
 					</div>
 					<div>
 						<Label>Max PP</Label>
-						<P class="text-2xl">{(data(i).powerPoints * (5 + mon.PPUPs[i])) / 5}</P>
+						<P class="text-2xl">{(data[i].powerPoints * (5 + mon.PPUPs[i])) / 5}</P>
 					</div>
 					<div>
 						<Label>Category</Label>
 						<P class="text-2xl"
-							>{data(i).category.at(0)! + data(i).category.slice(1).toLowerCase()}</P
+							>{data[i].category.at(0)! + data[i].category.slice(1).toLowerCase()}</P
 						>
 					</div>
 					<div>
 						<Label>Effect Chance</Label>
-						<P class="text-2xl">{data(i).effectChance}%</P>
+						<P class="text-2xl">{data[i].effectChance}%</P>
 					</div>
 				</div>
 				<div class="flex w-full justify-end">
