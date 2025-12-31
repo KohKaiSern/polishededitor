@@ -1,44 +1,49 @@
 import { extractIDs } from './common';
-import { splitRead } from './utils';
 import type { Location } from './types';
+import { splitRead } from './utils';
 
 //This file uses pointers instead of a simple index-based system, which is why
 //it requires a special extractNames implementation.
 function extractNames(data: Location[], NAMES: string[]): Location[] {
-  let index = 0;
-  for (let lineNo = 0; lineNo < NAMES.length; lineNo++) {
-    if (!NAMES[lineNo].startsWith('landmark')) continue;
-    const pointer = NAMES[lineNo].split(', ').at(-1)! + ':';
-    let descIndex = NAMES.findIndex((l) => l.includes(pointer))!;
-    while (!NAMES[descIndex].includes('"')) descIndex++;
-    data.find((i) => i.index === index)!.name = NAMES[descIndex].split('"').at(1)!;
-    index++;
-  }
-  return data;
+	let index = 0;
+	for (let lineNo = 0; lineNo < NAMES.length; lineNo++) {
+		if (!NAMES[lineNo].startsWith('landmark')) continue;
+		const pointer = NAMES[lineNo].split(', ').at(-1)! + ':';
+		let descIndex = NAMES.findIndex((l) => l.includes(pointer))!;
+		while (!NAMES[descIndex].includes('"')) descIndex++;
+		data.find((i) => i.index === index)!.name = NAMES[descIndex].split('"').at(1)!;
+		index++;
+	}
+	return data;
 }
 
 const locations: {
-  polished: Location[];
-  faithful: Location[];
+	polished: Location[];
+	faithful: Location[];
 } = {
-  polished: [],
-  faithful: []
+	polished: [],
+	faithful: []
 };
 
 const NULL_LOCATION: Location = {
-  id: null,
-  index: -1,
-  name: ''
+	id: null,
+	index: -1,
+	name: ''
 };
 
-const files = await Promise.all([
-  'constants/landmark_constants.asm',
-  'data/maps/landmarks.asm',
-].map(path => splitRead(path)))
+const files = await Promise.all(
+	['constants/landmark_constants.asm', 'data/maps/landmarks.asm'].map((path) => splitRead(path))
+);
 
 for (const PF of ['polished', 'faithful'] as const) {
-  locations[PF] = extractIDs(locations[PF], files[0][PF], NULL_LOCATION, undefined, 'NUM_LANDMARKS');
-  locations[PF] = extractNames(locations[PF], files[1][PF]);
+	locations[PF] = extractIDs(
+		locations[PF],
+		files[0][PF],
+		NULL_LOCATION,
+		undefined,
+		'NUM_LANDMARKS'
+	);
+	locations[PF] = extractNames(locations[PF], files[1][PF]);
 }
 
 export default locations;

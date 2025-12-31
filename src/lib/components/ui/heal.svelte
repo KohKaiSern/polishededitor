@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Button } from 'flowbite-svelte';
-	import type { PartyMon } from '$parsers/types';
 	import moves from '$data/moves.json';
+	import type { PartyMon } from '$parsers/types';
+	import { Button } from 'flowbite-svelte';
 
 	let { mon = $bindable(), PF }: { mon: PartyMon; PF: 'polished' | 'faithful' } = $props();
 

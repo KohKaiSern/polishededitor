@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Checkbox } from 'flowbite-svelte';
 	import tmhms from '$data/tmhms.json';
 	import type { Item } from '$parsers/types';
+	import { Checkbox } from 'flowbite-svelte';
 
 	let { contents = $bindable(), PF }: { contents: Item[]; PF: 'polished' | 'faithful' } = $props();
 

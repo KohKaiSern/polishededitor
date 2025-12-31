@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Heading, Label, Radio } from 'flowbite-svelte';
+	import type { Player } from '$parsers/types';
 	import NumberInput from '$ui/number-input.svelte';
 	import TextInput from '$ui/text-input.svelte';
-	import type { Player } from '$parsers/types';
+	import { Heading, Label, Radio } from 'flowbite-svelte';
 
 	let { player = $bindable() }: { player: Player } = $props();
 </script>

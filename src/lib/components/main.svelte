@@ -1,17 +1,17 @@
 <script lang="ts">
-	import { Fileupload, Label, Helper, Toast, Button, Heading, DarkMode, Hr } from 'flowbite-svelte';
-	import RadioSelect from '$ui/radio-select.svelte';
+	import Bag from '$components/bag/bag.svelte';
+	import Boxes from '$components/boxes/boxes.svelte';
 	import Instructions from '$components/instructions.svelte';
 	import Party from '$components/party/party.svelte';
-	import type { Data } from '$parsers/types';
-	import parseSave from '$parsers/parseSave';
-	import reverseParseSave from '$parsers/reverseParseSave';
-	import { retrieve } from '$parsers/utils';
+	import Player from '$components/player/player.svelte';
 	import addresses from '$data/addresses.json';
 	import versions from '$data/versions.json';
-	import Boxes from '$components/boxes/boxes.svelte';
-	import Bag from '$components/bag/bag.svelte';
-	import Player from '$components/player/player.svelte';
+	import parseSave from '$parsers/parseSave';
+	import reverseParseSave from '$parsers/reverseParseSave';
+	import type { Data } from '$parsers/types';
+	import { retrieve } from '$parsers/utils';
+	import RadioSelect from '$ui/radio-select.svelte';
+	import { Fileupload, Label, Helper, Toast, Button, Heading, DarkMode, Hr } from 'flowbite-svelte';
 
 	let PF: 'polished' | 'faithful' = $state('polished');
 	let data: Data | null = $state(null);

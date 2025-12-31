@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Accordion, AccordionItem, Listgroup, ListgroupItem, P } from 'flowbite-svelte';
 	import apricorns from '$data/apricorns.json';
-	import NumberInput from '$ui/number-input.svelte';
 	import expCandy from '$data/expCandy.json';
 	import wings from '$data/wings.json';
 	import type { Bag } from '$parsers/types';
+	import NumberInput from '$ui/number-input.svelte';
+	import { Accordion, AccordionItem, Listgroup, ListgroupItem, P } from 'flowbite-svelte';
 
 	let { bag = $bindable(), PF }: { bag: Bag; PF: 'polished' | 'faithful' } = $props();
 

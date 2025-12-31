@@ -1,5 +1,6 @@
 <script lang="ts">
 	import items from '$data/items.json';
+
 	let {
 		heldItem,
 		PF,

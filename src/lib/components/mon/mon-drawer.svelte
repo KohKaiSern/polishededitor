@@ -1,13 +1,13 @@
 <script lang="ts">
-	import type { Form, Species } from '$extractors/types';
-	import type { BoxMon, PartyMon } from '$parsers/types';
-	import { Button, Heading, Hr, Tabs, TabItem } from 'flowbite-svelte';
 	import Basics from '$components/mon/basics.svelte';
-	import Stats from '$components/mon/stats.svelte';
-	import DropdownSelect from '$ui/dropdown-select.svelte';
-	import Moves from '$components/mon/moves.svelte';
 	import Caught from '$components/mon/caught.svelte';
 	import Misc from '$components/mon/misc.svelte';
+	import Moves from '$components/mon/moves.svelte';
+	import Stats from '$components/mon/stats.svelte';
+	import type { Form, Species } from '$extractors/types';
+	import type { BoxMon, PartyMon } from '$parsers/types';
+	import DropdownSelect from '$ui/dropdown-select.svelte';
+	import { Button, Heading, Hr, Tabs, TabItem } from 'flowbite-svelte';
 
 	interface MonDrawerProps {
 		mon: PartyMon | BoxMon;

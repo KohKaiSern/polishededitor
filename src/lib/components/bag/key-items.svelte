@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Button, Listgroup, ListgroupItem, P } from 'flowbite-svelte';
-	import { PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
-	import Combobox from '$ui/combobox.svelte';
 	import keyItems from '$data/keyItems.json';
 	import type { Item } from '$parsers/types';
+	import Combobox from '$ui/combobox.svelte';
+	import { Button, Listgroup, ListgroupItem, P } from 'flowbite-svelte';
+	import { PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
 
 	let { contents = $bindable(), PF }: { contents: Item[]; PF: 'polished' | 'faithful' } = $props();
 

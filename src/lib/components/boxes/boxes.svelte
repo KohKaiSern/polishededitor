@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Button, Card, Heading, Label } from 'flowbite-svelte';
-	import { PlusOutline } from 'flowbite-svelte-icons';
-	import Combobox from '$ui/combobox.svelte';
-	import TextInput from '$ui/text-input.svelte';
+	import MonCard from '$components/mon/mon-card.svelte';
 	import boxThemes from '$data/boxThemes.json';
 	import type { Box, BoxMon, Player } from '$parsers/types';
-	import MonCard from '$components/mon/mon-card.svelte';
 	import Carousel from '$ui/carousel.svelte';
+	import Combobox from '$ui/combobox.svelte';
+	import TextInput from '$ui/text-input.svelte';
+	import { Button, Card, Heading, Label } from 'flowbite-svelte';
+	import { PlusOutline } from 'flowbite-svelte-icons';
 
 	let {
 		boxes = $bindable(),

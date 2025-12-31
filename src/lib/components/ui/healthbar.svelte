@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Progressbar, P } from 'flowbite-svelte';
 	import type { PartyMon } from '$parsers/types';
+	import { Progressbar, P } from 'flowbite-svelte';
 
 	let { mon }: { mon: PartyMon } = $props();
 

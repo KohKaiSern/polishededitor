@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Button, Heading, Card, Label, P } from 'flowbite-svelte';
-	import { PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
-	import type { BoxMon, PartyMon } from '$parsers/types';
-	import type { Form } from '$extractors/types';
 	import MoveCard from '$components/mon/move-card.svelte';
 	import moves from '$data/moves.json';
-	import NumberInput from '$ui/number-input.svelte';
+	import type { Form } from '$extractors/types';
+	import type { BoxMon, PartyMon } from '$parsers/types';
 	import ColoredCard from '$ui/colored-card.svelte';
+	import NumberInput from '$ui/number-input.svelte';
+	import { Button, Heading, Card, Label, P } from 'flowbite-svelte';
+	import { PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
 
 	interface MovesProps {
 		mon: PartyMon | BoxMon;

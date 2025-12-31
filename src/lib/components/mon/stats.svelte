@@ -1,4 +1,8 @@
 <script lang="ts">
+	import natures from '$data/natures.json';
+	import type { BoxMon, PartyMon } from '$parsers/types';
+	import NumberInput from '$ui/number-input.svelte';
+	import TypeIcon from '$ui/type-icon.svelte';
 	import {
 		Label,
 		Heading,
@@ -13,10 +17,6 @@
 		TableBodyCell,
 		RadioButton
 	} from 'flowbite-svelte';
-	import NumberInput from '$ui/number-input.svelte';
-	import type { BoxMon, PartyMon } from '$parsers/types';
-	import TypeIcon from '$ui/type-icon.svelte';
-	import natures from '$data/natures.json';
 
 	interface StatsProps {
 		mon: PartyMon | BoxMon;

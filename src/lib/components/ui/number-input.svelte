@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Label } from 'flowbite-svelte';
+
 	interface NumberInputProps {
 		value: number;
 		min: number;

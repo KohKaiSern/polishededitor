@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Card } from 'flowbite-svelte';
 	import type { Snippet } from 'svelte';
+
 	interface ColoredCardProps {
 		types: string[];
 		class?: string;

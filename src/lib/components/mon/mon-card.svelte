@@ -1,15 +1,16 @@
 <script lang="ts">
+	import MonDrawer from '$components/mon/mon-drawer.svelte';
+	import pokemon from '$data/pokemon.json';
 	import type { BoxMon, PartyMon } from '$parsers/types';
+	import ColoredCard from '$ui/colored-card.svelte';
+	import Heal from '$ui/heal.svelte';
+	import Healthbar from '$ui/healthbar.svelte';
+	import ItemIcon from '$ui/item-icon.svelte';
 	import MonSprite from '$ui/mon-sprite.svelte';
 	import TypeIcon from '$ui/type-icon.svelte';
-	import Healthbar from '$ui/healthbar.svelte';
-	import MonDrawer from '$components/mon/mon-drawer.svelte';
 	import { Heading, P, Button, Drawer } from 'flowbite-svelte';
 	import { EditSolid } from 'flowbite-svelte-icons';
-	import pokemon from '$data/pokemon.json';
-	import ItemIcon from '$ui/item-icon.svelte';
-	import Heal from '$ui/heal.svelte';
-	import ColoredCard from '$ui/colored-card.svelte';
+
 	interface MonCardProps {
 		mon: PartyMon | BoxMon;
 		PF: 'polished' | 'faithful';

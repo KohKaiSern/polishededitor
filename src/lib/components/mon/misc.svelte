@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Heading, Label, P } from 'flowbite-svelte';
+	import type { Form } from '$extractors/types';
+	import type { BoxMon, PartyMon } from '$parsers/types';
 	import NumberInput from '$ui/number-input.svelte';
 	import RadioSelect from '$ui/radio-select.svelte';
-	import type { BoxMon, PartyMon } from '$parsers/types';
-	import type { Form } from '$extractors/types';
+	import { Heading, Label, P } from 'flowbite-svelte';
 
 	let { mon = $bindable(), form }: { mon: PartyMon | BoxMon; form: Form } = $props();
 	function changePokerus(): void {

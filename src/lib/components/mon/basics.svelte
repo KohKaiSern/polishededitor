@@ -1,16 +1,16 @@
 <script lang="ts">
+	import abilities from '$data/abilities.json';
+	import items from '$data/items.json';
+	import pokemon from '$data/pokemon.json';
 	import type { Form, Species } from '$extractors/types';
 	import type { BoxMon, PartyMon } from '$parsers/types';
-	import NumberInput from '$ui/number-input.svelte';
-	import TextInput from '$ui/text-input.svelte';
-	import ItemIcon from '$ui/item-icon.svelte';
-	import { Heading, P } from 'flowbite-svelte';
-	import pokemon from '$data/pokemon.json';
-	import items from '$data/items.json';
-	import abilities from '$data/abilities.json';
-	import DropdownSelect from '$ui/dropdown-select.svelte';
 	import Combobox from '$ui/combobox.svelte';
+	import DropdownSelect from '$ui/dropdown-select.svelte';
+	import ItemIcon from '$ui/item-icon.svelte';
+	import NumberInput from '$ui/number-input.svelte';
 	import RadioSelect from '$ui/radio-select.svelte';
+	import TextInput from '$ui/text-input.svelte';
+	import { Heading, P } from 'flowbite-svelte';
 
 	interface BasicsProps {
 		mon: PartyMon | BoxMon;
