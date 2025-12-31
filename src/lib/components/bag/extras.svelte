@@ -3,7 +3,7 @@
 	import expCandy from '$data/expCandy.json';
 	import wings from '$data/wings.json';
 	import type { Bag } from '$parsers/types';
-	import NumberInput from '$ui/number-input.svelte';
+	import { NumberInput } from '$ui';
 	import { Accordion, AccordionItem, Listgroup, ListgroupItem, P } from 'flowbite-svelte';
 
 	let { bag = $bindable(), PF }: { bag: Bag; PF: 'polished' | 'faithful' } = $props();

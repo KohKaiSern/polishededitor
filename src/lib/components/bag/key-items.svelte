@@ -1,7 +1,7 @@
 <script lang="ts">
 	import keyItems from '$data/keyItems.json';
 	import type { Item } from '$parsers/types';
-	import Combobox from '$ui/combobox.svelte';
+	import { Combobox } from '$ui';
 	import { Button, Listgroup, ListgroupItem, P } from 'flowbite-svelte';
 	import { PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
 

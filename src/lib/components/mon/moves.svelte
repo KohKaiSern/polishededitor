@@ -3,8 +3,7 @@
 	import moves from '$data/moves.json';
 	import type { Form } from '$extractors/types';
 	import type { BoxMon, PartyMon } from '$parsers/types';
-	import ColoredCard from '$ui/colored-card.svelte';
-	import NumberInput from '$ui/number-input.svelte';
+	import { ColoredCard, NumberInput } from '$ui';
 	import { Button, Heading, Card, Label, P } from 'flowbite-svelte';
 	import { PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
 

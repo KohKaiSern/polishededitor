@@ -1,8 +1,7 @@
 <script lang="ts">
 	import natures from '$data/natures.json';
 	import type { BoxMon, PartyMon } from '$parsers/types';
-	import NumberInput from '$ui/number-input.svelte';
-	import TypeIcon from '$ui/type-icon.svelte';
+	import { NumberInput, TypeIcon } from '$ui';
 	import {
 		Label,
 		Heading,

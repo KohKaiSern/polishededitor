@@ -1,7 +1,7 @@
 <script lang="ts">
 	import moves from '$data/moves.json';
 	import type { Form, Move } from '$extractors/types';
-	import TypeIcon from '$ui/type-icon.svelte';
+	import { TypeIcon } from '$ui';
 	import { Button, ButtonGroup, Dropdown, Search } from 'flowbite-svelte';
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 

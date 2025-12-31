@@ -1,9 +1,7 @@
 <script lang="ts">
 	import items from '$data/items.json';
 	import type { Item } from '$parsers/types';
-	import Combobox from '$ui/combobox.svelte';
-	import ItemIcon from '$ui/item-icon.svelte';
-	import NumberInput from '$ui/number-input.svelte';
+	import { NumberInput, ItemIcon, Combobox } from '$ui';
 	import { Button, Listgroup, ListgroupItem, P } from 'flowbite-svelte';
 	import { PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
 

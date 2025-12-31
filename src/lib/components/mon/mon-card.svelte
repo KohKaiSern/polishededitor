@@ -2,12 +2,7 @@
 	import MonDrawer from '$components/mon/mon-drawer.svelte';
 	import pokemon from '$data/pokemon.json';
 	import type { BoxMon, PartyMon } from '$parsers/types';
-	import ColoredCard from '$ui/colored-card.svelte';
-	import Heal from '$ui/heal.svelte';
-	import Healthbar from '$ui/healthbar.svelte';
-	import ItemIcon from '$ui/item-icon.svelte';
-	import MonSprite from '$ui/mon-sprite.svelte';
-	import TypeIcon from '$ui/type-icon.svelte';
+	import { ColoredCard, Heal, Healthbar, ItemIcon, MonSprite, TypeIcon } from '$ui';
 	import { Heading, P, Button, Drawer } from 'flowbite-svelte';
 	import { EditSolid } from 'flowbite-svelte-icons';
 

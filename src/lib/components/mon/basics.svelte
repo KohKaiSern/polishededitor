@@ -4,12 +4,7 @@
 	import pokemon from '$data/pokemon.json';
 	import type { Form, Species } from '$extractors/types';
 	import type { BoxMon, PartyMon } from '$parsers/types';
-	import Combobox from '$ui/combobox.svelte';
-	import DropdownSelect from '$ui/dropdown-select.svelte';
-	import ItemIcon from '$ui/item-icon.svelte';
-	import NumberInput from '$ui/number-input.svelte';
-	import RadioSelect from '$ui/radio-select.svelte';
-	import TextInput from '$ui/text-input.svelte';
+	import { TextInput, RadioSelect, NumberInput, ItemIcon, DropdownSelect, Combobox } from '$ui';
 	import { Heading, P } from 'flowbite-svelte';
 
 	interface BasicsProps {

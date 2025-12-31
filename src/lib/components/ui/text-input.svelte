@@ -1,6 +1,6 @@
 <script lang="ts">
 	import keyboard from '$data/keyboard.json';
-	import { Button, Drawer, Label, P } from 'flowbite-svelte';
+	import { Button, Drawer, P } from 'flowbite-svelte';
 
 	let {
 		value = $bindable(),

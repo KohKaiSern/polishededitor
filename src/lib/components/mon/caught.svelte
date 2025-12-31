@@ -2,10 +2,7 @@
 	import items from '$data/items.json';
 	import locations from '$data/locations.json';
 	import type { BoxMon, PartyMon } from '$parsers/types';
-	import Combobox from '$ui/combobox.svelte';
-	import NumberInput from '$ui/number-input.svelte';
-	import RadioSelect from '$ui/radio-select.svelte';
-	import TextInput from '$ui/text-input.svelte';
+	import { Combobox, NumberInput, RadioSelect, TextInput } from '$ui';
 	import { Heading, Label } from 'flowbite-svelte';
 
 	let { mon = $bindable(), PF }: { mon: PartyMon | BoxMon; PF: 'polished' | 'faithful' } = $props();

@@ -5,7 +5,7 @@
 	import TMHM from '$components/bag/tmhm.svelte';
 	import items from '$data/items.json';
 	import type { Item } from '$parsers/types';
-	import RadioSelect from '$ui/radio-select.svelte';
+	import { RadioSelect } from '$ui';
 
 	let { bag = $bindable(), PF }: { bag: Record<string, Item[]>; PF: 'polished' | 'faithful' } =
 		$props();
