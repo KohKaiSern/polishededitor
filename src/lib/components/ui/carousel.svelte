@@ -38,7 +38,7 @@
 		onfocusout={() => {
 			enforce();
 		}}
-		class="h-10 focus:border-transparent focus:ring-4 focus:!ring-purple-300 text-center"
+		class="!w-12 focus:border-transparent focus:ring-4 focus:!ring-purple-300 text-center"
 	/>
 	<Button
 		type="button"
