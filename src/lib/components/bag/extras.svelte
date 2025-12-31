@@ -12,6 +12,32 @@
 		const spritePath = list.find((i: any) => i.name === item)!.spritePath;
 		return `https://raw.githubusercontent.com/KohKaiSern/polishededitornew/refs/heads/main/src/${spritePath}`;
 	};
+
+	interface ItemConfig {
+		items: any[];
+		dataSource: any;
+		max: number;
+		getLabel?: (item: any) => string;
+	}
+
+	const itemConfigs: Record<string, ItemConfig> = $derived({
+		candy: {
+			items: bag.candy,
+			dataSource: expCandy[PF],
+			max: 99
+		},
+		apricorns: {
+			items: bag.apricorns,
+			dataSource: apricorns[PF],
+			max: 99,
+			getLabel: (item) => `${item.name}: ${apricorns[PF].find((a) => a.name === item.name)!.ball}`
+		},
+		wings: {
+			items: bag.wings,
+			dataSource: wings[PF],
+			max: 999
+		}
+	});
 </script>
 
 <Accordion class="mt-8">
@@ -19,82 +45,36 @@
 		{#snippet header()}Game Corner Coins{/snippet}
 		<NumberInput bind:value={bag.coins[0].qty} min={0} max={50000} />
 	</AccordionItem>
-	<AccordionItem>
-		{#snippet header()}Experience Candy{/snippet}
-		<Listgroup>
-			{#each bag.candy as candy, i}
-				<ListgroupItem class="flex w-full flex-wrap py-3 gap-3 sm:justify-between sm:flex-nowrap">
-					<div class="flex items-center gap-3">
-						<div
-							class="size-[35px] flex bg-white rounded-lg justify-center items-center border
-							border-gray-300 dark:border-none"
-						>
-							<img
-								class="rounded-sm"
-								src={src(candy.name, expCandy[PF])}
-								alt={`Sprite of ${candy.name}`}
-							/>
+
+	{#each Object.entries(itemConfigs) as [key, config]}
+		<AccordionItem>
+			{#snippet header()}{key.charAt(0).toUpperCase() +
+					key.slice(1).replace(/([A-Z])/g, ' $1')}{/snippet}
+			<Listgroup>
+				{#each config.items as item, i}
+					<ListgroupItem class="flex w-full flex-wrap py-3 gap-3 sm:justify-between sm:flex-nowrap">
+						<div class="flex items-center gap-3">
+							<div
+								class="size-[35px] flex bg-white rounded-lg justify-center items-center border
+								border-gray-300 dark:border-none"
+							>
+								<img
+									class="rounded-sm"
+									src={src(item.name, config.dataSource)}
+									alt={`Sprite of ${item.name}`}
+								/>
+							</div>
+							<P>{config.getLabel ? config.getLabel(item) : item.name}</P>
 						</div>
-						<P>{candy.name}</P>
-					</div>
-					<div>
-						<NumberInput bind:value={bag.candy[i].qty} min={0} max={99} />
-					</div>
-				</ListgroupItem>
-			{/each}
-		</Listgroup>
-	</AccordionItem>
-	<AccordionItem>
-		{#snippet header()}Apricorns{/snippet}
-		<Listgroup>
-			{#each bag.apricorns as apricorn, i}
-				<ListgroupItem class="flex w-full flex-wrap py-3 gap-3 sm:justify-between sm:flex-nowrap">
-					<div class="flex items-center gap-3">
-						<div
-							class="size-[35px] flex bg-white rounded-lg justify-center items-center border
-							border-gray-300 dark:border-none"
-						>
-							<img
-								class="rounded-sm"
-								src={src(apricorn.name, apricorns[PF])}
-								alt={`Sprite of ${apricorn.name}`}
-							/>
+						<div>
+							<NumberInput bind:value={config.items[i].qty} min={0} max={config.max} />
 						</div>
-						<P>{`${apricorn.name}: ${apricorns[PF].find((a) => a.name === apricorn.name)!.ball}`}</P
-						>
-					</div>
-					<div>
-						<NumberInput bind:value={bag.apricorns[i].qty} min={0} max={99} />
-					</div>
-				</ListgroupItem>
-			{/each}
-		</Listgroup>
-	</AccordionItem>
-	<AccordionItem>
-		{#snippet header()}Wings{/snippet}
-		<Listgroup>
-			{#each bag.wings as wing, i}
-				<ListgroupItem class="flex w-full flex-wrap py-3 gap-3 sm:justify-between sm:flex-nowrap">
-					<div class="flex items-center gap-3">
-						<div
-							class="size-[35px] flex bg-white rounded-lg justify-center items-center border
-							border-gray-300 dark:border-none"
-						>
-							<img
-								class="rounded-sm"
-								src={src(wing.name, wings[PF])}
-								alt={`Sprite of ${wing.name}`}
-							/>
-						</div>
-						<P>{wing.name}</P>
-					</div>
-					<div>
-						<NumberInput bind:value={bag.wings[i].qty} min={0} max={999} />
-					</div>
-				</ListgroupItem>
-			{/each}
-		</Listgroup>
-	</AccordionItem>
+					</ListgroupItem>
+				{/each}
+			</Listgroup>
+		</AccordionItem>
+	{/each}
+
 	<AccordionItem>
 		{#snippet header()}Blue Card Points{/snippet}
 		<NumberInput bind:value={bag.blueCard[0].qty} min={0} max={30} />
