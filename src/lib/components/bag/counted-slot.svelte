@@ -47,7 +47,7 @@
 					<Button class="p-2!" color="red" onclick={() => deleteItem(i)}>
 						<TrashBinSolid class="h-6 w-6" />
 					</Button>
-					<div>
+					<div class="w-60">
 						<NumberInput bind:value={contents[i].qty} min={1} max={99} />
 					</div>
 				</div>

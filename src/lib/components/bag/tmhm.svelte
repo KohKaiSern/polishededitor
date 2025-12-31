@@ -22,6 +22,7 @@
 	<Checkbox
 		bind:group
 		{onchange}
+		color="purple"
 		classes={{ div: 'w-full p-4' }}
 		choices={contents.map((entry: { name: string; qty: number }) => ({
 			value: entry.name,
