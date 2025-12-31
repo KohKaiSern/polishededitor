@@ -2,10 +2,11 @@
 	import { Button, Heading, Card, Label, P } from 'flowbite-svelte';
 	import { PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
 	import type { BoxMon, PartyMon } from '$parsers/types';
-	import type { Form, Move } from '$extractors/types';
+	import type { Form } from '$extractors/types';
 	import MoveCard from '$components/mon/move-card.svelte';
 	import moves from '$data/moves.json';
 	import NumberInput from '$ui/number-input.svelte';
+	import ColoredCard from '$ui/colored-card.svelte';
 
 	interface MovesProps {
 		mon: PartyMon | BoxMon;
@@ -35,30 +36,6 @@
 	}
 
 	let data = $derived(mon.moveset.map((move) => moves[PF].find((m) => m.name === move)!));
-
-	function borderColor(i: number): string {
-		return {
-			BUG: '#92BC2C',
-			DARK: '#595761',
-			DRAGON: '#0C69C8',
-			ELECTRIC: '#F2D94E',
-			FIRE: '#FBA54C',
-			FAIRY: '#EE90E6',
-			FIGHTING: '#D3425F',
-			FLYING: '#A1BBEC',
-			GHOST: '#5F6DBC',
-			GRASS: '#5FBD58',
-			GROUND: '#DA7C4D',
-			ICE: '#75D0C1',
-			NORMAL: '#A0A29F',
-			POISON: '#B763CF',
-			PSYCHIC: '#FA8581',
-			ROCK: '#C9BB8A',
-			STEEL: '#5695A3',
-			WATER: '#539DDF',
-			UNKNOWN_T: '#666666'
-		}[data[i].type]!;
-	}
 </script>
 
 <Heading tag="h5">Moves</Heading>
@@ -80,10 +57,7 @@
 				</div>
 			</Card>
 		{:else}
-			<Card
-				class="p-7 min-h-40 w-full max-w-none flex flex-col justify-between shadow-lg gap-5 border-4"
-				style="border-color: {borderColor(i)};"
-			>
+			<ColoredCard types={[data[i].type]}>
 				<MoveCard
 					bind:move={mon.moveset[i]}
 					data={data[i]}
@@ -154,7 +128,7 @@
 						><TrashBinSolid /></Button
 					>
 				</div>
-			</Card>
+			</ColoredCard>
 		{/if}
 	{/each}
 </div>
