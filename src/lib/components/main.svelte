@@ -58,7 +58,7 @@
 						.buffer as ArrayBuffer
 				])
 			),
-			download: `${files![0].name.slice(0, -4)}_EDITED${files![0].name.slice(-4)}`
+			download: `${files![0].name.slice(0, files![0].name.lastIndexOf('.'))}_EDITED${files![0].name.slice(files![0].name.lastIndexOf('.'))}`
 		}).click();
 	}
 
@@ -94,10 +94,10 @@
 
 <Label for="save" class="pb-2">Upload Save</Label>
 <div class="flex gap-5 text-nowrap mb-2">
-	<Fileupload id="save" accept=".srm,.sav" bind:files onchange={uploadSave} />
+	<Fileupload id="save" accept=".srm,.sav,.SaveRAM" bind:files onchange={uploadSave} />
 	<Button onclick={downloadSave} class="bg-purple-600 dark:bg-purple-500">Download Save</Button>
 </div>
-<Helper>.SRM / .SAV (Max. 33kB).</Helper>
+<Helper>.SRM / .SAV / .SaveRAM (Max. 33kB).</Helper>
 
 <Instructions />
 
