@@ -20,7 +20,7 @@
 
 	const src = (item: string): string => {
 		const spritePath = keyItems[PF].find((i) => i.name === item)!.spritePath;
-		return `https://raw.githubusercontent.com/KohKaiSern/polishededitornew/refs/heads/main/src/${spritePath}`;
+		return `https://raw.githubusercontent.com/KohKaiSern/polishededitor/refs/heads/main/src/${spritePath}`;
 	};
 </script>
 

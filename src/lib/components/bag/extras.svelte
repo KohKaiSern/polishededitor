@@ -10,7 +10,7 @@
 
 	const src = (item: string, list: any): string => {
 		const spritePath = list.find((i: any) => i.name === item)!.spritePath;
-		return `https://raw.githubusercontent.com/KohKaiSern/polishededitornew/refs/heads/main/src/${spritePath}`;
+		return `https://raw.githubusercontent.com/KohKaiSern/polishededitor/refs/heads/main/src/${spritePath}`;
 	};
 
 	interface ItemConfig {

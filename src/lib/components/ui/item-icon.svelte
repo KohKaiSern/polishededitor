@@ -9,7 +9,7 @@
 
 	let itemSrc = $derived.by(() => {
 		const spritePath = items[PF].find((i) => i.name === heldItem)!.spritePath;
-		return `https://raw.githubusercontent.com/KohKaiSern/polishededitornew/refs/heads/main/src/${spritePath}`;
+		return `https://raw.githubusercontent.com/KohKaiSern/polishededitor/refs/heads/main/src/${spritePath}`;
 	});
 </script>
 
