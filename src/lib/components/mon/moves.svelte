@@ -122,11 +122,13 @@
 						<P class="text-2xl">{data[i].effectChance}%</P>
 					</div>
 				</div>
-				<div class="flex w-full justify-end">
-					<Button class="p-2! size-11" color="red" onclick={() => ondelete(i)}
-						><TrashBinSolid /></Button
-					>
-				</div>
+				{#if mon.moveset[1] != 'None'}
+					<div class="flex w-full justify-end">
+						<Button class="p-2! size-11" color="red" onclick={() => ondelete(i)}
+							><TrashBinSolid /></Button
+						>
+					</div>
+				{/if}
 			</ColoredCard>
 		{/if}
 	{/each}
