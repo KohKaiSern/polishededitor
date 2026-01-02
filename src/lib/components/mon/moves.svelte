@@ -64,7 +64,7 @@
 					{PF}
 					resetPP={() => resetPP(i)}
 				/>
-				<div class="flex sm:flex-nowrap flex-wrap gap-7">
+				<div class="flex sm:flex-nowrap flex-wrap gap-7 mt-5">
 					{#if 'powerPoints' in mon}
 						<div class="flex flex-col w-full">
 							<Label class="mb-[-10px]">Power Points</Label>
