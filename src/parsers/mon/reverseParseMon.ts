@@ -314,6 +314,6 @@ const stats = (file: Uint8Array, address: number, stats: number[]): Uint8Array =
 };
 
 const hyperTraining = (file: Uint8Array, address: number, hyperTraining: boolean[]): Uint8Array => (
-  (file[address] = hyperTraining.map((s) => Number(s)).reduce((a, b) => (a << 1) | b)),
+  (file[address] = (hyperTraining.map((s) => Number(s)).reduce((a, b) => (a << 1) | b)) << 2),
   file
 );
