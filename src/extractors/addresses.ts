@@ -42,6 +42,8 @@ const SYMBOLS = [
 	'wPartyMonOTs',
 	'wPartyMon1HyperTraining',
 	'wPartyMon1Nickname',
+	'wPokédexCaught',
+	'wPokédexSeen',
 	'wGameData'
 ];
 

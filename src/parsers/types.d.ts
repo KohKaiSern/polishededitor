@@ -59,9 +59,12 @@ export interface Player {
 	gender: string;
 }
 
+export type Pokedex = Record<string, number>;
+
 export interface Data {
 	party: PartyMon[];
 	boxes: Box[];
 	bag: Bag;
 	player: Player;
+	pokedex: Pokedex;
 }

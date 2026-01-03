@@ -96,7 +96,7 @@ export async function createGIF(
 	const animContent = (await splitRead(animPath)).polished;
 
 	const encoder = new GifEncoder(frameHeight, frameHeight);
-	encoder.setRepeat(0).setQuality(10);
+	encoder.setRepeat(0).setQuality(1);
 
 	// Create a read stream and pipe it into a file write stream:
 	const writeStream = createWriteStream(import.meta.dirname + '/../' + outputPath);
