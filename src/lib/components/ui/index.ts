@@ -1,6 +1,7 @@
 export { default as Carousel } from './carousel.svelte';
 export { default as ColoredCard } from './colored-card.svelte';
 export { default as Combobox } from './combobox.svelte';
+export { default as Cycler } from './cycler.svelte'
 export { default as DropdownSelect } from './dropdown-select.svelte';
 export { default as Heal } from './heal.svelte';
 export { default as Healthbar } from './healthbar.svelte';

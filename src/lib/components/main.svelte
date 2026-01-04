@@ -4,6 +4,7 @@
 	import Instructions from '$components/instructions.svelte';
 	import Party from '$components/party/party.svelte';
 	import Player from '$components/player/player.svelte';
+	import Pokedex from '$components/pokedex/pokedex.svelte';
 	import addresses from '$data/addresses.json';
 	import versions from '$data/versions.json';
 	import parseSave from '$parsers/parseSave';
@@ -104,11 +105,12 @@
 {#if data}
 	<RadioSelect
 		bind:value={editor}
-		options={['Party', 'Boxes', 'Bag', 'Player'].map((e) => ({ id: e, text: e }))}
+		options={['Party', 'Boxes', 'Bag', 'Player', 'Pokedex'].map((e) => ({ id: e, text: e }))}
 	/>
 	<Hr class="my-5" />
 	{#if editor === 'Party'}<Party bind:party={data.party} player={data.player} {PF} />{/if}
 	{#if editor === 'Boxes'}<Boxes bind:boxes={data.boxes} player={data.player} {PF} />{/if}
 	{#if editor === 'Bag'}<Bag bind:bag={data.bag} {PF} />{/if}
 	{#if editor === 'Player'}<Player bind:player={data.player} />{/if}
+	{#if editor === 'Pokedex'}<Pokedex bind:pokedex={data.pokedex} {PF} />{/if}
 {/if}
