@@ -1,7 +1,7 @@
 <script lang="ts">
 	import pokemon from '$data/pokemon.json';
 	import type { Pokedex } from '$parsers/types';
-	import { ColoredCard, TypeIcon, Cycler } from '$ui';
+	import { ColoredCard, TypeIcon, Cycler, FullCycler } from '$ui';
 	import { Heading } from 'flowbite-svelte';
 
 	interface PokedexProps {
@@ -20,6 +20,11 @@
 		return result;
 	});
 </script>
+
+<div class="flex gap-5 items-center my-5">
+	<Heading tag="h5" class="text-red-600 dark:text-red-400">CHANGE EVERY ENTRY:</Heading>
+	<FullCycler bind:pokedex />
+</div>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
 	{#each sortedMons as species}
