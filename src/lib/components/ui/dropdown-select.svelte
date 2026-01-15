@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Button, Dropdown } from 'flowbite-svelte';
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
+	import { onMount } from 'svelte';
 
 	interface DropdownSelectProps {
 		value: string;
@@ -17,6 +18,11 @@
 	}: DropdownSelectProps = $props();
 
 	let isOpen = $state(false);
+	onMount(() => {
+		setTimeout(() => {
+			isOpen = false;
+		}, 250);
+	});
 </script>
 
 <div class="flex align-middle">
