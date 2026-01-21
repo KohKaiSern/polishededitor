@@ -10,6 +10,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>Polished Editor - Cheating/Save Editing Tool for Polished Crystal</title>
 </svelte:head>
 
 {@render children()}
