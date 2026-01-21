@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
-	import favicon from '$lib/assets/favicon.png';
 	import './layout.css';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 
@@ -9,7 +8,6 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
 	<title>Polished Editor - Cheating/Save Editing Tool for Polished Crystal</title>
 	<meta
 		name="description"
