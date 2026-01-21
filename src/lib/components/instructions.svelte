@@ -3,8 +3,8 @@
 </script>
 
 <P class="mt-5">
-	Polished Editor is a save editor for Polished Crystal. It auto-updates by scraping game files. <br
-	/>
+	Polished Editor is a save editor/cheat device for Polished Crystal. It auto-updates by scraping
+	game files. <br />
 	Contact Rev3lation on the Polished Crystal Discord Server (in #save-editor) to report bugs (bad eggs,
 	corrupted saves, etc).
 	<br />
