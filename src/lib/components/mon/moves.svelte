@@ -97,7 +97,7 @@
 						/>
 					</div>
 				</div>
-				<P italic>{data[i].description}</P>
+				<P italic class="my-5">{data[i].description}</P>
 				<div class="grid grid-cols-2 md:grid-cols-5 gap-3">
 					<div>
 						<Label>Base Power</Label>
