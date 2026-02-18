@@ -23,6 +23,9 @@ function parseBoxAddresses(file: Uint8Array): number[][] {
       mons[box][i] = address;
     }
   }
+  console.log(indexes)
+  console.log(flags)
+  console.log(mons)
   return mons;
 }
 
